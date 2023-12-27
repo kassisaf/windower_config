@@ -1,0 +1,17 @@
+Changed Abyssea maps to:
+
+http://mdh.gamependium.com/strategies/abyssea/
+
+Updated maps that were missing from Bg wiki etc:
+
+Moh Gates map 2 293/5
+Cirdas Caverns map 2 292/7
+Yorcia map Updated
+Marjami Ravine updated
+Dho Gates updated
+Woh Gates updated
+Outer Rakaznar 1 and 2 updated 311/108 - 109
+Inner Rakaznar 1 and 2 added 318/101 - 102
+Escha Zitah added 333/8
+Escha Ru'aun added 337/37.dat
+Reiseinjima added 342/69.dat

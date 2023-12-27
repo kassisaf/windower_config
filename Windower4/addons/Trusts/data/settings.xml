@@ -1,0 +1,102 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <auto>true</auto>
+        <language>English</language>
+        <sets>
+            <aby>
+                <1>AAHM</1>
+                <2>Ulmia</2>
+                <3>Joachim</3>
+                <4>King of Hearts</4>
+                <5>Kupipi</5>
+            </aby>
+            <apex>
+                <1>AAEV</1>
+                <2>Sylvie (UC)</2>
+                <3>Koru-Moru</3>
+                <4>Kupipi</4>
+                <5>Shantotto II</5>
+            </apex>
+            <blm>
+                <1>Kayeel-Payeel</1>
+                <2>Robel-Akbel</2>
+                <3>Shantotto II</3>
+                <4>Kupipi</4>
+                <5>Ovjang</5>
+            </blm>
+            <default>
+                <1>AAHM</1>
+                <2>Ulmia</2>
+                <3>Joachim</3>
+                <4>King of Hearts</4>
+                <5>Kupipi</5>
+            </default>
+            <di>
+                <1>Selh&apos;teus</1>
+                <2>Lilisette II</2>
+                <3>Arciela II</3>
+                <4>Qultada</4>
+                <5>Kupipi</5>
+            </di>
+            <dyna>
+                <1>Sakura</1>
+                <2>Mayakov</2>
+                <3>Uka Totlihn</3>
+                <4>Kupipi</4>
+                <5>Koru-Moru</5>
+            </dyna>
+            <exp>
+                <1>AAEV</1>
+                <2>Rainemard</2>
+                <3>Qultada</3>
+                <4>Kupipi</4>
+                <5>Shantotto II</5>
+            </exp>
+            <exp1>
+                <1>Kupofried</1>
+                <2>Valaineral</2>
+                <3>Semih Lafihna</3>
+                <4>Shantotto II</4>
+            </exp1>
+            <general>
+                <1>Valaineral</1>
+                <2>Sylvie (UC)</2>
+                <3>Kupipi</3>
+                <4>Koru-Moru</4>
+                <5>Ulmia</5>
+            </general>
+            <proc>
+                <1>Cherukiki</1>
+                <2>Ulmia</2>
+                <3>Koru-Moru</3>
+            </proc>
+            <rems>
+                <1>Valaineral</1>
+                <2>Sylvie (UC)</2>
+                <3>Kupipi</3>
+                <4>Koru-Moru</4>
+                <5>AATT</5>
+            </rems>
+            <skillup>
+                <1>Ulmia</1>
+                <2>Joachim</2>
+                <3>Sakura</3>
+                <4>Kupipi</4>
+                <5>Koru-Moru</5>
+            </skillup>
+            <taxet>
+                <1>Trion</1>
+                <2>Zeid II</2>
+                <3>Mayakov</3>
+                <4>Kupipi</4>
+                <5>Koru-Moru</5>
+            </taxet>
+        </sets>
+        <wait>
+            <aftercast>3</aftercast>
+            <retr>1.25</retr>
+            <retrall>3</retrall>
+        </wait>
+    </global>
+</settings>
