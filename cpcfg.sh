@@ -2,9 +2,10 @@
 base_dir="$HOME/Games/final-fantasy-xi-online/drive_c/Windower4"
 echo "Copying Windower config files..."
 
-mkdir -p "Windower4"
+mkdir -p "Windower4/scripts"
 cd Windower4
 cp -v "$base_dir/settings.xml" .
+cp -v "$base_dir/scripts/init.txt" ./scripts/
 
 standard_addons=(
   "autojoin"

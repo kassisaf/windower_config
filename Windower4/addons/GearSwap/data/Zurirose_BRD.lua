@@ -5,7 +5,7 @@
 
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(1, 1, 16)  -- Macro book, macro page, lockstyle set
+  job_init(1, 1, 1)  -- Macro book, macro page, lockstyle set
 
   -- Leave these empty
   sets.precast = {WS = {crit = {}}}

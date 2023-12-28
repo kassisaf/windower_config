@@ -7,8 +7,7 @@
 		<addon>distance</addon>
 		<addon>tparty</addon>
 		<addon>timestamp</addon>
-		<plugin>config</plugin>
-		<plugin>delaymenot</plugin>
+    <plugin>Config</plugin>
 		<!-- Essential -->
 		<addon>findall</addon>
 		<addon>gearswap</addon>
@@ -17,7 +16,7 @@
 		<addon>skillchains</addon>
 		<addon>treasury</addon>
 		<addon>yush</addon>
-		<plugin>timers</plugin>
+    <plugin>timers</plugin>
 		<!-- Time savers -->
 		<addon>craft</addon>
 		<addon>enternity</addon>
@@ -37,8 +36,10 @@
 		<addon>fastfollow</addon>
 		<addon>lottery</addon>
 		<addon>send</addon>
-		<!-- Bugfixes -->
-		<plugin>mipmapfix</plugin>
-		<plugin>sandbox</plugin>
+		<!-- Fixes -->
+    <plugin>delaymenot</plugin>
+    <plugin>mipmapfix</plugin>
+		<!-- Other -->
+		<addon>equipviewer</addon>
 	</global>
 </settings>
