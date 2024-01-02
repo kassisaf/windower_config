@@ -1,0 +1,47 @@
+<settings>
+	<!-- Chars not explicitly defined will use global -->
+	<global>
+		<!-- Basic -->
+		<addon>xipivot</addon>
+		<addon>consolebg</addon>
+		<addon>distance</addon>
+		<addon>tparty</addon>
+		<addon>timestamp</addon>
+    <plugin>Config</plugin>
+		<!-- Essential -->
+		<addon>findall</addon>
+		<addon>gearswap</addon>
+		<addon>rolltracker</addon>
+		<addon>shortcuts</addon>
+		<addon>skillchains</addon>
+		<addon>treasury</addon>
+		<addon>yush</addon>
+    <plugin>timers</plugin>
+		<!-- Time savers -->
+		<addon>craft</addon>
+		<addon>enternity</addon>
+		<addon>trusts</addon>
+		<addon>jobchange</addon>
+		<addon>myhome</addon>
+		<addon>superwarp</addon>
+		<addon>trade</addon>
+		<addon>tradenpc</addon>
+		<addon>quicktrade</addon>
+		<addon>sellnpc</addon>
+		<addon>sparks</addon>
+		<addon>pouches</addon>
+		<!-- Dual boxing -->
+		<addon>attackwithme</addon>
+		<addon>autojoin</addon>
+		<addon>fastfollow</addon>
+		<addon>lottery</addon>
+		<addon>send</addon>
+		<!-- Fixes -->
+		<addon>remember</addon>
+		<plugin>delaymenot</plugin>
+		<plugin>mipmapfix</plugin>
+		<!-- Other -->
+		<addon>equipviewer</addon>
+		<addon>debuffed</addon>
+	</global>
+</settings>

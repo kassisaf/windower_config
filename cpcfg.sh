@@ -1,9 +1,9 @@
 !#/bin/bash
-base_dir="$HOME/Games/final-fantasy-xi-online/drive_c/Windower4"
+base_dir="/c/Program Files (x86)/Windower"
 echo "Copying Windower config files..."
 
-mkdir -p "Windower4/scripts"
-cd Windower4
+mkdir -p "Windower/scripts"
+cd Windower
 cp -v "$base_dir/settings.xml" .
 cp -v "$base_dir/scripts/init.txt" ./scripts/
 

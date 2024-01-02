@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <autoload>
+    <addon>plugin_manager</addon>
+  </autoload>
+  <profile name="Retail">
+    <consolekey>Insert</consolekey>
+    <mipmaplevel>1</mipmaplevel>
+    <gamma>0.1</gamma>
+    <uiscale>1.4</uiscale>
+    <supersampling>2</supersampling>
+  </profile>
+</settings>
