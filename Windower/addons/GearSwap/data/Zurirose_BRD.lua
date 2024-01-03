@@ -64,14 +64,16 @@ function get_sets()
   sets.TP = set_combine(full_nyame, {
     main       = "Naegling",
     sub        = "Genmei Shield",
-
-    neck       = "Sanctity Necklace",
+    -- head       = "Bunzi's Hat",    -- Need RP
+    -- body       = "Ayanmo Corazza +2", -- Ashera (lol)
+    -- hands      = "Bunzi's Gloves", -- Need RP
+    neck       = "Sanctity Necklace",  -- JSE for acc/quad attack
     waist      = "Sailfi Belt +1",
-    left_ear   = "Digni. Earring",
-    right_ear  = "Fili Earring",
+    left_ear   = "Dignitary's Earring",
+    right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
     right_ring = "Petrov Ring",
-    back       = "Agema Cape",
+    back       = "Agema Cape", -- Replace with ambu (DW+10, DEX+20, Acc+30, Atk+20)
   })
   if dual_wield_available then
     sets.TP["sub"] = "Centovente"
@@ -139,7 +141,8 @@ function get_sets()
     sub        = "Ammurapi Shield",
     range      = "Gjallarhorn",
     neck       = "Incanter's Torque",
-    right_ear  = "Dignitary's Earring",
+    left_ear   = "Dignitary's Earring",
+    right_ear  = "Hermetic Earring",
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
   }

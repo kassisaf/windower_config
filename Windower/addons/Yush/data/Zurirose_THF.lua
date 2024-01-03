@@ -19,4 +19,5 @@ return {
   ['Alt+8']  = '',
   ['Alt+9']  = '',
   ['Alt+0']  = 'gs disable range ammo; input /equip range "Antitail"; input /ra <stnpc>',
+  ['Win+1']  = 'input /item "Living Key" <t>'
 }
