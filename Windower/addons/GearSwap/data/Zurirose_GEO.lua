@@ -30,8 +30,8 @@ function get_sets()
   relic_head  = "Bagua Galero"
   relic_body  = "Bagua Tunic +3"
   -- relic_hands = ""
-  relic_legs  = "Bagua Pants +2"
-  relic_feet  = "Bagua Sandals +2"
+  relic_legs  = "Bagua Pants +3"
+  relic_feet  = "Bagua Sandals +3"
   empy_head   = "Azimuth Hood +2"
   empy_body   = "Azimuth Coat +3"
   empy_hands  = "Azimuth Gloves +2"
@@ -61,7 +61,7 @@ function get_sets()
     main      = "Idris",                -- Luopan DT -25%
     sub       = "Genmei Shield",
     hands     = af_hands,               -- Luopan DT -13%
-    feet      = relic_feet,             -- pet regen +4
+    feet      = relic_feet,             -- pet regen +2-5
     neck      = jse_neck,               -- Luopan absorb damage +8%
     left_ear  = "Handler's Earring +1", -- pet PDT -4%
     right_ear = "Handler's Earring",    -- pet PDT -3%

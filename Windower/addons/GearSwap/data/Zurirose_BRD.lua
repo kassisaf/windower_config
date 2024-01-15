@@ -36,12 +36,25 @@ function get_sets()
   relic_body  = "Bihu Justaucorps +3"
   relic_hands = "Bihu Cuffs"
   relic_legs  = "Bihu Cannions"
-  relic_feet  = "Bihu Slippers +2"
+  relic_feet  = "Bihu Slippers +3"
   empy_head   = "Fili Calot +2"
   empy_body   = "Fili Hongreline +2"
   empy_hands  = "Fili Manchettes +2"
   empy_legs   = "Fili Rhingrave +2"
   empy_feet   = "Fili Cothurnes +2"
+
+  song_cape = {name="Intarabus's Cape", augments={
+    'CHR+20',
+    'Mag. Acc+20 /Mag. Dmg.+20',
+    'Mag. Acc.+10',
+    '"Fast Cast"+10',
+    'Damage taken-5%',}}
+  enmity_cape ={name="Intarabus's Cape", augments={
+    'VIT+20',
+    'Eva.+20 /Mag. Eva.+20',
+    'VIT+10',
+    'Enmity+10',
+    'Phys. dmg. taken-10%',}}
 
   -- Basic sets
   sets.idle = {
@@ -59,7 +72,7 @@ function get_sets()
     right_ear  = "Meili Earring",
     left_ring  = "Shneddick Ring",
     right_ring = "Defending Ring",
-    back       = "Intarabus's Cape",
+    back       = song_cape,
   }
   sets.TP = set_combine(full_nyame, {
     main       = "Naegling",
@@ -91,7 +104,24 @@ function get_sets()
     right_ear  = "Loquacious Earring",  -- FC +2%
     left_ring  = "Kishar Ring",         -- FC +4%
     right_ring = "Naji's Loop",         -- FC +1%
-    back       = "Intarabus's Cape",    -- FC +10%
+    back       = song_cape,    -- FC +10%
+  }
+  sets.enmity = {
+    main       = "Mafic Cudgel",       -- Enmity +6
+    sub        = "Genmei Shield",
+    -- range      = "Linos"            -- PDT3%, DEF or EVA +15, VIT+8
+    head       = "Nyame Helm",         -- (replace with Halitus Helm)
+    body       = "Emet Harness +1",    -- Enmity +10
+    hands      = empy_hands,
+    legs       = "Zoar Subligar +1",   -- Enmity +6
+    feet       = "Nyame Sollerets",
+    neck       = "Unmoving Collar +1", -- Enmity +10
+    waist      = "Kasiri Belt",
+    back       = enmity_cape,          -- Enmity +10
+    left_ear   = "Cryptic Earring",    -- Enmity +4
+    right_ear  = "Friomisi Earring",   -- Enmity +2 (replace with Trux from Divine Might)
+    left_ring  = "Provocare Ring",     -- Enmity +5
+    right_ring = "Supershear Ring",    -- Enmity +5
   }
 
   -- Precast sets
@@ -183,7 +213,7 @@ function get_sets()
     right_ear  = "Fili Earring",
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
-    back       = "Intarabus's Cape",
+    back       = song_cape,
   }
   -- Equip second kali in offhand for more duration if dual wield is available
   if dual_wield_available then

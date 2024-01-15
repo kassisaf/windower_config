@@ -118,8 +118,8 @@ function get_sets()
   -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
   -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc
   sets.precast.RA = {
-    ammo  = bullets["acc"],
-    -- ammo  = bullets["physical"],
+    -- ammo  = bullets["acc"],
+    ammo  = bullets["physical"],
     -- Total from gear: 50 Snapshot, 40 Rapid Shot
     head  = empy_head,                     -- 0 Snapshot, 16 Rapid Shot
     body  = "Ikenga's Vest",               -- 9 Snapshot
@@ -161,7 +161,7 @@ function get_sets()
     waist      = "Fotia Belt",
     left_ear   = "Moonshade Earring",
     right_ear  = "Ishvara Earring",
-    left_ring  = "Rufescent Ring",
+    left_ring  = "Regal Ring",
     right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
     back       = savage_cape,
   })
@@ -248,14 +248,13 @@ function get_sets()
     -- Purely defensive
     feet       = "Malignance Boots",
     left_ring  = "Defending Ring",
-
     -- Actually helps with rolls
     main       = roll_knife,
     range      = "Compensator",
     head       = relic_head,
     hands      = empy_hands,
     legs       = "Desultor Tassets",
-    -- neck       = "Regal Necklace",
+    neck       = "Regal Necklace",
     right_ring = "Luzaf's Ring",
     back       = snapshot_roll_cape,
   })

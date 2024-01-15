@@ -10,8 +10,10 @@ return {
   -- Magic bubbles
   ['Ctrl+4'] = 'input /ma "Geo-Malaise" <stnpc>',
   ['Alt+4']  = 'input /ma "Indi-Acumen" <stpt>',
-  ['Ctrl+5'] = 'input /ma "Geo-INT" <stpt>',
-  ['Alt+5']  = 'input /ma "Indi-INT" <stpt>',
+  ['Ctrl+5'] = 'input /ma "Geo-Langour" <stpt>',
+  ['Alt+5']  = 'input /ma "Indi-Focus" <stpt>',
+  ['Ctrl+6'] = 'input /ma "Geo-INT" <stpt>',
+  ['Alt+6']  = 'input /ma "Indi-INT" <stpt>',
   -- Situational bubbles
   ['Ctrl+6'] = 'input /ma "Geo-Haste" <stpt>',
   ['Alt+6']  = 'input /ma "Indi-Haste" <stpt>',
@@ -20,10 +22,14 @@ return {
   -- Tag
   ['Ctrl+8'] = 'input /ma "Curaga II" <stpt>',
   -- Bubble heal & burn
-  ['Ctrl+9'] = 'input /ja "Life Cycle" <me>',
-  ['Ctrl+0'] = 'input /ja "Ecliptic Attrition" <me>',
+  ['Ctrl+9'] = 'input /ja "Ecliptic Attrition" <me>',
+  ['Ctrl+0'] = 'input /ja "Life Cycle" <me>',
   -- Bubble dismiss
   ['Alt+8']  = 'input /ja "Mending Halation" <me>',
   ['Alt+9']  = 'input /ja "Radial Arcana" <me>',
   ['Alt+0']  = 'input /ja "Full Circle" <me>',
+
+  ['Win+1']  = 'input /ma "Cure" Thedd',
+  ['Win+2']  = 'input /ma "Silence" <stnpc>',
+  ['Win+0']  = 'input /ma "Curaga II" <me>',
 }

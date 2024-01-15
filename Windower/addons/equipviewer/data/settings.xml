@@ -34,18 +34,11 @@
         </icon>
         <left_justify>false</left_justify>
         <pos>
-            <x>500</x>
-            <y>500</y>
-        </pos>
-        <show_ammo_count>true</show_ammo_count>
-        <show_encumbrance>true</show_encumbrance>
-        <size>32</size>
-    </global>
-    <zurirose>
-        <pos>
             <x>1545</x>
             <y>878</y>
         </pos>
+        <show_ammo_count>true</show_ammo_count>
+        <show_encumbrance>true</show_encumbrance>
         <size>28</size>
-    </zurirose>
+    </global>
 </settings>

@@ -9,7 +9,7 @@ function get_sets()
   -- Basic sets
   sets.idle = set_combine(full_nyame, {
     main       = "Hepatizon Axe",
-    sub        = "Kaja Grip",
+    sub        = "Utu Grip",
     -- ammo = "",
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",

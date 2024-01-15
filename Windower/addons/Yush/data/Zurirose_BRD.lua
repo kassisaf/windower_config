@@ -28,15 +28,22 @@ return {
   ['Alt+9']  = 'input /ma "Horde Lullaby" <stnpc>',
   ['Alt+0']  = 'input /ma "Horde Lullaby II" <stnpc>',
 
-  ['Win+1'] = 'input /ja "Pianissimo" <me>',
-  ['Win+2'] = 'input /ma "Mage\'s Ballad II" <stpt>',
-  ['Win+3'] = 'input /ma "Mage\'s Ballad III" <stpt>',
-  ['Win+4'] = 'input /ma "Knight\'s Minne IV" <stpt>',
-  ['Win+5'] = 'input /ma "Knight\'s Minne V" <stpt>',
-  ['Win+6'] = 'input /ma "Learned Etude" <stpt>',
-  ['Win+7'] = 'input /ma "Sage Etude" <stpt>',
-  ['Win+8'] = 'input /ma "Adventurer\'s Dirge" <stpt>', -- Enmity DOWN
-  ['Win+9'] = 'input /ma "Foe Sirvente" <stpt>', -- Enmity UP
+  -- Xevioso
+  ['Win+1'] = 'input /ma "Sentinel\'s Scherzo" <me>',
+  ['Win+2'] = 'input /ma "Valor Minuet V" <me>',
+  ['Win+3'] = 'input /ma "Wind Carol II" <me>',
+  ['Win+4'] = 'input /ma "Knight\'s Minne V" <me>',
+  ['Win+5'] = 'input /ma "Honor March" <me>',
+
+  -- ['Win+1'] = 'input /ja "Pianissimo" <me>',
+  -- ['Win+2'] = 'input /ma "Mage\'s Ballad II" <stpt>',
+  -- ['Win+3'] = 'input /ma "Mage\'s Ballad III" <stpt>',
+  -- ['Win+4'] = 'input /ma "Knight\'s Minne IV" <stpt>',
+  -- ['Win+5'] = 'input /ma "Knight\'s Minne V" <stpt>',
+  -- ['Win+6'] = 'input /ma "Learned Etude" <stpt>',
+  -- ['Win+7'] = 'input /ma "Sage Etude" <stpt>',
+  -- ['Win+8'] = 'input /ma "Adventurer\'s Dirge" <stpt>', -- Enmity DOWN
+  -- ['Win+9'] = 'input /ma "Foe Sirvente" <stpt>', -- Enmity UP
   ['Win+0'] = 'gs c dummy', -- Toggles use of Daurdabla in midcast
 }
 

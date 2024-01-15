@@ -1,6 +1,6 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  -- job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
+  job_init(1, 1, 1)  -- Macro book, macro page, lockstyle set
 
   -- Leave these empty
   sets.precast = {WS = {crit = {}}}
@@ -16,8 +16,9 @@ function get_sets()
     hands      = "Ayanmo Manopolas",
     legs       = "Ayanmo Cosciales",
     feet       = "Ayanmo Gambieras",
-    neck       = "Subtlety Spec.",
+    neck       = "Sanctity Necklace",
     waist      = "Eschan Stone",
+    back       = "Solemnity Cape",
     left_ear   = "Odr Earring",
     right_ear  = "Steelflash Earring",
     left_ring  = "Shneddick Ring",
@@ -25,8 +26,9 @@ function get_sets()
   }
   sets.TP = set_combine(sets.idle, {
     main  = "Eminent Scimitar",
-    sub   = "Moogle Guard +1",
+    sub   = "Machaera",
     hands = "Magus Bazubands",
+    neck  = "Lissome Necklace",
   })
   sets.FC = {}
 

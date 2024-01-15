@@ -7,7 +7,7 @@
 		<addon>distance</addon>
 		<addon>tparty</addon>
 		<addon>timestamp</addon>
-    <plugin>Config</plugin>
+		<plugin>Config</plugin>
 		<!-- Essential -->
 		<addon>findall</addon>
 		<addon>gearswap</addon>
@@ -16,7 +16,8 @@
 		<addon>skillchains</addon>
 		<addon>treasury</addon>
 		<addon>yush</addon>
-    <plugin>timers</plugin>
+		<addon>cancel</addon>
+		<plugin>timers</plugin>
 		<!-- Time savers -->
 		<addon>craft</addon>
 		<addon>enternity</addon>
@@ -40,8 +41,12 @@
 		<addon>remember</addon>
 		<plugin>delaymenot</plugin>
 		<plugin>mipmapfix</plugin>
+		<!-- Job-specific -->
+		<addon>azuresets</addon>
+		<addon>blualert</addon>
 		<!-- Other -->
 		<addon>equipviewer</addon>
 		<addon>debuffed</addon>
+		<addon>omen</addon>
 	</global>
 </settings>

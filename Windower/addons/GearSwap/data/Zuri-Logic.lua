@@ -27,6 +27,7 @@ end
 ---------------------
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
+weapon_slots = {"main", "range"}
 
 ------------------------
 -- Modes and commands --
@@ -226,18 +227,30 @@ function precast(spell, position)
 		end
 	end
 
-	-- Use WS-specific set if it exists, or fall back to generic ranged or melee WS set
+	-- Weaponskills
 	if spell.type == "WeaponSkill" then
+		-- Avoid swapping weapons and losing TP
+		-- if player.equipment[slot] then
+		-- 	for slot, _ in pairs(weapon_slots) do
+		-- 		if sets[slot] and sets[slot] ~= player.equipment[slot] then
+		-- 			sets[slot] = nil
+		-- 		end
+		-- 	end
+		-- end
+		-- Look for a set specific to the WS
 		if sets.precast.WS[spell.english] then
+			-- Equip crit gear for SA/TA
 			if sets.precast.WS.crit[spell.english] and (buffactive["Sneak Attack"] or buffactive["Trick Attack"]) then
 				safe_equip(sets.precast.WS.crit[spell.english])
 			end
 			safe_equip(sets.precast.WS[spell.english])
+		-- If no set is defined for this WS, fall back to generic ranged or melee set
 		elseif ranged_weaponskills[spell.english] then
 			safe_equip(sets.precast.WS.ranged)
 		else
 			safe_equip(sets.precast.WS.melee)
 		end
+
 	-- Treat Double-Up as a roll (luzaf's and roll+ gear apply)
 	elseif player.main_job == "COR" and (spell.english == "Double-Up" or spell.type == "CorsairRoll") then
 		equip_roll_set(spell)
