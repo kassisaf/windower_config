@@ -5,6 +5,10 @@ function get_sets()
   -- Leave these empty
   sets.precast = {WS = {crit = {}}}
   sets.midcast = {}
+  sets.cycles = {}
+
+  -- State flags
+  dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
 
   -- Gear Aliases
   bullets = {
@@ -114,6 +118,27 @@ function get_sets()
   }
 
   -- Shooting sets
+  sets.cycles.shooting = {
+    physical = {
+      main  = "Kustawi +1",
+      sub   = "Nusku Shield",
+      range = "Holliday",
+      ammo  = bullets["physical"]
+    },
+    magic = {
+      main  = "Naegling",
+      sub   = "Tauret",
+      range = "Molybdosis",
+      ammo  = bullets["macc"]
+    },
+    statue_crusher = {
+      main  = "Naegling",
+      sub   = "Tauret",
+      range = "Ataktos",
+      ammo  = bullets["macc"]
+    },
+  }
+
   -- Preshot should contain: Snapshot, Rapid Shot
   -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
   -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc

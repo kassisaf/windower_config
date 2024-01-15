@@ -107,16 +107,17 @@ function get_sets()
     back       = song_cape,    -- FC +10%
   }
   sets.enmity = {
+    -- Total +61 enmity;  With head and earring upgrade can get up to 72
     main       = "Mafic Cudgel",       -- Enmity +6
     sub        = "Genmei Shield",
     -- range      = "Linos"            -- PDT3%, DEF or EVA +15, VIT+8
-    head       = "Nyame Helm",         -- (replace with Halitus Helm)
+    head       = "Nyame Helm",         -- (replace with Halitus Helm + Linos with at least 3% PDT)
     body       = "Emet Harness +1",    -- Enmity +10
     hands      = empy_hands,
     legs       = "Zoar Subligar +1",   -- Enmity +6
     feet       = "Nyame Sollerets",
     neck       = "Unmoving Collar +1", -- Enmity +10
-    waist      = "Kasiri Belt",
+    waist      = "Kasiri Belt",        -- Enmity +3
     back       = enmity_cape,          -- Enmity +10
     left_ear   = "Cryptic Earring",    -- Enmity +4
     right_ear  = "Friomisi Earring",   -- Enmity +2 (replace with Trux from Divine Might)
@@ -210,7 +211,7 @@ function get_sets()
     neck       = "Moonbow Whistle +1",
     -- waist      = "Flume Belt +1",
     left_ear   = "Dignitary's Earring",
-    right_ear  = "Fili Earring",
+    right_ear  = "Fili Earring +1",
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
     back       = song_cape,

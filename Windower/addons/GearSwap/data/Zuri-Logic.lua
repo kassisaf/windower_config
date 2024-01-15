@@ -22,6 +22,20 @@ function ends_with(str, ending)
 	return ending == "" or str:sub(-#ending) == ending
 end
 
+function split_by_space(inputstr)
+  local t = {}
+  for str in string.gmatch(inputstr, "([^%s]+)") do
+    table.insert(t, str)
+  end
+  return t
+end
+
+function get_table_length(t)
+  local count = 0
+  for _ in pairs(t) do count = count + 1 end
+  return count
+end
+
 ---------------------
 -- Misc. variables --
 ---------------------
@@ -80,6 +94,40 @@ function job_init(macro_book, macro_page, lockstyleset)
 	send_command("wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
 
 	load_job_specific_addons()
+end
+
+-- Cycles between sets defined in sets.cycles
+cycle_state = {}
+cycle_sizes = {}
+function cycle(cycle_name)
+	if not sets.cycles[cycle_name] then
+		send_command("input /echo Error: Cycle group '" .. cycle_name .. "' is undefined")
+		return
+	end
+
+	if not cycle_sizes[cycle_name] then
+		cycle_sizes[cycle_name] = get_table_length(sets.cycles[cycle_name])
+	end
+
+	local set_index = 1
+	for k, v in pairs(sets.cycles[cycle_name]) do
+		if not cycle_state[cycle_name] then
+			cycle_state[cycle_name] = k
+		end
+		if cycle_state[cycle_name] == k then
+			equip(v)
+			send_command("input /echo Equipped " .. cycle_name .. " set " .. set_index .. ": " .. k)
+			if set_index == cycle_sizes[cycle_name] then
+				set_index = 1
+			else
+				set_index = set_index + 1
+			end
+			cycle_sizes[cycle_name] = set_index
+			cycle_state[cycle_name] = next(sets.cycles[cycle_name], k)
+			break
+		end
+		set_index = set_index + 1
+	end
 end
 
 --------------------------------------------------------
@@ -351,21 +399,26 @@ end -- buff_change()
 --  //gs c u|update: Calls an update to equip idle or TP set
 --  //gs c th:       Toggles TH mode
 --  //gs c melee:    Locks/unlocks main and sub slots
-function self_command(command)
-	if command == "u" or command == "update" then
+function self_command(command_str)
+	params = split_by_space(command_str)
+
+	if params[1] == "u" or params[1] == "update" then
 		equip_idle_or_tp_set(true)
-	elseif command == "th" then
+	elseif params[1] == "dummy" then
+		toggle_mode("dummy_songs")
+	elseif params[1] == "cycle" then
+		cycle(params[2])
+	elseif params[1] == "th" then
 		toggle_mode("TH")
 		equip_idle_or_tp_set()
-	elseif command == "dummy" then
-		toggle_mode("dummy_songs")
-	elseif command == "debug" then
+	elseif params[1] == "debug" then
 		send_command("gs showswaps")
 		send_command("gs debugmode")
 		toggle_mode("debug")
-	elseif command == "equip_cure_cheat_set" then
+	-- Toggle HP on and off
+	elseif params[1] == "equip_cure_cheat_set" then
 		equip(cure_cheat_set)
-	elseif command == "cc" then
+	elseif params[1] == "cc" then
 		send_command("gs equip naked; wait 1; gs c equip_cure_cheat_set")
 	end
 end -- self_command()
