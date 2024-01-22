@@ -19,14 +19,6 @@ function get_sets()
   instrument_lullaby    = "Marsyas"     -- All lullaby except Horde II
   instrument_lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
   instrument_dummy      = "Daurdabla"
-  kali_a = {name="Kali", augments={
-    'DMG:+15',
-    'CHR+15',
-    'Mag. Acc.+15',}}
-  kali_c = {name="Kali", augments={
-    'MP+60',
-    'Mag. Acc.+20',
-    '"Refresh"+1',}}
   af_head     = "Brioso Roundlet +3"
   af_body     = "Brioso Justaucorps +2"
   af_hands    = "Brioso Cuffs +2"
@@ -42,6 +34,7 @@ function get_sets()
   empy_hands  = "Fili Manchettes +2"
   empy_legs   = "Fili Rhingrave +2"
   empy_feet   = "Fili Cothurnes +2"
+  jse_neck    = "Bard's Charm +1"
 
   song_cape = {name="Intarabus's Cape", augments={
     'CHR+20',
@@ -55,6 +48,35 @@ function get_sets()
     'VIT+10',
     'Enmity+10',
     'Phys. dmg. taken-10%',}}
+  savage_cape={name="Intarabus's Cape", augments={
+    'STR+20',
+    'Accuracy+20 Attack+20',
+    'STR+10',
+    'Weapon skill damage +10%',
+    'Damage taken-5%',}}
+  tp_cape={name="Intarabus's Cape", augments={
+    'DEX+20',
+    'Accuracy+20 Attack+20',
+    'DEX+5', -- TODO: add 5 dye
+    '"Store TP"+10',
+    'Damage taken-5%',}}
+  kali_a = {name="Kali", augments={
+    'DMG:+15',
+    'CHR+15',
+    'Mag. Acc.+15',}}
+  kali_c = {name="Kali", augments={
+    'MP+60',
+    'Mag. Acc.+20',
+    '"Refresh"+1',}}
+  linos_tp = {name="Linos", augments={
+    'Accuracy+12',             -- Snowslit: 1-20, any other snow: 1-15
+    '"Store TP"+2',            -- Leafslit, Leaftip: 1-4
+    'Quadruple Attack +2',}}   -- Dusktip: 1-3
+  linos_savage = {name="Linos", augments={
+    'Attack+15',               -- Snowslit: 1-20, any other snow: 1-15
+    'Weapon skill damage +2%', -- Leafslit, Leaftip: 1-3
+    'STR+8',}}                 -- Duskslit: 1-8
+  -- linos_enmity = {name="Linos", augments={}}
 
   -- Basic sets
   sets.idle = {
@@ -74,20 +96,22 @@ function get_sets()
     right_ring = "Defending Ring",
     back       = song_cape,
   }
-  sets.TP = set_combine(full_nyame, {
+  sets.TP = {
     main       = "Naegling",
     sub        = "Genmei Shield",
-    -- head       = "Bunzi's Hat",    -- Need RP
-    -- body       = "Ayanmo Corazza +2", -- Ashera (lol)
-    -- hands      = "Bunzi's Gloves", -- Need RP
-    neck       = "Sanctity Necklace",  -- JSE for acc/quad attack
+    range      = linos_tp,
+    head       = "Ayanmo Zucchetto +2", -- Bunzi's Hat after RP
+    body       = "Ayanmo Corazza +2",   -- Ashera (lol)
+    hands      = "Ayanmo Cosciales +2", -- Bunzi's Gloves after RP
+    feet       = "Ayanmo Gambieras +2", -- Battlecast Gaiters?
+    neck       = jse_neck,
     waist      = "Sailfi Belt +1",
     left_ear   = "Dignitary's Earring",
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Petrov Ring",
-    back       = "Agema Cape", -- Replace with ambu (DW+10, DEX+20, Acc+30, Atk+20)
-  })
+    right_ring = "Ephramad's Ring",     -- or Petrov for STP but no acc?
+    back       = tp_cape,
+  }
   if dual_wield_available then
     sets.TP["sub"] = "Centovente"
   end
@@ -110,7 +134,7 @@ function get_sets()
     -- Total +61 enmity;  With head and earring upgrade can get up to 72
     main       = "Mafic Cudgel",       -- Enmity +6
     sub        = "Genmei Shield",
-    -- range      = "Linos"            -- PDT3%, DEF or EVA +15, VIT+8
+    -- range      = linos_enmity,         -- PDT3%, DEF or EVA +15, VIT+8
     head       = "Nyame Helm",         -- (replace with Halitus Helm + Linos with at least 3% PDT)
     body       = "Emet Harness +1",    -- Enmity +10
     hands      = empy_hands,
@@ -140,19 +164,15 @@ function get_sets()
 
   -- Weaponskill sets
   sets.precast.WS.melee = set_combine(full_nyame, {
+    range      = linos_savage,
     body       = relic_body,
-    neck       = "Fotia Gorget",
-    waist      = "Fotia Belt",
+    neck       = "Republican Platinum Medal",
+    waist      = "Sailfi Belt +1",
     left_ear   = "Moonshade Earring",
     right_ear  = "Ishvara Earring",
     left_ring  = "Rufescent Ring",
-    -- right_ring = "Apate Ring",
     right_ring = "Ephramad's Ring",
-    back       = "Phalangite Mantle",
-  })
-  sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-    neck  = "Republican Platinum Medal",
-    waist = "Sailfi Belt +1",
+    back       = savage_cape,
   })
 
   -- Job ability sets

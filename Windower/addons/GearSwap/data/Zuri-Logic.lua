@@ -393,6 +393,11 @@ function buff_change(name, gain, buff_details)
   --         send_command("input /p Doom removed.")
   --     end
   -- end
+  if gain then
+    if sets.status and sets.status[name] ~= nil then
+      equip(sets.status[name])
+    end
+  end
 end -- buff_change()
 
 -- Command usage:

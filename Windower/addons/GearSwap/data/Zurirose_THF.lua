@@ -65,12 +65,12 @@ function get_sets()
     hands      = "Malignance Gloves",
     legs       = "Malignance Tights",
     feet       = "Malignance Boots",
-    neck       = "Anu Torque",
+    neck       = "Anu Torque",         -- Get JSE neck +1
     waist      = "Sailfi Belt +1",
     left_ear   = "Eabani Earring",
     right_ear  = "Skulker's Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Petrov Ring",       -- Get Epona's Ring
+    right_ring = "Hetairoi Ring",      -- Get Epona's Ring
     back       = "Toutatis's Cape",
   }
   sets.FC = {
