@@ -32,7 +32,7 @@ function get_sets()
     -- body       = empy_body,
     neck       = "Loricate Torque +1",
     left_ear   = "Eabani Earring",
-    right_ear  = "Meili Earring",
+    right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
     waist      = "Carrier's Sash",
@@ -93,6 +93,21 @@ function get_sets()
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
   })
 
+  -- sets.precast.WS.melee = set_combine(full_nyame, {
+  --   hands      = "Meghanada Gloves +2",
+  --   neck       = "Fotia Gorget",
+  --   waist      = "Fotia Belt",
+  --   left_ear   = "Moonshade Earring",
+  --   right_ear  = "Ishvara Earring",
+  --   left_ring  = "Regal Ring",
+  --   right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
+  --   back       = savage_cape,
+  -- })
+  -- sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+  --   neck  = "Republican Platinum Medal",
+  --   waist = "Sailfi Belt +1",
+  -- })
+
   -- Job ability sets
   sets.precast["Box Step"]   = sets.TH
   sets.precast["Quick Step"] = sets.TH
@@ -106,11 +121,8 @@ function get_sets()
   sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
   
   -- Midcast sets
-  sets.midcast["Blue Magic"] = set_combie(sets.idle, {
+  sets.midcast["Blue Magic"] = set_combine(sets.idle, full_malignance, {
     head       = "Pixie Hairpin +1",
-    hands      = "Malignance Gloves",
-    legs       = "Malignance Tights",
-    feet       = "Malignance Boots",
     waist      = "Eschan Stone",
     left_ring  = "Shiva Ring +1",
     right_ring = "Stikini Ring",

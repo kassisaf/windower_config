@@ -29,7 +29,7 @@ return {
   ['Alt+9']  = 'input /ja "Radial Arcana" <me>',
   ['Alt+0']  = 'input /ja "Full Circle" <me>',
 
-  ['Win+1']  = 'input /ma "Cure" Thedd',
+  ['Win+1']  = 'input /ma "Cure" Dumoyt',
   ['Win+2']  = 'input /ma "Silence" <stnpc>',
   ['Win+0']  = 'input /ma "Curaga II" <me>',
 }

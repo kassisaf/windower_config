@@ -17,6 +17,11 @@ lockables = {
   "Portafurnace", -- lol
 }
 
+special_ammo = {
+  "Hauksbok Bullet", 
+  "Animikii Bullet"
+}
+
 elemental_obi_weaponskills = S{
   "Aeolian Edge",
   "Leaden Salute",

@@ -44,14 +44,15 @@ function get_sets()
     main       = "Malignance Pole",
     sub        = "Khonsu",
     range      = "Dunna",
+    -- ammo       = "Crepuscular Pebble",
     head       = empy_head,            -- DT -11%
     body       = empy_body,            -- Refresh +3, no DT
     hands      = empy_hands,           -- DT -11%
     legs       = "Nyame Flanchard",    -- DT -8%
     feet       = empy_feet,            -- DT -10%
     neck       = "Loricate Torque +1", -- DT -6%, 55-60 def
-    left_ear   = "Lugalbanda Earring", -- m.eva +10, mdb +5
-    right_ear  = "Eabani Earring",     -- m.eva +8, eva +15
+    left_ear   = "Eabani Earring",     -- m.eva +8, eva +15
+    right_ear  = "Lugalbanda Earring", -- m.eva +10, mdb +5
     left_ring  = "Defending Ring",     -- DT -10%
     right_ring = "Shneddick Ring",     -- Movespeed, status resists
     waist      = "Carrier's Sash",     -- Ele resist tier
@@ -74,15 +75,16 @@ function get_sets()
     -- feet  = "Bagua Sandals +3",
   })
   sets.TP = set_combine(full_nyame, {
-    main       = "Idris",      -- Ternion +1?
+    main       = "Idris",
     sub        = "Genmei Shield",
-
+    head       = empy_head,
     neck       = "Loricate Torque +1",
-    left_ear   = "Telos Earring",
+    left_ear   = "Dignitary's Earring",
     right_ear  = "Brutal Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Petrov Ring",
+    right_ring = "Chirich Ring +1",
     waist      = "Eschan Stone",
+    back       = idle_cape,
   })
   sets.FC = {
     -- Fast Cast reduces spellcasting time up to 80%, and half of that applies to recast
@@ -225,6 +227,7 @@ function get_sets()
     waist      = "Obstinate Sash",    -- Enfeebling duration +5%, m.acc+15 at R15
   })
   sets.midcast["Dark Magic"] = set_combine(sets.macc, {
+    -- head       = "Pixie Hairpin +1",
     legs       = empy_legs,          -- Dark Magic skill +30
     right_ring = "Evanescence Ring",
   })

@@ -6,15 +6,15 @@
 -- end
 
 return {
-  ['Ctrl+1'] = 'input /ja "Marcato" <me>',
+  ['Ctrl+1'] = 'input /ja "Pianissimo" <me>',
   ['Ctrl+2'] = 'input /ma "Knight\'s Minne V" <me>',
   ['Ctrl+3'] = 'input /ma "Valor Minuet III" <me>',
   ['Ctrl+4'] = 'input /ma "Valor Minuet IV" <me>',
   ['Ctrl+5'] = 'input /ma "Valor Minuet V" <me>',
   ['Ctrl+6'] = 'input /ma "Victory March" <me>',
   ['Ctrl+7'] = 'input /ma "Honor March" <me>',
-  ['Ctrl+8'] = 'input /ma "Sword Madrigal" <me>',
-  ['Ctrl+9'] = 'input /ma "Blade Madrigal" <me>',
+  ['Ctrl+8'] = 'input /ma "Blade Madrigal" <me>',
+  ['Ctrl+9'] = 'input /ma "Mage\'s Ballad II" <me>',
   ['Ctrl+0'] = 'input /ma "Mage\'s Ballad III" <me>',
 
   ['Alt+1']  = 'input /ma "Carnage Elegy" <stnpc>',

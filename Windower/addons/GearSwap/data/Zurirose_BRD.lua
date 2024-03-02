@@ -36,53 +36,73 @@ function get_sets()
   empy_feet   = "Fili Cothurnes +2"
   jse_neck    = "Bard's Charm +1"
 
-  song_cape = {name="Intarabus's Cape", augments={
-    'CHR+20',
-    'Mag. Acc+20 /Mag. Dmg.+20',
-    'Mag. Acc.+10',
-    '"Fast Cast"+10',
-    'Damage taken-5%',}}
-  enmity_cape ={name="Intarabus's Cape", augments={
-    'VIT+20',
-    'Eva.+20 /Mag. Eva.+20',
-    'VIT+10',
-    'Enmity+10',
-    'Phys. dmg. taken-10%',}}
-  savage_cape={name="Intarabus's Cape", augments={
-    'STR+20',
-    'Accuracy+20 Attack+20',
-    'STR+10',
-    'Weapon skill damage +10%',
-    'Damage taken-5%',}}
-  tp_cape={name="Intarabus's Cape", augments={
-    'DEX+20',
-    'Accuracy+20 Attack+20',
-    'DEX+5', -- TODO: add 5 dye
-    '"Store TP"+10',
-    'Damage taken-5%',}}
-  kali_a = {name="Kali", augments={
-    'DMG:+15',
-    'CHR+15',
-    'Mag. Acc.+15',}}
-  kali_c = {name="Kali", augments={
-    'MP+60',
-    'Mag. Acc.+20',
-    '"Refresh"+1',}}
-  linos_tp = {name="Linos", augments={
-    'Accuracy+12',             -- Snowslit: 1-20, any other snow: 1-15
-    '"Store TP"+2',            -- Leafslit, Leaftip: 1-4
-    'Quadruple Attack +2',}}   -- Dusktip: 1-3
-  linos_savage = {name="Linos", augments={
-    'Attack+15',               -- Snowslit: 1-20, any other snow: 1-15
-    'Weapon skill damage +2%', -- Leafslit, Leaftip: 1-3
-    'STR+8',}}                 -- Duskslit: 1-8
-  -- linos_enmity = {name="Linos", augments={}}
+  ambu_cape = {
+    songs = {name="Intarabus's Cape", augments={
+      'CHR+20',
+      'Mag. Acc+20 /Mag. Dmg.+20',
+      'Mag. Acc.+10',
+      '"Fast Cast"+10',
+      'Damage taken-5%',
+    }},
+    enmity = {name="Intarabus's Cape", augments={
+      'VIT+20',
+      'Eva.+20 /Mag. Eva.+20',
+      'VIT+10',
+      'Enmity+10',
+      'Phys. dmg. taken-10%',
+    }},
+    tp = {name="Intarabus's Cape", augments={
+      'DEX+20',
+      'Accuracy+20 Attack+20',
+      'DEX+5', -- TODO: add 5 dye
+      '"Store TP"+10',
+      'Damage taken-5%',
+    }},
+    savage = {name="Intarabus's Cape", augments={
+      'STR+20',
+      'Accuracy+20 Attack+20',
+      'STR+10',
+      'Weapon skill damage +10%',
+      'Damage taken-5%',
+    }},
+  }
+  
+  kali = {
+    path_a = {name="Kali", augments={
+      'DMG:+15',
+      'CHR+15',
+      'Mag. Acc.+15',
+    }},
+    path_c = {name="Kali", augments={
+      'MP+60',
+      'Mag. Acc.+20',
+      '"Refresh"+1',
+    }},
+  }
+
+  linos = {
+    tp = {name="Linos", augments={
+      'Accuracy+12',             -- Snowslit: 1-20, any other snow: 1-15
+      '"Store TP"+2',            -- Leafslit, Leaftip: 1-4
+      'Quadruple Attack +2',     -- Dusktip: 1-3
+    }},
+    savage = {name="Linos", augments={
+      'Attack+15',               -- Snowslit: 1-20, any other snow: 1-15
+      'Weapon skill damage +2%', -- Leafslit, Leaftip: 1-3
+      'STR+8',                   -- Duskslit: 1-8
+    }},
+    defense = {name="Linos", augments={
+      'DEF+13',                  -- Any snow (but use snowtip): 1-15
+      'Phys. dmg. taken -4%',    -- Leafslit: 1-5%
+      'VIT+7',                   -- Duskslit: 1-8
+    }}
+  }
 
   -- Basic sets
   sets.idle = {
     main       = "Sangoma",
     sub        = "Genmei Shield",
-    range      = instrument_general,
+    range      = linos.defense,
     head       = empy_head,
     body       = "Inyanga Jubbah +2",
     hands      = empy_hands,
@@ -94,23 +114,24 @@ function get_sets()
     right_ear  = "Meili Earring",
     left_ring  = "Shneddick Ring",
     right_ring = "Defending Ring",
-    back       = song_cape,
+    back       = ambu_cape.songs,
   }
   sets.TP = {
     main       = "Naegling",
     sub        = "Genmei Shield",
-    range      = linos_tp,
+    range      = linos.tp,
     head       = "Ayanmo Zucchetto +2", -- Bunzi's Hat after RP
     body       = "Ayanmo Corazza +2",   -- Ashera (lol)
-    hands      = "Ayanmo Cosciales +2", -- Bunzi's Gloves after RP
-    feet       = "Ayanmo Gambieras +2", -- Battlecast Gaiters?
+    hands      = "Bunzi's Gloves",
+    legs       = "Nyame Flanchard",
+    feet       = "Nyame Sollerets",     -- Battlecast Gaiters?
     neck       = jse_neck,
     waist      = "Sailfi Belt +1",
     left_ear   = "Dignitary's Earring",
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Ephramad's Ring",     -- or Petrov for STP but no acc?
-    back       = tp_cape,
+    right_ring = "Chirich Ring +1",     -- Ephramad's Ring for acc swap?
+    back       = ambu_cape.tp,
   }
   if dual_wield_available then
     sets.TP["sub"] = "Centovente"
@@ -128,25 +149,25 @@ function get_sets()
     right_ear  = "Loquacious Earring",  -- FC +2%
     left_ring  = "Kishar Ring",         -- FC +4%
     right_ring = "Naji's Loop",         -- FC +1%
-    back       = song_cape,    -- FC +10%
+    back       = ambu_cape.songs,       -- FC +10%
   }
   sets.enmity = {
-    -- Total +61 enmity;  With head and earring upgrade can get up to 72
+    -- Total +69 enmity, 72 possible with Trux Earring
     main       = "Mafic Cudgel",       -- Enmity +6
     sub        = "Genmei Shield",
-    -- range      = linos_enmity,         -- PDT3%, DEF or EVA +15, VIT+8
-    head       = "Nyame Helm",         -- (replace with Halitus Helm + Linos with at least 3% PDT)
+    range      = linos.defense,
+    head       = "Halitus Helm",       -- Enmity +8
     body       = "Emet Harness +1",    -- Enmity +10
     hands      = empy_hands,
     legs       = "Zoar Subligar +1",   -- Enmity +6
     feet       = "Nyame Sollerets",
     neck       = "Unmoving Collar +1", -- Enmity +10
     waist      = "Kasiri Belt",        -- Enmity +3
-    back       = enmity_cape,          -- Enmity +10
     left_ear   = "Cryptic Earring",    -- Enmity +4
-    right_ear  = "Friomisi Earring",   -- Enmity +2 (replace with Trux from Divine Might)
+    right_ear  = "Friomisi Earring",   -- Enmity +2 (get Trux from Divine Might for +5)
     left_ring  = "Provocare Ring",     -- Enmity +5
     right_ring = "Supershear Ring",    -- Enmity +5
+    back       = ambu_cape.enmity,     -- Enmity +10
   }
 
   -- Precast sets
@@ -164,7 +185,7 @@ function get_sets()
 
   -- Weaponskill sets
   sets.precast.WS.melee = set_combine(full_nyame, {
-    range      = linos_savage,
+    range      = linos.savage,
     body       = relic_body,
     neck       = "Republican Platinum Medal",
     waist      = "Sailfi Belt +1",
@@ -172,7 +193,7 @@ function get_sets()
     right_ear  = "Ishvara Earring",
     left_ring  = "Rufescent Ring",
     right_ring = "Ephramad's Ring",
-    back       = savage_cape,
+    back       = ambu_cape.savage,
   })
 
   -- Job ability sets
@@ -220,7 +241,7 @@ function get_sets()
   })
 
   sets.midcast["BuffSong"] = {
-    main       = kali_a,
+    main       = kali.path_a,
     sub        = "Genbu's Shield",
     range      = "Gjallarhorn",
     head       = empy_head,
@@ -234,19 +255,19 @@ function get_sets()
     right_ear  = "Fili Earring +1",
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
-    back       = song_cape,
+    back       = ambu_cape.songs,
   }
   -- Equip second kali in offhand for more duration if dual wield is available
   if dual_wield_available then
-    sets.midcast["BuffSong"]["sub"] = kali_c
+    sets.midcast["BuffSong"]["sub"] = kali.path_c
   end
 
   sets.midcast["DebuffSong"] = set_combine(sets.midcast["BuffSong"], {
-    main  = kali_a,
+    main  = kali.path_a,
     sub   = "Amurappi Shield",
     feet  = empy_feet,
     waist = "Luminary Sash",
-  })
+  })--, sets.enmity)
   -- No swaps needed for minuet, march
   sets.midcast["Madrigal"] = {
     feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
@@ -283,7 +304,7 @@ function get_sets()
     legs  = "Inyanga Shalwar +2",
     feet  = af_feet,
     -- waist = "Acuity Belt +1", -- Need to RP this
-  })
+  })--, sets.enmity)
 
   sets.midcast["Horde Lullaby II"] = set_combine(sets.midcast["Lullaby"], {
     -- 486 string skill required for 6 yalm radius
@@ -303,7 +324,7 @@ function get_sets()
     -- back       = "Erato's Cape",        -- String +4
     body  = relic_body,
     hands = empy_hands,
-  })
+  })--, sets.enmity)
 
   sets.midcast["Cure"] = {
     main       = "Daybreak",

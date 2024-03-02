@@ -12,10 +12,10 @@ function get_sets()
 
   -- Gear Aliases
   bullets = {
-    physical  = "Eminent Bullet",
-    acc       = "Decimating Bullet",
-    macc      = "Orichalcum Bullet",
-    quickdraw = "Hauksbok Bullet",   -- 1000 DI points
+    physical = "Chrono Bullet",
+    macc     = "Orichalcum Bullet",
+    qd_dmg   = "Hauksbok Bullet",
+    qd_acc   = "Animikii Bullet",
   }
   snapshot_roll_cape = {name="Camulus's Mantle", augments={
     'INT+20',
@@ -79,7 +79,7 @@ function get_sets()
   -- Basic sets
   sets.idle = {
     main       = "Naegling",
-    sub        = "Tauret",
+    sub        = "Gleti's Knife",
     range      = "Ataktos",
     ammo       = bullets["physical"],
     head       = "Nyame Helm",
@@ -90,7 +90,7 @@ function get_sets()
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",
     left_ear   = "Eabani Earring",
-    right_ear  = "Meili Earring",      -- Odnowa Earring +1 once it has more RP
+    right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
     back       = snapshot_roll_cape,
@@ -108,7 +108,7 @@ function get_sets()
     left_ear   = "Eabani Earring",
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Petrov Ring",
+    right_ring = "Chirich Ring +1",
     back       = melee_tp_cape,
   })
   sets.FC = {
@@ -122,11 +122,11 @@ function get_sets()
     physical = {
       main  = "Kustawi +1",
       sub   = "Nusku Shield",
-      range = "Holliday",
+      range = "Fomalhaut",
       ammo  = bullets["physical"]
     },
     magic = {
-      main  = "Naegling",
+      main  = stp_knife,
       sub   = "Tauret",
       range = "Molybdosis",
       ammo  = bullets["macc"]
@@ -143,7 +143,6 @@ function get_sets()
   -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
   -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc
   sets.precast.RA = {
-    -- ammo  = bullets["acc"],
     ammo  = bullets["physical"],
     -- Total from gear: 50 Snapshot, 40 Rapid Shot
     head  = empy_head,                     -- 0 Snapshot, 16 Rapid Shot
@@ -166,10 +165,10 @@ function get_sets()
     neck       = "Marked Gorget",  -- Iskur Gorget
     waist      = "Eschan Stone",
     left_ring  = "Cacoethic Ring +1",
-    -- right_ring = "Cacoethic Ring",
-    right_ring = "Ephramad's Ring",
+    right_ring = "Ephramad's Ring",  -- Fall back to NQ Cacoethic if swapping TVR ring
     left_ear   = "Telos Earring",
-    right_ear  = "Beyla Earring",
+    right_ear  = "Enervating Earring",
+    -- right_ear  = "Beyla Earring",
     back       = last_stand_cape,
   }
 
@@ -195,7 +194,8 @@ function get_sets()
     waist = "Sailfi Belt +1",
   })
   sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS.melee, {
-    right_ear = "Telos Earring",
+    left_ear  = "Telos Earring",
+    right_ear = "Ishvara Earring",
     -- back = "" MND/Atk./Acc./DA
   })
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
@@ -217,8 +217,8 @@ function get_sets()
     hands     = empy_hands,
     legs      = "Malignance Tights",
     feet      = "Malignance Boots",   -- Replace with Relic
-    left_ear  = "Ishvara Earring",
-    right_ear = "Telos Earring",
+    left_ear  = "Telos Earring",
+    right_ear = "Ishvara Earring",
     waist     = "Tellen Belt",
     back      = leaden_salute_cape,   -- Replace with WS capes
   })
@@ -241,6 +241,7 @@ function get_sets()
     ammo      = bullets["macc"],
     head      = "Nyame Helm",
     right_ear = "Hecate's Earring",
+    left_ring = "Regal Ring",
   })
   sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Leaden Salute"]
   sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
@@ -260,7 +261,7 @@ function get_sets()
   })
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {
     body  = af_body,
-    ammo  = bullets["acc"],
+    ammo  = bullets["physical"],
     neck  = "Fotia Gorget",
     waist = "Fotia Belt",
     back  = last_stand_cape,
@@ -274,14 +275,14 @@ function get_sets()
     feet       = "Malignance Boots",
     left_ring  = "Defending Ring",
     -- Actually helps with rolls
-    main       = roll_knife,
-    range      = "Compensator",
-    head       = relic_head,
-    hands      = empy_hands,
-    legs       = "Desultor Tassets",
-    neck       = "Regal Necklace",
-    right_ring = "Luzaf's Ring",
-    back       = snapshot_roll_cape,
+    main       = roll_knife,         -- +7, duration +45
+    range      = "Compensator",      -- duration +20
+    head       = relic_head,         -- effect +50
+    hands      = empy_hands,         -- duration +45/50/55/60
+    legs       = "Desultor Tassets", -- delay -5
+    neck       = "Regal Necklace",   -- +7, duration +20
+    right_ring = "Luzaf's Ring",     -- range *2 (from 8 to 16 yalms)
+    back       = snapshot_roll_cape, -- duration +30
   })
   sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
     head = empy_head,
@@ -312,7 +313,7 @@ function get_sets()
 
   -- Quick Draw sets
   quick_draw_stp = {
-    ammo       = bullets["quickdraw"],
+    ammo       = bullets["qd_acc"],
     head       = "Malignance Chapeau",
     body       = "Mirke Wardecors",
     hands      = "Malignance Gloves",
@@ -334,15 +335,16 @@ function get_sets()
     neck       = jse_neck,
     left_ear   = "Chasseur's Earring",  -- 9 macc
     right_ear  = "Dignitary's Earring",
-    left_ring  = "Stikini Ring",
+    left_ring  = "Regal Ring",
     right_ring = "Stikini Ring",
   })
   quick_draw_dmg = set_combine(quick_draw_stp, {
+    ammo       = bullets["qd_dmg"],
     head       = "Nyame Helm",
     body       = relic_body,
     hands      = "Carmine Finger Gauntlets +1",
     legs       = "Nyame Flanchard",
-    -- feet       = relic_feet,
+    feet       = relic_feet,
     neck       = jse_neck,
     left_ear   = "Friomisi Earring",
     right_ear  = "Hecate's Earring",
@@ -357,6 +359,7 @@ function get_sets()
   sets.precast["Dark Shot"]  = set_combine(quick_draw_acc, {
     right_ring = "Archon Ring",
   })
+  sets.precast["Ice Shot"] = quick_draw_dmg
 
   -- All Curing and Divine waltzes fall back to Waltz when spell mappings are checked
   sets.precast["Waltz"] = {

@@ -41,6 +41,7 @@ end
 ---------------------
 
 lockables_set = to_set(lockables) -- from Zuri-Settings.lua
+special_ammo_set = to_set(special_ammo)
 weapon_slots = {"main", "range"}
 
 ------------------------
@@ -262,6 +263,9 @@ function precast(spell, position)
 
   if spell.action_type == "Ranged Attack" then
     safe_equip(sets.precast.RA)
+    if special_ammo_set[player.equipment['ammo']] then
+      equip({ammo = empty})
+    end
     return
   end
 
@@ -302,7 +306,7 @@ function precast(spell, position)
   -- Treat Double-Up as a roll (luzaf's and roll+ gear apply)
   elseif player.main_job == "COR" and (spell.english == "Double-Up" or spell.type == "CorsairRoll") then
     equip_roll_set(spell)
-  -- General handing if nothing more specific matches above
+  -- General handling if nothing more specific matches above
   -- Check for set based on spell name first
   elseif sets.precast[spell.english] then
     safe_equip(sets.precast[spell.english])

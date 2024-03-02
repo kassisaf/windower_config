@@ -36,11 +36,13 @@ function get_sets()
     left_ear   = "Odr Earring",
     right_ear  = "Steelflash Earring",
     left_ring  = "Shneddick Ring",
-    right_ring = "Ayanmo Ring",
+    right_ring = "Gelatinous Ring",
     back       = tp_cape,
   }
   sets.TP = set_combine(sets.idle, {
     left_ring  = "Mummu Ring",
+    right_ring = "Hizamaru Ring",
+    feet       = "Shukuyu Sune-Ate",
   })
   sets.FC = {}
 

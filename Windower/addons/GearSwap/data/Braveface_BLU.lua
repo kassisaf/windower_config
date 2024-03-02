@@ -11,11 +11,11 @@ function get_sets()
   -- Basic sets
   sets.idle = {
     ammo       = "Ghastly Tathlum",
-    head       = "Ayanmo Zucchetto",
+    head       = "Ayanmo Zucchetto +2",
     body       = "Ayanmo Corazza",
-    hands      = "Ayanmo Manopolas",
-    legs       = "Ayanmo Cosciales",
-    feet       = "Ayanmo Gambieras",
+    hands      = "Ayanmo Manopolas +2",
+    legs       = "Ayanmo Cosciales +2",
+    feet       = "Ayanmo Gambieras +2",
     neck       = "Sanctity Necklace",
     waist      = "Eschan Stone",
     back       = "Solemnity Cape",
@@ -47,11 +47,11 @@ function get_sets()
   
   -- Midcast sets
   sets.midcast["BlueMagic"] = {
-    head      = "Jhakri Coronal +1",
-    body      = "Jhakri Robe +1",
-    hands     = "Jhakri Cuffs +1",
-    legs      = "Jhakri Slops +1",
-    feet      = "Jhakri Pigaches +1",
+    head      = "Jhakri Coronal +2",
+    body      = "Jhakri Robe +2",
+    hands     = "Jhakri Cuffs +2",
+    legs      = "Jhakri Slops +2",
+    feet      = "Jhakri Pigaches +2",
   }
 
   -- Other sets
