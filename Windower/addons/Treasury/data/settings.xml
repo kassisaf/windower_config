@@ -6,20 +6,20 @@
         <Delay>0</Delay>
         <Drop>Aoid. Seal: Bd.,Aoid. Seal: Hn.,Aoid. Seal: Ft.,Aoid. Seal: Hd.,Aoid. Seal: Lg.</Drop>
         <Lot />
-        <Pass>Abs. Gauntlets -1,Abs. Sollerets -1</Pass>
+        <Pass>Abs. Sollerets -1,Abs. Gauntlets -1</Pass>
         <Verbose>false</Verbose>
     </global>
     <bleakmind>
-        <Drop>Vision Card,Creed Seal: Hn.,Dwarf Pugil,Orison Seal: Ft.,Balance Jewel,Balance Stone,Onca Suit,Skormoth Mask,Raid. Seal: Ft.,Voyage Card,Aoid. Seal: Hn.,Mavi Seal: Hn.,Balance Coin,Aoid. Seal: Bd.,Vision Jewel,M. Beetle Saliva,Aoid. Seal: Ft.,Drill Calamary,Ardor Jewel,Rvg. Seal: Bd.,Wieldance Coin,Voyage Coin,Ardor Coin,Aoid. Seal: Lg.,Ferine Seal: Bd.,Ardor Stone,Wieldance Jewel,Voyage Stone,Cirque Seal: Hn.,Aoid. Seal: Hd.,Balance Card,Vision Stone,Kriegsmesser,Raid. Seal: Bd.,Orison Seal: Lg.,Wieldance Stone,Vision Coin,Ardor Card,Pebble,Raid. Seal: Hd.,Voyage Jewel</Drop>
+        <Drop>Vision Card,Creed Seal: Hn.,Dwarf Pugil,Orison Seal: Ft.,Balance Jewel,Balance Stone,Onca Suit,Skormoth Mask,Raid. Seal: Ft.,Voyage Card,Voyage Coin,Mavi Seal: Hn.,Balance Coin,Aoid. Seal: Bd.,Vision Jewel,M. Beetle Saliva,Aoid. Seal: Ft.,Drill Calamary,Ardor Jewel,Voyage Jewel,Ferine Seal: Bd.,Aoid. Seal: Hn.,Ardor Coin,Aoid. Seal: Lg.,Wieldance Coin,Ardor Stone,Wieldance Jewel,Rvg. Seal: Bd.,Cirque Seal: Hn.,Aoid. Seal: Hd.,Balance Card,Wieldance Stone,Kriegsmesser,Orison Seal: Lg.,Raid. Seal: Bd.,Vision Stone,Vision Coin,Ardor Card,Pebble,Raid. Seal: Hd.,Voyage Stone</Drop>
         <Lot>Flan Meat,Bone Chip</Lot>
         <Pass>Eschalixir,Abs. Gauntlets -1,Onca Suit,Abs. Sollerets -1,Skormoth Mask,Rock Salt</Pass>
     </bleakmind>
     <braveface>
-        <Drop>Vision Card,Creed Seal: Hn.,Dwarf Pugil,Orison Seal: Ft.,Balance Jewel,Balance Stone,Onca Suit,Skormoth Mask,Raid. Seal: Ft.,Voyage Card,Aoid. Seal: Hn.,Mavi Seal: Hn.,Balance Coin,Aoid. Seal: Bd.,Vision Jewel,M. Beetle Saliva,Aoid. Seal: Ft.,Drill Calamary,Ardor Jewel,Rvg. Seal: Bd.,Wieldance Coin,Voyage Coin,Ardor Coin,Aoid. Seal: Lg.,Ferine Seal: Bd.,Ardor Stone,Wieldance Jewel,Voyage Stone,Cirque Seal: Hn.,Aoid. Seal: Hd.,Balance Card,Vision Stone,Kriegsmesser,Raid. Seal: Bd.,Orison Seal: Lg.,Wieldance Stone,Vision Coin,Ardor Card,Pebble,Raid. Seal: Hd.,Voyage Jewel</Drop>
-        <Pass>Abs. Gauntlets -1,Bat Fang,Abs. Sollerets -1</Pass>
+        <Drop>Vision Card,Creed Seal: Hn.,Dwarf Pugil,Orison Seal: Ft.,Balance Jewel,Balance Stone,Onca Suit,Skormoth Mask,Raid. Seal: Ft.,Voyage Card,Voyage Coin,Mavi Seal: Hn.,Balance Coin,Aoid. Seal: Bd.,Vision Jewel,M. Beetle Saliva,Aoid. Seal: Ft.,Drill Calamary,Ardor Jewel,Voyage Jewel,Ferine Seal: Bd.,Aoid. Seal: Hn.,Ardor Coin,Aoid. Seal: Lg.,Wieldance Coin,Ardor Stone,Wieldance Jewel,Rvg. Seal: Bd.,Cirque Seal: Hn.,Aoid. Seal: Hd.,Balance Card,Wieldance Stone,Kriegsmesser,Orison Seal: Lg.,Raid. Seal: Bd.,Vision Stone,Vision Coin,Ardor Card,Pebble,Raid. Seal: Hd.,Voyage Stone</Drop>
+        <Pass>Abs. Gauntlets -1,Abs. Sollerets -1,Bat Fang</Pass>
     </braveface>
     <zurirose>
-        <Drop>Hydra Salade,Vision Card,Vision Stone,Dwarf Pugil,Onca Suit,Raid. Seal: Ft.,Voyage Card,Mavi Seal: Hn.,Hydra Beret,Wym. Brais -1,Mel. Gloves -1,Balance Coin,Aoid. Seal: Bd.,Etoile Bangles -1,Vision Jewel,Aoid. Seal: Ft.,Hydra Brais,Hydra Brayettes,Dls. Tights -1,Ardor Coin,Rvg. Seal: Bd.,Aoid. Seal: Hd.,Hydra Boots,Hydra Haubert,Hydra Hose,Vision Coin,Comm. Frac -1,Brd. Jstcorps -1,Wieldance Stone,Creed Seal: Hn.,Orison Seal: Ft.,Balance Jewel,Balance Stone,Hydra Harness,Skormoth Mask,Hydra Jupon,Aoid. Seal: Hn.,Hydra Bracers,M. Beetle Saliva,Ardor Jewel,Etoile Casaque -1,Hydra Spats,Ferine Seal: Bd.,Abs. Flanchard -1,Wieldance Coin,Hydra Cap,Voyage Jewel,Aoid. Seal: Lg.,Hydra Sollerets,Hydra Gloves,Wieldance Jewel,Voyage Stone,Cirque Seal: Hn.,Etoile Tights -1,Voyage Coin,Ardor Stone,Kriegsmesser,Balance Card,Orison Seal: Lg.,Mst. Trousers -1,Hydra Moufles,Ardor Card,Pebble,Raid. Seal: Hd.,Raid. Seal: Bd.</Drop>
-        <Pass>Eschalixir,Abs. Gauntlets -1,Rock Salt,Onca Suit,Hydra Beret,Skormoth Mask,Abs. Sollerets -1</Pass>
+        <Drop>Hydra Salade,Vision Card,Vision Stone,Dwarf Pugil,Hydra Cap,Hydra Sollerets,Voyage Card,Mavi Seal: Hn.,Hydra Beret,Wym. Brais -1,Mel. Gloves -1,Balance Coin,Aoid. Seal: Bd.,Etoile Bangles -1,Vision Jewel,Aoid. Seal: Ft.,Hydra Brais,Hydra Brayettes,Dls. Tights -1,Ardor Coin,Rvg. Seal: Bd.,Aoid. Seal: Hd.,Hydra Boots,Hydra Haubert,Hydra Hose,Vision Coin,Comm. Frac -1,Brd. Jstcorps -1,Wieldance Stone,Hydra Moufles,Orison Seal: Ft.,Balance Jewel,Balance Stone,Hydra Harness,Skormoth Mask,Hydra Jupon,Voyage Coin,Hydra Bracers,M. Beetle Saliva,Ardor Jewel,Raid. Seal: Bd.,Ferine Seal: Bd.,Wieldance Jewel,Creed Seal: Hn.,Wieldance Coin,Onca Suit,Etoile Tights -1,Aoid. Seal: Lg.,Raid. Seal: Ft.,Hydra Gloves,Voyage Jewel,Voyage Stone,Cirque Seal: Hn.,Abs. Flanchard -1,Aoid. Seal: Hn.,Balance Card,Kriegsmesser,Ardor Stone,Orison Seal: Lg.,Mst. Trousers -1,Hydra Spats,Ardor Card,Pebble,Raid. Seal: Hd.,Etoile Casaque -1</Drop>
+        <Pass>Impulse Belt,Tokon Hachimaki,Brisk Mask,Rock Salt,Hydra Beret,Eschalixir,Abs. Gauntlets -1,Onca Suit,Abs. Sollerets -1,Skormoth Mask,Lithe Boots</Pass>
     </zurirose>
 </settings>

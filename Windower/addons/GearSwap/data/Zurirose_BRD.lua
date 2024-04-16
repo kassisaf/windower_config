@@ -134,7 +134,7 @@ function get_sets()
     back       = ambu_cape.tp,
   }
   if dual_wield_available then
-    sets.TP["sub"] = "Centovente"
+    sets.TP["sub"] = "Gleti's Knife"
   end
   sets.FC = {
     -- TODO optimize with haste

@@ -9,13 +9,8 @@ function get_sets()
   -- Gear aliases
 
   -- Basic sets
-  sets.idle = {
+  sets.idle = set_combine(full_nyame, {
     ammo       = "Ghastly Tathlum",
-    head       = "Ayanmo Zucchetto +2",
-    body       = "Ayanmo Corazza",
-    hands      = "Ayanmo Manopolas +2",
-    legs       = "Ayanmo Cosciales +2",
-    feet       = "Ayanmo Gambieras +2",
     neck       = "Sanctity Necklace",
     waist      = "Eschan Stone",
     back       = "Solemnity Cape",
@@ -23,7 +18,7 @@ function get_sets()
     right_ear  = "Steelflash Earring",
     left_ring  = "Shneddick Ring",
     right_ring = "Ayanmo Ring",
-  }
+  })
   sets.TP = set_combine(sets.idle, {
     main  = "Eminent Scimitar",
     sub   = "Machaera",

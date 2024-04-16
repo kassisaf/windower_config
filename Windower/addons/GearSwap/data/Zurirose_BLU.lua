@@ -40,7 +40,7 @@ function get_sets()
   })
   sets.TP = set_combine(sets.idle, {
     main       = "Naegling",
-    sub        = "Machaera",
+    sub        = "Iris", -- Machaera for trials
     ammo       = "Coiste Bodhar",
     head       = "Malignance Chapeau",
     body       = "Adhemar Jacket",
@@ -49,9 +49,9 @@ function get_sets()
     legs       = "Malignance Tights",
     feet       = "Malignance Boots",
     neck       = "Sanctity Necklace",
-    left_ear   = "Suppanomimi",
+    left_ear   = "Telos Earring",
     right_ear  = "Hashishin Earring +1",
-    left_ring  = "Defending Ring",
+    right_ring = "Chirich Ring +1",
     right_ring = "Chirich Ring +1",
     waist      = "Sailfi Belt +1",
     back       = "Atheling Mantle",
@@ -80,33 +80,33 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
-    ammo       = "Crepuscular Pebble",
-    neck       = "Republican Platinum Medal",
-    waist      = "Sailfi Belt +1",
-    back       = "Phalangite Mantle",
-    left_ear   = "Moonshade Earring",
-    right_ear  = "Ishvara Earring",
-    left_ring  = "Rufescent Ring",
-    right_ring = "Ephramad's Ring",           -- Fall back to Regal or Apate if swapping TVR ring
-  })
-  sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-  })
-
   -- sets.precast.WS.melee = set_combine(full_nyame, {
-  --   hands      = "Meghanada Gloves +2",
-  --   neck       = "Fotia Gorget",
-  --   waist      = "Fotia Belt",
+  --   ammo       = "Crepuscular Pebble",
+  --   neck       = "Republican Platinum Medal",
+  --   waist      = "Sailfi Belt +1",
+  --   back       = "Phalangite Mantle",
   --   left_ear   = "Moonshade Earring",
   --   right_ear  = "Ishvara Earring",
-  --   left_ring  = "Regal Ring",
-  --   right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-  --   back       = savage_cape,
+  --   left_ring  = "Rufescent Ring",
+  --   right_ring = "Ephramad's Ring",           -- Fall back to Regal or Apate if swapping TVR ring
   -- })
   -- sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
-  --   neck  = "Republican Platinum Medal",
-  --   waist = "Sailfi Belt +1",
   -- })
+
+  sets.precast.WS.melee = set_combine(full_nyame, {
+    hands      = "Meghanada Gloves +2",
+    neck       = "Fotia Gorget",
+    waist      = "Fotia Belt",
+    left_ear   = "Moonshade Earring",
+    right_ear  = "Ishvara Earring",
+    left_ring  = "Regal Ring",
+    right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
+    back       = "Phalangite Mantle",
+  })
+  sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+    neck  = "Republican Platinum Medal",
+    waist = "Sailfi Belt +1",
+  })
 
   -- Job ability sets
   sets.precast["Box Step"]   = sets.TH
@@ -121,8 +121,12 @@ function get_sets()
   sets.precast["Curing Waltz III"] = sets.precast["Curing Waltz"]
   
   -- Midcast sets
-  sets.midcast["Blue Magic"] = set_combine(sets.idle, full_malignance, {
-    head       = "Pixie Hairpin +1",
+  sets.midcast["Blue Magic"] = set_combine(sets.idle, {
+    head       = "Jhakri Coronal +2",
+    body       = "Jhakri Robe +2",
+    hands      = "Jhakri Cuffs +2",
+    legs       = "Jhakri Slops +2",
+    feet       = "Jhakri Pigaches +2",
     waist      = "Eschan Stone",
     left_ring  = "Shiva Ring +1",
     right_ring = "Stikini Ring",

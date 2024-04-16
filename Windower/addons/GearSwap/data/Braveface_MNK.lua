@@ -23,14 +23,9 @@ function get_sets()
   }}
 
   -- Basic sets
-  sets.idle = {
+  sets.idle = set_combine(full_nyame, {
     ammo       = "Thew Bomblet",
     main       = "Kaja Knuckles",
-    head       = "Hizamaru Somen +2",
-    body       = "Mummu Jacket +2",
-    hands      = "Mummu Wrists +2",
-    legs       = "Mummu Kecks +2",
-    feet       = "Mummu Gamashes +2",
     neck       = "Subtlety Spectacles",
     waist      = "Eschan Stone",
     left_ear   = "Odr Earring",
@@ -38,7 +33,7 @@ function get_sets()
     left_ring  = "Shneddick Ring",
     right_ring = "Gelatinous Ring",
     back       = tp_cape,
-  }
+  })
   sets.TP = set_combine(sets.idle, {
     left_ring  = "Mummu Ring",
     right_ring = "Hizamaru Ring",
@@ -50,11 +45,11 @@ function get_sets()
   sets.precast.RA = {}
 
   -- Weaponskill sets
-  sets.precast.WS.melee = {
+  sets.precast.WS.melee = set_combine(full_nyame, {
     neck      = "Anu Torque",
     left_ring = "Rufescent Ring",
     back      = ws_cape,
-  }
+  })
   -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
   -- sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
   -- })

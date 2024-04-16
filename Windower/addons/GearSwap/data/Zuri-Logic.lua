@@ -405,9 +405,10 @@ function buff_change(name, gain, buff_details)
 end -- buff_change()
 
 -- Command usage:
---  //gs c u|update: Calls an update to equip idle or TP set
---  //gs c th:       Toggles TH mode
---  //gs c melee:    Locks/unlocks main and sub slots
+--  //gs c u|update:       Calls an update to equip idle or TP set
+--  //gs c th:             Toggles TH mode
+--  //gs c melee:          Locks/unlocks main and sub slots
+--  //gs c cycle set_name: Cycles through sets in sets.cycles[set_name] (must be defined)
 function self_command(command_str)
   params = split_by_space(command_str)
 
