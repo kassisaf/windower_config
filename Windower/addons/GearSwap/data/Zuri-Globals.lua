@@ -350,6 +350,14 @@ full_malignance = {
   feet  = "Malignance Boots",
 }
 
+full_sakpata = {
+  head  = "Sakpata's Helm",
+  body  = "Sakpata's Plate",
+  hands = "Sakpata's Gauntlets",
+  legs  = "Sakpata's Cuisses",
+  feet  = "Sakpata's Leggings",
+}
+
 vanya_head_d = {name="Vanya Hood", augments={
   'MP+50',
   '"Fast Cast"+10',

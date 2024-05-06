@@ -111,7 +111,7 @@ function get_sets()
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",
     left_ear   = "Eabani Earring",
-    right_ear  = "Meili Earring",
+    right_ear  = "Odnowa Earring +1",
     left_ring  = "Shneddick Ring",
     right_ring = "Defending Ring",
     back       = ambu_cape.songs,
@@ -267,7 +267,7 @@ function get_sets()
     sub   = "Amurappi Shield",
     feet  = empy_feet,
     waist = "Luminary Sash",
-  })--, sets.enmity)
+  })
   -- No swaps needed for minuet, march
   sets.midcast["Madrigal"] = {
     feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
@@ -304,7 +304,7 @@ function get_sets()
     legs  = "Inyanga Shalwar +2",
     feet  = af_feet,
     -- waist = "Acuity Belt +1", -- Need to RP this
-  })--, sets.enmity)
+  })
 
   sets.midcast["Horde Lullaby II"] = set_combine(sets.midcast["Lullaby"], {
     -- 486 string skill required for 6 yalm radius
@@ -324,7 +324,23 @@ function get_sets()
     -- back       = "Erato's Cape",        -- String +4
     body  = relic_body,
     hands = empy_hands,
-  })--, sets.enmity)
+  })
+
+  tanking_in_odyssey = false  -- TODO add a toggle for this
+  if tanking_in_odyssey then
+    sets.midcast["Lullaby"] = set_combine(
+      sets.midcast["Lullaby"],
+      sets.enmity
+    )
+    sets.midcast["Horde Lullaby II"] = set_combine(
+      sets.midcast["Horde Lullaby II"],
+      sets.enmity
+    )
+    sets.midcast["Magic Finale"] = set_combine(
+      sets.midcast["DebuffSong"],
+      sets.enmity
+    )
+  end
 
   sets.midcast["Cure"] = {
     main       = "Daybreak",

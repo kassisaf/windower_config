@@ -5,6 +5,9 @@
 --   return 'input /ma "' .. song_name .. '" <me>'
 -- end
 
+-- 2x march, ltncarol, 2x int
+-- ethren
+
 return {
   ['Ctrl+1'] = 'input /ja "Pianissimo" <me>',
   ['Ctrl+2'] = 'input /ma "Knight\'s Minne V" <me>',
@@ -23,17 +26,29 @@ return {
   ['Alt+4']  = 'input /ma "Magic Finale" <stnpc>',
   ['Alt+5']  = 'input /ma "Silence" <stnpc>',
   ['Alt+6']  = 'input /ma "Light Threnody" <stnpc>',
-  ['Alt+7']  = 'input /ma "Earth Threondy" <stnpc>',
+  ['Alt+7']  = 'input /ma "Earth Threnody II" <stnpc>',
   ['Alt+8']  = 'input /ma "Foe Lullaby II" <stnpc>',
   ['Alt+9']  = 'input /ma "Horde Lullaby" <stnpc>',
   ['Alt+0']  = 'input /ma "Horde Lullaby II" <stnpc>',
 
-  -- Xevioso
-  ['Win+1'] = 'input /ma "Sentinel\'s Scherzo" <me>',
-  ['Win+2'] = 'input /ma "Valor Minuet V" <me>',
-  ['Win+3'] = 'input /ma "Wind Carol II" <me>',
-  ['Win+4'] = 'input /ma "Knight\'s Minne V" <me>',
+  -- Ongo
+  ['Win+1'] = 'input /ma "Learned Etude" <me>',
+  ['Win+2'] = 'input /ma "Sage Etude" <me>',
+  ['Win+3'] = 'input /ma "Lightning Carol" <me>',
+  ['Win+4'] = 'input /ma "Victory March" <me>',
   ['Win+5'] = 'input /ma "Honor March" <me>',
+  
+  ['Win+6'] = 'input /ja "Pianissimo" <me>',
+  ['Win+7'] = 'input /ma "Mage\'s Ballad III" Legasan',
+  ['Win+8'] = 'input /ja "Pianissimo" <me>',
+  ['Win+9'] = 'input /ma "Knight\'s Minne V" <me>',
+
+  -- Xevioso
+  -- ['Win+1'] = 'input /ma "Sentinel\'s Scherzo" <me>',
+  -- ['Win+2'] = 'input /ma "Valor Minuet V" <me>',
+  -- ['Win+3'] = 'input /ma "Wind Carol II" <me>',
+  -- ['Win+4'] = 'input /ma "Knight\'s Minne V" <me>',
+  -- ['Win+5'] = 'input /ma "Honor March" <me>',
 
   -- ['Win+1'] = 'input /ja "Pianissimo" <me>',
   -- ['Win+2'] = 'input /ma "Mage\'s Ballad II" <stpt>',
