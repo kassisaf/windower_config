@@ -7,20 +7,22 @@ function get_sets()
   sets.midcast = {}
 
   -- Gear aliases
-  tp_cape = {name="Segomo's Mantle", augments={
-    'DEX+20',
-    'Accuracy+20 Attack+20',
-    'DEX+10',
-    '"Dbl.Atk."+10',
-    'Damage taken-5%',
-  }}
-  -- ws_cape = {name="Segomo's Mantle", augments={
-  --     'STR+20',
-  --     'Accuracy+20 Attack+20',
-  --     'STR+10',
-  --     '"Dbl.Atk."+10',
-  --     'Damage taken-5%',
-  -- }}
+  ambuscade_cape = {
+    tp = {name="Segomo's Mantle", augments={
+      'DEX+20',
+      'Accuracy+20 Attack+20',
+      'DEX+10',
+      '"Dbl.Atk."+10',
+      'Damage taken-5%',
+    }}
+    -- ws = {name="Segomo's Mantle", augments={
+    --     'STR+20',
+    --     'Accuracy+20 Attack+20',
+    --     'STR+10',
+    --     '"Dbl.Atk."+10',
+    --     'Damage taken-5%',
+    -- }}
+  }
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
@@ -32,7 +34,7 @@ function get_sets()
     right_ear  = "Bloodbead Earring",
     left_ring  = "Shneddick Ring",
     right_ring = "Gelatinous Ring +1",
-    back       = tp_cape,
+    back       = ambuscade_cape.tp,
   })
   sets.TP = set_combine(sets.idle, {
     left_ring  = "Mummu Ring",

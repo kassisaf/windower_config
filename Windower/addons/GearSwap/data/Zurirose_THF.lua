@@ -6,14 +6,6 @@ function get_sets()
   sets.precast = {WS = {crit = {}}}
   sets.midcast = {}
 
-  my_only_thf_cape = {name="Toutatis's Cape", augments={
-    'DEX+20',
-    'Accuracy+20 Attack+20',
-    'DEX+10',
-    '"Store TP"+10',
-    'Damage taken-5%',
-  }}
-
   -- JSE Prefixes:
   -- Artifact: Rogue's / Pillager's
   -- Relic:    Assassin's / Plunderer's
@@ -39,6 +31,16 @@ function get_sets()
     legs  = "Raider's Culottes +1",
     feet  = "Skulker's Poulaines +2",
   }
+  
+  ambuscade_cape = {
+    tp = {name="Toutatis's Cape", augments={
+      'DEX+20',
+      'Accuracy+20 Attack+20',
+      'DEX+10',
+      '"Store TP"+10',
+      'Damage taken-5%',
+    }}
+  }
   jse_neck       = "Assassin's Gorget +1"
   sortie_earring = "Skulker's Earring +1"
 
@@ -56,7 +58,7 @@ function get_sets()
     right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   })
   sets.TP = {
     main       = "Aeneas",
@@ -74,7 +76,7 @@ function get_sets()
     right_ear  = sortie_earring,
     left_ring  = "Chirich Ring +1",
     right_ring = "Hetairoi Ring", -- Get Epona's Ring
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   }
   sets.FC = {
     legs       = "Limbo Trousers",     -- 3%
@@ -115,7 +117,7 @@ function get_sets()
     right_ring = "Ephramad's Ring",
     left_ear   = "Moonshade Earring",
     right_ear  = "Odr Earring",
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   })
   sets.precast.WS["Rudra's Storm"] = set_combine(nyame, {
     ammo       = "Coiste Bodhar",
@@ -126,7 +128,7 @@ function get_sets()
     left_ear   = "Moonshade Earring",
     right_ear  = "Sherida Earring",
     waist      = "Kentarch Belt +1",
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   })
   sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {
     waist = "Sailfi Belt +1",
@@ -144,7 +146,7 @@ function get_sets()
     right_ring = "Ephramad's Ring",
     left_ear   = "Moonshade Earring",
     right_ear  = "Odr Earring",
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   }
   sets.precast.WS["Extenterator"] = {
     ammo       = "Coiste Bodhar",
@@ -159,7 +161,7 @@ function get_sets()
     right_ring = "Regal Ring",        -- Gere Ring
     left_ear   = "Sherida Earring",
     right_ear  = sortie_earring,
-    back       = my_only_thf_cape,
+    back       = ambuscade_cape.tp,
   }
   sets.precast.WS["Aeolian Edge"] = set_combine(nyame, {
     ammo       = "Ghastly Tathlum +1",

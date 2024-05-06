@@ -33,6 +33,7 @@ function get_sets()
     -- legs  = "Iga Hakama",
     -- feet  = "Iga Kyahan",
   }
+  ambuscade_cape = {}
 
   -- Basic sets
   sets.idle = set_combine(nyame, {

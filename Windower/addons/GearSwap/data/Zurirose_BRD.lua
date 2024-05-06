@@ -46,9 +46,10 @@ function get_sets()
     legs  = "Fili Rhingrave +2",
     feet  = "Fili Cothurnes +2",
   }
-  jse_neck    = "Bard's Charm +1"
+  jse_neck = "Bard's Charm +1"
+  sortie_earring = "Fili Earring +1"
 
-  ambu_cape = {
+  ambuscade_cape = {
     songs = {name="Intarabus's Cape", augments={
       'CHR+20',
       'Mag. Acc+20 /Mag. Dmg.+20',
@@ -126,7 +127,7 @@ function get_sets()
     right_ear  = "Odnowa Earring +1",
     left_ring  = "Shneddick Ring",
     right_ring = "Defending Ring",
-    back       = ambu_cape.songs,
+    back       = ambuscade_cape.songs,
   }
   sets.TP = {
     main       = "Naegling",
@@ -143,7 +144,7 @@ function get_sets()
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
     right_ring = "Chirich Ring +1",     -- Ephramad's Ring for acc swap?
-    back       = ambu_cape.tp,
+    back       = ambuscade_cape.tp,
   }
   if dual_wield_available then
     sets.TP["sub"] = "Gleti's Knife"
@@ -161,7 +162,7 @@ function get_sets()
     right_ear  = "Loquacious Earring",  -- FC +2%
     left_ring  = "Kishar Ring",         -- FC +4%
     right_ring = "Naji's Loop",         -- FC +1%
-    back       = ambu_cape.songs,       -- FC +10%
+    back       = ambuscade_cape.songs,       -- FC +10%
   }
   sets.enmity = {
     -- Total +69 enmity, 72 possible with Trux Earring
@@ -179,7 +180,7 @@ function get_sets()
     right_ear  = "Friomisi Earring",   -- Enmity +2 (get Trux from Divine Might for +5)
     left_ring  = "Provocare Ring",     -- Enmity +5
     right_ring = "Supershear Ring",    -- Enmity +5
-    back       = ambu_cape.enmity,     -- Enmity +10
+    back       = ambuscade_cape.enmity,     -- Enmity +10
   }
 
   -- Precast sets
@@ -205,7 +206,7 @@ function get_sets()
     right_ear  = "Ishvara Earring",
     left_ring  = "Rufescent Ring",
     right_ring = "Ephramad's Ring",
-    back       = ambu_cape.savage,
+    back       = ambuscade_cape.savage,
   })
 
   -- Job ability sets
@@ -264,10 +265,10 @@ function get_sets()
     neck       = "Moonbow Whistle +1",
     -- waist      = "Flume Belt +1",
     left_ear   = "Dignitary's Earring",
-    right_ear  = "Fili Earring +1",
+    right_ear  = sortie_earring,
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
-    back       = ambu_cape.songs,
+    back       = ambuscade_cape.songs,
   }
   -- Equip second kali in offhand for more duration if dual wield is available
   if dual_wield_available then

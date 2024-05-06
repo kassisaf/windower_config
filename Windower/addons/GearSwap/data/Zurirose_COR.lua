@@ -37,7 +37,46 @@ function get_sets()
     legs  = "Chasseur's Culottes +2",
     feet  = "Chasseur's Bottes +3",
   }
-  jse_neck    = "Commodore Charm +1"
+  jse_neck = "Commodore Charm +1"
+  -- sortie_earring = ""
+  
+  ambuscade_cape = {
+    snapshot_roll = {name="Camulus's Mantle", augments={
+      'INT+20',
+      'Eva.+20 /Mag. Eva.+20',
+      'Mag. Evasion+10',
+      '"Snapshot"+10',
+      'Mag. Evasion+15',
+    }},
+    leaden_salute = {name="Camulus's Mantle", augments={
+      'AGI+20',
+      'Mag. Acc+20 /Mag. Dmg.+20',
+      'AGI+10',
+      'Weapon skill damage +10%',
+      'Damage taken-5%',
+    }}
+    last_stand = {name="Camulus's Mantle", augments={
+      'AGI+20',
+      'Rng.Acc.+20 Rng.Atk.+20',
+      'AGI+10',
+      'Weapon skill damage +10%',
+      'Damage taken-5%',
+    }}
+    melee_tp = {name="Camulus's Mantle", augments={
+      'DEX+20',
+      'Accuracy+20 Attack+20',
+      'Accuracy+10',
+      '"Dbl.Atk."+10',
+      'Damage taken-5%',
+    }}
+    savage_blade = {name="Camulus's Mantle", augments={
+      'STR+20',
+      'Accuracy+20 Attack+20',
+      'STR+10',
+      'Weapon skill damage +10%',
+      'Damage taken-5%',
+    }}
+  }
 
   bullets = {
     physical = "Chrono Bullet",
@@ -45,41 +84,6 @@ function get_sets()
     qd_dmg   = "Hauksbok Bullet",
     qd_acc   = "Animikii Bullet",
   }
-  snapshot_roll_cape = {name="Camulus's Mantle", augments={
-    'INT+20',
-    'Eva.+20 /Mag. Eva.+20',
-    'Mag. Evasion+10',
-    '"Snapshot"+10',
-    'Mag. Evasion+15',
-  }}
-  leaden_salute_cape = {name="Camulus's Mantle", augments={
-    'AGI+20',
-    'Mag. Acc+20 /Mag. Dmg.+20',
-    'AGI+10',
-    'Weapon skill damage +10%',
-    'Damage taken-5%',
-  }}
-  last_stand_cape = { name="Camulus's Mantle", augments={
-    'AGI+20',
-    'Rng.Acc.+20 Rng.Atk.+20',
-    'AGI+10',
-    'Weapon skill damage +10%',
-    'Damage taken-5%',
-  }}
-  melee_tp_cape = {name="Camulus's Mantle", augments={
-    'DEX+20',
-    'Accuracy+20 Attack+20',
-    'Accuracy+10',
-    '"Dbl.Atk."+10',
-    'Damage taken-5%',
-  }}
-  savage_cape = {name="Camulus's Mantle", augments={
-    'STR+20',
-    'Accuracy+20 Attack+20',
-    'STR+10',
-    'Weapon skill damage +10%',
-    'Damage taken-5%',
-  }}
   roll_knife = {name="Lanun Knife", augments={'Path: C'}}
   stp_knife = {name="Lanun Knife", augments={'Path: A'}}
 
@@ -100,7 +104,7 @@ function get_sets()
     right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
-    back       = snapshot_roll_cape,
+    back       = ambuscade_cape.snapshot_roll,
   }
   sets.TP = set_combine(sets.idle, {
     legs       = empyrean.legs,
@@ -111,7 +115,7 @@ function get_sets()
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
     right_ring = "Chirich Ring +1",
-    back       = melee_tp_cape,
+    back       = ambuscade_cape.melee_tp,
   })
   sets.FC = {
     left_ear   = "Loquacious Earring", -- "Enhances"
@@ -153,7 +157,7 @@ function get_sets()
     legs  = "Adhemar Kecks +1",            -- 10 Snapshot, 13 Rapid Shot
     feet  = "Meghanada Jambeaux +2",       -- 10 Snapshot
     neck  = jse_neck,                      -- 3 Snapshot
-    back  = snapshot_roll_cape,            -- 10 Snapshot
+    back  = ambuscade_cape.snapshot_roll, -- 10 Snapshot
     waist = "Tellen Belt",
   }
   -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
@@ -171,7 +175,7 @@ function get_sets()
     left_ear   = "Telos Earring",
     right_ear  = "Enervating Earring",
     -- right_ear  = "Beyla Earring",
-    back       = last_stand_cape,
+    back       = ambuscade_cape.last_stand,
   }
 
   -- Precast sets
@@ -189,7 +193,7 @@ function get_sets()
     right_ear  = "Ishvara Earring",
     left_ring  = "Regal Ring",
     right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-    back       = savage_cape,
+    back       = ambuscade_cape.savage_blade,
   })
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
     neck  = "Republican Platinum Medal",
@@ -222,7 +226,7 @@ function get_sets()
     left_ear  = "Telos Earring",
     right_ear = "Ishvara Earring",
     waist     = "Tellen Belt",
-    back      = last_stand_cape,
+    back      = ambuscade_cape.last_stand,
   })
   sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
     ammo       = bullets["macc"],
@@ -237,7 +241,7 @@ function get_sets()
     left_ring  = "Archon Ring",
     right_ring = "Dingir Ring",
     waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
-    back       = leaden_salute_cape,
+    back       = ambuscade_cape.leaden_salute,
   })
   sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
     ammo      = bullets["macc"],
@@ -265,7 +269,7 @@ function get_sets()
     ammo  = bullets["physical"],
     neck  = "Fotia Gorget",
     waist = "Fotia Belt",
-    back  = last_stand_cape,
+    back  = ambuscade_cape.last_stand,
   })
   
   -- Job ability sets
@@ -276,14 +280,14 @@ function get_sets()
     feet       = malignance.feet,
     left_ring  = "Defending Ring",
     -- Actually helps with rolls
-    main       = roll_knife,         -- +7, duration +45
-    range      = "Compensator",      -- duration +20
-    head       = relic.head,         -- effect +50
-    hands      = empyrean.hands,         -- duration +45/50/55/60
-    legs       = "Desultor Tassets", -- delay -5
-    neck       = "Regal Necklace",   -- +7, duration +20
-    right_ring = "Luzaf's Ring",     -- range *2 (from 8 to 16 yalms)
-    back       = snapshot_roll_cape, -- duration +30
+    main       = roll_knife,                    -- +7, duration +45
+    range      = "Compensator",                 -- duration +20
+    head       = relic.head,                    -- effect +50
+    hands      = empyrean.hands,                    -- duration +45/50/55/60
+    legs       = "Desultor Tassets",            -- delay -5
+    neck       = "Regal Necklace",              -- +7, duration +20
+    right_ring = "Luzaf's Ring",                -- range *2 (from 8 to 16 yalms)
+    back       = ambuscade_cape.snapshot_roll, -- duration +30
   })
   sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
     head = empyrean.head,
@@ -326,7 +330,7 @@ function get_sets()
     left_ring  = "Chirich Ring +1",
     right_ring = "Rajas Ring",          -- STP +5 without the enmity from Petrov
     waist      = "Eschan Stone",
-    back       = leaden_salute_cape,    -- Replace with quickdraw_cape: AGI/MDmg/STP/MAB
+    back       = ambuscade_cape.leaden_salute,    -- Replace with quickdraw cape: AGI/MDmg/STP/MAB
   }
   quick_draw_acc = set_combine(quick_draw_stp, {
     ammo       = bullets["macc"],

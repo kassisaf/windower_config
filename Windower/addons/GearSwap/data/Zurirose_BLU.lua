@@ -10,7 +10,7 @@ function get_sets()
   -- Artifact: Magus / Assimilator's
   -- Relic:    Mirage / Luhlaza
   -- Empyrean: Mavi / Hashishin
-  artifact = { -- Magus / Assimilator's
+  artifact = {
     -- head  = "Magus Keffiyeh",
     -- body  = "Magus Jubbah",
     hands = "Assimilator's Bazubands +1"
@@ -31,6 +31,10 @@ function get_sets()
     -- legs  = "Mavi Tayt",
     -- feet  = "Mavi Basmak",
   }
+  -- jse_neck = ""
+  -- sortie_earring = ""
+
+  ambuscade_cape = {}
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
