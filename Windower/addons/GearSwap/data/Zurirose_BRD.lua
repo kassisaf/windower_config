@@ -152,7 +152,7 @@ function get_sets()
   sets.FC = {
     -- TODO optimize with haste
     -- Don't use ammo FC, messes with instrument swaps... Linos?
-    head       = vanya.head.path_d,          -- Fast Cast +10%
+    head       = vanya.head.path_d,     -- Fast Cast +10%
     body       = "Inyanga Jubbah +2",   -- FC +14%
     hands      = "Inyan. Dastanas +2",
     legs       = "Ayanmo Cosciales +2", -- FC +6%

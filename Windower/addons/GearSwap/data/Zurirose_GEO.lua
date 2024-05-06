@@ -80,7 +80,7 @@ function get_sets()
     neck      = jse_neck,               -- Luopan absorb damage +8%
     left_ear  = "Handler's Earring +1", -- pet PDT -4%
     right_ear = "Handler's Earring",    -- pet PDT -3%
-    back      = ambu_cape.idle,    -- pet regen +10, pet DT -2%
+    back      = ambu_cape.idle,         -- pet regen +10, pet DT -2%
     waist     = "Isa Belt",             -- pet regen +1,  pet DT -3%
 
     -- Telchine augs: pet DT -4%, pet regen +3
@@ -108,7 +108,7 @@ function get_sets()
     -- sub        = "Genmei Shield",
 
     range      = "Dunna",              -- Fast Cast +3%
-    head       = vanya.head.path_d,         -- Fast Cast +10%
+    head       = vanya.head.path_d,    -- Fast Cast +10%
     body       = "Merlinic Jubbah",    -- Fast Cast +10%
     hands      = empyrean.hands,       -- Fast Cast +5%
     legs       = artifact.legs,        -- Fast Cast +11%
