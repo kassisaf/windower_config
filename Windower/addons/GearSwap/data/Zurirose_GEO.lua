@@ -36,7 +36,7 @@ function get_sets()
   jse_neck = "Bagua Charm +1"
   -- sortie_earring = ""
 
-  ambuscade_cape = {
+  ambu_cape = {
     idle = {name="Nantosuelta's Cape", augments={
       'VIT+20',
       'Eva.+20 /Mag. Eva.+20',
@@ -70,7 +70,7 @@ function get_sets()
     left_ring  = "Defending Ring",     -- DT -10%
     right_ring = "Shneddick Ring",     -- Movespeed,  status resists
     waist      = "Carrier's Sash",     -- Ele resist tier
-    back       = ambuscade_cape.nuke,  -- DT -5%
+    back       = ambu_cape.nuke,  -- DT -5%
   }
   sets.idle_with_pet = set_combine(sets.idle, {
     main      = "Idris",                -- Luopan DT -25%
@@ -80,7 +80,7 @@ function get_sets()
     neck      = jse_neck,               -- Luopan absorb damage +8%
     left_ear  = "Handler's Earring +1", -- pet PDT -4%
     right_ear = "Handler's Earring",    -- pet PDT -3%
-    back      = ambuscade_cape.idle,    -- pet regen +10, pet DT -2%
+    back      = ambu_cape.idle,    -- pet regen +10, pet DT -2%
     waist     = "Isa Belt",             -- pet regen +1,  pet DT -3%
 
     -- Telchine augs: pet DT -4%, pet regen +3
@@ -98,7 +98,7 @@ function get_sets()
     left_ring  = "Chirich Ring +1",
     right_ring = "Chirich Ring +1",
     waist      = "Eschan Stone",
-    back       = ambuscade_cape.idle,
+    back       = ambu_cape.idle,
   })
   sets.FC = {
     -- Fast Cast reduces spellcasting time up to 80%, and half of that applies to recast
@@ -108,7 +108,7 @@ function get_sets()
     -- sub        = "Genmei Shield",
 
     range      = "Dunna",              -- Fast Cast +3%
-    head       = vanya_head_d,         -- Fast Cast +10%
+    head       = vanya.head.path_d,         -- Fast Cast +10%
     body       = "Merlinic Jubbah",    -- Fast Cast +10%
     hands      = empyrean.hands,       -- Fast Cast +5%
     legs       = artifact.legs,        -- Fast Cast +11%
@@ -135,7 +135,7 @@ function get_sets()
     right_ear  = "Dignitary's Earring",
     left_ring  = "Stikini Ring",
     right_ring = "Stikini Ring",
-    back       = ambuscade_cape.nuke,
+    back       = ambu_cape.nuke,
     waist      = "Acuity Belt +1",
   }
 
@@ -169,7 +169,7 @@ function get_sets()
   }
   sets.precast["Life Cycle"] = {
     body = "Geomancy Tunic +1",
-    back = ambuscade_cape.nuke,
+    back = ambu_cape.nuke,
   }
   sets.precast["Mending Halation"] = {
     legs = relic.legs,
@@ -183,19 +183,16 @@ function get_sets()
     -- Naked skill at ML10: 435 handbell + 435 geomancy = 870 (need 30 to hit 900 tier)
     -- Fill remaining slots with duration, defense, and empy set bonus to cast without MP
     -- Gada with 11% duration lasts ~10s longer than Solstice, but loses 6 conserve MP
-    -- main  = "Gada",          -- Duration +11%
-    main  = "Idris",
-    sub   = "Genmei Shield", -- PDT -10%
-    range = "Dunna",         -- Skill +18
-
-    head  = empyrean.head,  -- Skill +20, DT -11%
-    body  = empyrean.body,  -- For empy bonus... no DT
-    hands = empyrean.hands, -- DT -11%
-    legs  = relic.legs,     -- Indi Duration +18, no DT
-    feet  = empyrean.feet,  -- Indi Duration +25, DT -10%
-
+    main       = "Idris",
+    sub        = "Genmei Shield",       -- PDT -10%
+    range      = "Dunna",               -- Skill +18
+    head       = empyrean.head,         -- Skill +20,         DT -11%
+    body       = empyrean.body,         -- For empy bonus... no DT
+    hands      = empyrean.hands,        -- DT -11%
+    legs       = relic.legs,            -- Indi Duration +18, no DT
+    feet       = empyrean.feet,         -- Indi Duration +25, DT -10%
     neck       = jse_neck,              -- Luopan duration +20%
-    back       = ambuscade_cape.nuke,   -- Indi Duration +20, DT -5%
+    back       = ambu_cape.nuke,        -- Indi Duration +20, DT -5%
     waist      = "Luminary Sash",       -- Conserve MP +4
     left_ear   = "Mendicant's Earring", -- Conserve MP +2
     right_ear  = "Lugalbanda Earring",  -- m.eva +10
@@ -226,7 +223,7 @@ function get_sets()
     left_ring  = "Shiva Ring +1",
     right_ring = "Jhakri Ring",            -- Freke Ring
     waist      = "Acuity Belt +1",         -- Better than refoc. for now? Get Sacro Cord
-    back       = ambuscade_cape.nuke,
+    back       = ambu_cape.nuke,
   })
   sets.midcast["Enhancing Magic"] = {
     main       = "Gada",              -- 18 enhancing skill
@@ -256,13 +253,15 @@ function get_sets()
   })
   sets.midcast["Drain"] = sets.midcast["Aspir"]
   sets.midcast["Stoneskin"] = set_combine(sets.midcast["Enhancing Magic"], {
-    -- legs = "Shedir Seraweels", -- Stoneskin +35
     neck  = "Nodens Gorget", -- Stoneskin +30
     waist = "Siegel Sash",   -- Stoneskin +20
+
+    -- legs     = "Shedir Seraweels", -- Stoneskin +35
     -- left_ear = "Earthcry Earring", -- Stoneskin +10
   })
   sets.midcast["Aquaveil"] = set_combine(sets.midcast["Enhancing Magic"], {
     head = "Chironic Hat", -- Aquaveil +1
+
     -- legs = "Shedir Seraweels" -- Aquaveil +1
   })
 
@@ -270,11 +269,11 @@ function get_sets()
     main       = "Daybreak",
     sub        = "Genbu's Shield",      -- 3% cure potency augment
     ammo       = "Hydrocera",
-    head       = vanya_head_b,
-    body       = vanya_body_b,
-    hands      = vanya_hands_b,
-    legs       = vanya_legs_b,
-    feet       = vanya_feet_b,
+    head       = vanya.head.path_b,
+    body       = vanya.body.path_b,
+    hands      = vanya.hands.path_b,
+    legs       = vanya.legs.path_b,
+    feet       = vanya.feet.path_b,
     neck       = "Incanter's Torque",
     left_ear   = "Meili Earring",
     right_ear  = "Mendicant's Earring",
@@ -289,6 +288,7 @@ function get_sets()
   sets.TH = {
     ammo  = "Perfect Lucky Egg",
     head  = "White Rarab Cap +1",
+
     -- waist = "Chaac Belt",
   }
   -- Maximize crit rate for Domain Invasion

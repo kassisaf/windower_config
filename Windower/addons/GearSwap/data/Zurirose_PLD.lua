@@ -37,7 +37,7 @@ function get_sets()
   -- jse_neck = ""
   sortie_earring = "Chevalier's Earring +1"
 
-  ambuscade_cape = {
+  ambu_cape = {
     meva = {name = "Rudianos's Mantle", augments = {
       'HP+60',
       'Mag. Evasion+10',
@@ -84,14 +84,14 @@ function get_sets()
   sets.idle = set_combine(nyame, {
 		main       = "Malignance Sword",
 		sub        = "Srivatsa",
-		ammo       = "Sapience Orb",           -- "Staunch Tathlum +1",
+		ammo       = "Sapience Orb",         -- "Staunch Tathlum +1",
 		head       = empyrean.head,
 		body       = sakpata.body,
 		hands      = sakpata.hands,
 		legs       = empyrean.legs,
 		feet       = sakpata.feet,
 		neck       = "Unmoving Collar +1",
-		back       = ambuscade_cape.meva,
+		back       = ambu_cape.meva,
 		waist      = "Platinum Moogle Belt",
 		left_ear   = "Foresti Earring",
 		right_ear  = sortie_earring,
@@ -115,7 +115,7 @@ function get_sets()
     head       = "Carmine Mask +1",    -- 14% FC
     -- body       = artifact.body,
     hands      = "Leyline Gloves",     -- 5+1% FC
-    feet       = empyrean.feet,            -- 10% FC at +2
+    feet       = empyrean.feet,        -- 10% FC at +2
     left_ear   = "Loquacious Earring", -- 2% FC
     right_ear  = "Odnowa Earring +1",
     right_ring = "Kishar Ring",        -- 4% FC
@@ -139,12 +139,12 @@ function get_sets()
     ammo       = "Sapience Orb",           -- Enmity +2
     head       = "Loess Barbuta +1",       -- Enmity +24
     body       = "Souveran Cuirass +1",    -- Enmity +20
-    legs       = relic.legs,               -- Enmity +
+    legs       = relic.legs,               -- Enmity +?
     hands      = "Souveran Handschuhs +1", -- Enmity +9 with path ???
-    feet       = empyrean.feet,                -- Enmity +
+    feet       = empyrean.feet,            -- Enmity +?
     neck       = "Unmoving Collar +1",     -- Enmity +10
     waist      = "Creed Baudrier",         -- Enmity +5
-    back       = ambuscade_cape.meva,           -- Enmity +10 (swap with physical def cape?)
+    back       = ambu_cape.meva,           -- Enmity +10 (swap with physical def cape?)
     left_ear   = "Cryptic Earring",        -- Enmity +4
     right_ear  = "Friomisi Earring",       -- Enmity +2 (get Trux from Divine Might for +5)
     left_ring  = "Provocare Ring",         -- Enmity +5 (get Apeile Ring +1, Eiwaz Ring)
@@ -210,7 +210,8 @@ function get_sets()
     right_ear  = "Ishvara Earring",
     left_ring  = "Regal Ring",
     right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-    -- back       = ambuscade_cape.savage_blade,
+    
+    -- back       = ambu_cape.savage_blade,
   })
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
     neck  = "Republican Platinum Medal",
@@ -251,7 +252,7 @@ function get_sets()
 
   -- Midcast sets
   sets.midcast["Cure"] = {
-    back = ambuscade_cape.cure,
+    back = ambu_cape.cure,
   }
 
   sets.midcast["Phalanx"] = set_combine(sets.phalanx_received, {

@@ -31,8 +31,8 @@ function get_sets()
     legs  = "Raider's Culottes +1",
     feet  = "Skulker's Poulaines +2",
   }
-  
-  ambuscade_cape = {
+
+  ambu_cape = {
     tp = {name="Toutatis's Cape", augments={
       'DEX+20',
       'Accuracy+20 Attack+20',
@@ -58,7 +58,7 @@ function get_sets()
     right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   })
   sets.TP = {
     main       = "Aeneas",
@@ -76,7 +76,7 @@ function get_sets()
     right_ear  = sortie_earring,
     left_ring  = "Chirich Ring +1",
     right_ring = "Hetairoi Ring", -- Get Epona's Ring
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   }
   sets.FC = {
     legs       = "Limbo Trousers",     -- 3%
@@ -117,7 +117,7 @@ function get_sets()
     right_ring = "Ephramad's Ring",
     left_ear   = "Moonshade Earring",
     right_ear  = "Odr Earring",
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   })
   sets.precast.WS["Rudra's Storm"] = set_combine(nyame, {
     ammo       = "Coiste Bodhar",
@@ -128,7 +128,7 @@ function get_sets()
     left_ear   = "Moonshade Earring",
     right_ear  = "Sherida Earring",
     waist      = "Kentarch Belt +1",
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   })
   sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {
     waist = "Sailfi Belt +1",
@@ -146,7 +146,7 @@ function get_sets()
     right_ring = "Ephramad's Ring",
     left_ear   = "Moonshade Earring",
     right_ear  = "Odr Earring",
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   }
   sets.precast.WS["Extenterator"] = {
     ammo       = "Coiste Bodhar",
@@ -158,10 +158,10 @@ function get_sets()
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
     left_ring  = "Ephramad's Ring",
-    right_ring = "Regal Ring",        -- Gere Ring
+    right_ring = "Regal Ring",      -- Gere Ring
     left_ear   = "Sherida Earring",
     right_ear  = sortie_earring,
-    back       = ambuscade_cape.tp,
+    back       = ambu_cape.tp,
   }
   sets.precast.WS["Aeolian Edge"] = set_combine(nyame, {
     ammo       = "Ghastly Tathlum +1",
@@ -211,19 +211,20 @@ function get_sets()
     head  = relic.head,            -- Enhances Aura Steal
     hands = "Thief's Kote",        -- Steal +3
     legs  = "Assassin's Culottes", -- Steal +5,    lost after reforge
-    feet  = artifact.feet,               -- Steal +2 NQ, +3/+3/+10/+15 with upgrades
+    feet  = artifact.feet,         -- Steal +2 NQ, +3/+3/+10/+15 with upgrades
   })
   sets.precast["Box Step"]   = sets.TH
   sets.precast["Quick Step"] = sets.TH
   sets.precast["Waltz"] = set_combine(sets.idle, {
     ammo       = "Yamarang",
-    head       = "Mummu Bonnet +2",   -- Waltz +9%
-    body       = "Passion Jacket",    -- Waltz +13%
-    -- legs       = "Dashing Subligar",  -- Blink effect during Waltz
-    -- hands      = "Slither Gloves +1", -- Waltz +5%
+    head       = "Mummu Bonnet +2", -- Waltz +9%
+    body       = "Passion Jacket",  -- Waltz +13%
     left_ring  = "Defending Ring",
-    -- left_ring  = "Valseur's Ring",    -- Waltz +3%
-    right_ring = "Asklepian Ring",    -- Waltz received +3%
+    right_ring = "Asklepian Ring",  -- Waltz received +3%
+    
+    -- legs      = "Dashing Subligar",  -- Blink effect during Waltz
+    -- hands     = "Slither Gloves +1", -- Waltz +5%
+    -- left_ring = "Valseur's Ring",    -- Waltz +3%
   })
   sets.precast["Curing Waltz"]  = sets.precast["Waltz"]
   sets.precast["Curing Waltz II"]  = sets.precast["Waltz"]

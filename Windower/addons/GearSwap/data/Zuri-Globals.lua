@@ -334,14 +334,55 @@ ranged_weaponskills = S{
   "Myrkr",
 }
 
-nyame = {
-  head  = " Nyame Helm",
-  body  = " Nyame Mail",
-  hands = " Nyame Gauntlets",
-  legs  = " Nyame Flanchard",
-  feet  = " Nyame Sollerets",
+agwu = {
+  head  = "Agwu's Cap",
+  body  = "Agwu's Robe",
+  hands = "Agwu's Gages",
+  legs  = "Agwu's Slops",
+  feet  = "Agwu's Pigaches",
 }
-
+bunzi = {
+  head  = "Bunzi's Hat",
+  body  = "Bunzi's Robe",
+  hands = "Bunzi's Gloves",
+  legs  = "Bunzi's Pants",
+  feet  = "Bunzi's Sabots",
+}
+gleti = {
+  head  = "Gleti's Mask",
+  body  = "Gleti's Cuirass",
+  hands = "Gleti's Gauntlets",
+  legs  = "Gleti's Breeches",
+  feet  = "Gleti's Boots",
+}
+ikenga = {
+  head  = "Ikenga's Hat",
+  body  = "Ikenga's Coat",
+  hands = "Ikenga's Gloves",
+  legs  = "Ikenga's Slops",
+  feet  = "Ikenga's Clogs",
+}
+mpaca = {
+  head  = "Mpaca's Cap",
+  body  = "Mpaca's Doublet",
+  hands = "Mpaca's Gloves",
+  legs  = "Mpaca's Hose",
+  feet  = "Mpaca's Boots",
+}
+nyame = {
+  head  = "Nyame Helm",
+  body  = "Nyame Mail",
+  hands = "Nyame Gauntlets",
+  legs  = "Nyame Flanchard",
+  feet  = "Nyame Sollerets",
+}
+sakpata = {
+  head  = "Sakpata's Helm",
+  body  = "Sakpata's Plate",
+  hands = "Sakpata's Gauntlets",
+  legs  = "Sakpata's Cuisses",
+  feet  = "Sakpata's Leggings",
+}
 
 malignance = {
   head  = "Malignance Chapeau",
@@ -351,42 +392,45 @@ malignance = {
   feet  = "Malignance Boots",
 }
 
-sakpata = {
-  head  = "Sakpata's Helm",
-  body  = "Sakpata's Plate",
-  hands = "Sakpata's Gauntlets",
-  legs  = "Sakpata's Cuisses",
-  feet  = "Sakpata's Leggings",
+vanya = {
+  head  = {
+    path_b = {name="Vanya Hood", augments={
+      'Healing magic skill +20',
+      '"Cure" spellcasting time -7%',
+      'Magic dmg. taken -3',
+    }},
+    path_d = {name="Vanya Hood", augments={
+      'MP+50',
+      '"Fast Cast"+10',
+      'Haste+2%',
+    }},
+  },
+  body  = {
+    path_b = {name="Vanya Robe", augments={
+      'Healing magic skill +20',
+      '"Cure" spellcasting time -7%',
+      'Magic dmg. taken -3',
+    }},
+  },
+  hands = {
+    path_b = {name="Vanya Cuffs", augments={
+      'Healing magic skill +20',
+      '"Cure" spellcasting time -7%',
+      'Magic dmg. taken -3',
+    }},
+  },
+  legs  = {
+    path_b = {name="Vanya Slops", augments={
+      'Healing magic skill +20',
+      '"Cure" spellcasting time -7%',
+      'Magic dmg. taken -3',
+    }},
+  },
+  feet  = {
+    path_b = {name="Vanya Clogs", augments={
+      'Healing magic skill +20',
+      '"Cure" spellcasting time -7%',
+      'Magic dmg. taken -3',
+    }},    
+  },
 }
-
-vanya_head_d = {name="Vanya Hood", augments={
-  'MP+50',
-  '"Fast Cast"+10',
-  'Haste+2%',
-}}
-
-vanya_head_b  = {name="Vanya Hood", augments={
-  'Healing magic skill +20',
-  '"Cure" spellcasting time -7%',
-  'Magic dmg. taken -3',
-}}
-vanya_body_b  = {name="Vanya Robe", augments={
-  'Healing magic skill +20',
-  '"Cure" spellcasting time -7%',
-  'Magic dmg. taken -3',
-}}
-vanya_hands_b = {name="Vanya Cuffs", augments={
-  'Healing magic skill +20',
-  '"Cure" spellcasting time -7%',
-  'Magic dmg. taken -3',
-}}
-vanya_legs_b  = {name="Vanya Slops", augments={
-  'Healing magic skill +20',
-  '"Cure" spellcasting time -7%',
-  'Magic dmg. taken -3',
-}}
-vanya_feet_b  = {name="Vanya Clogs", augments={
-  'Healing magic skill +20',
-  '"Cure" spellcasting time -7%',
-  'Magic dmg. taken -3',
-}}

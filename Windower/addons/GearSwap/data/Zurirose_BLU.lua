@@ -34,7 +34,7 @@ function get_sets()
   -- jse_neck = ""
   -- sortie_earring = ""
 
-  ambuscade_cape = {}
+  ambu_cape = {}
 
   -- Basic sets
   sets.idle = set_combine(nyame, {

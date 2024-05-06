@@ -40,7 +40,7 @@ function get_sets()
   jse_neck = "Commodore Charm +1"
   -- sortie_earring = ""
   
-  ambuscade_cape = {
+  ambu_cape = {
     snapshot_roll = {name="Camulus's Mantle", augments={
       'INT+20',
       'Eva.+20 /Mag. Eva.+20',
@@ -104,7 +104,7 @@ function get_sets()
     right_ear  = "Odnowa Earring +1",
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
-    back       = ambuscade_cape.snapshot_roll,
+    back       = ambu_cape.snapshot_roll,
   }
   sets.TP = set_combine(sets.idle, {
     legs       = empyrean.legs,
@@ -115,7 +115,7 @@ function get_sets()
     right_ear  = "Telos Earring",
     left_ring  = "Chirich Ring +1",
     right_ring = "Chirich Ring +1",
-    back       = ambuscade_cape.melee_tp,
+    back       = ambu_cape.melee_tp,
   })
   sets.FC = {
     left_ear   = "Loquacious Earring", -- "Enhances"
@@ -151,13 +151,13 @@ function get_sets()
   sets.precast.RA = {
     ammo  = bullets["physical"],
     -- Total from gear: 50 Snapshot, 40 Rapid Shot
-    head  = empyrean.head,                     -- 0 Snapshot, 16 Rapid Shot
+    head  = empyrean.head,                 -- 0 Snapshot,  16 Rapid Shot
     body  = "Ikenga's Vest",               -- 9 Snapshot
-    hands = "Carmine Finger Gauntlets +1", -- 8 Snapshot, 11 Rapid Shot (path D)
+    hands = "Carmine Finger Gauntlets +1", -- 8 Snapshot,  11 Rapid Shot (path D)
     legs  = "Adhemar Kecks +1",            -- 10 Snapshot, 13 Rapid Shot
     feet  = "Meghanada Jambeaux +2",       -- 10 Snapshot
     neck  = jse_neck,                      -- 3 Snapshot
-    back  = ambuscade_cape.snapshot_roll, -- 10 Snapshot
+    back  = ambu_cape.snapshot_roll,       -- 10 Snapshot
     waist = "Tellen Belt",
   }
   -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
@@ -168,14 +168,14 @@ function get_sets()
     legs       = empyrean.legs,
     feet       = malignance.feet,
     back       = "Sokolski Mantle",
-    neck       = "Marked Gorget",  -- Iskur Gorget
+    neck       = "Marked Gorget",      -- Iskur Gorget
     waist      = "Eschan Stone",
     left_ring  = "Cacoethic Ring +1",
-    right_ring = "Ephramad's Ring",  -- Fall back to NQ Cacoethic if swapping TVR ring
+    right_ring = "Ephramad's Ring",    -- Fall back to NQ Cacoethic if swapping TVR ring
     left_ear   = "Telos Earring",
     right_ear  = "Enervating Earring",
     -- right_ear  = "Beyla Earring",
-    back       = ambuscade_cape.last_stand,
+    back       = ambu_cape.last_stand,
   }
 
   -- Precast sets
@@ -192,8 +192,8 @@ function get_sets()
     left_ear   = "Moonshade Earring",
     right_ear  = "Ishvara Earring",
     left_ring  = "Regal Ring",
-    right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-    back       = ambuscade_cape.savage_blade,
+    right_ring = "Ephramad's Ring",      -- Fall back to Regal or Apate if swapping TVR ring
+    back       = ambu_cape.savage_blade,
   })
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
     neck  = "Republican Platinum Medal",
@@ -226,7 +226,7 @@ function get_sets()
     left_ear  = "Telos Earring",
     right_ear = "Ishvara Earring",
     waist     = "Tellen Belt",
-    back      = ambuscade_cape.last_stand,
+    back      = ambu_cape.last_stand,
   })
   sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
     ammo       = bullets["macc"],
@@ -240,8 +240,8 @@ function get_sets()
     right_ear  = "Moonshade Earring",
     left_ring  = "Archon Ring",
     right_ring = "Dingir Ring",
-    waist      = "Eschan Stone",      -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
-    back       = ambuscade_cape.leaden_salute,
+    waist      = "Eschan Stone",          -- 7 macc, 7 mab  (Hachirin will override if weather/day appropriate)
+    back       = ambu_cape.leaden_salute,
   })
   sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
     ammo      = bullets["macc"],
@@ -269,7 +269,7 @@ function get_sets()
     ammo  = bullets["physical"],
     neck  = "Fotia Gorget",
     waist = "Fotia Belt",
-    back  = ambuscade_cape.last_stand,
+    back  = ambu_cape.last_stand,
   })
   
   -- Job ability sets
@@ -280,14 +280,14 @@ function get_sets()
     feet       = malignance.feet,
     left_ring  = "Defending Ring",
     -- Actually helps with rolls
-    main       = roll_knife,                    -- +7, duration +45
-    range      = "Compensator",                 -- duration +20
-    head       = relic.head,                    -- effect +50
-    hands      = empyrean.hands,                    -- duration +45/50/55/60
-    legs       = "Desultor Tassets",            -- delay -5
-    neck       = "Regal Necklace",              -- +7, duration +20
-    right_ring = "Luzaf's Ring",                -- range *2 (from 8 to 16 yalms)
-    back       = ambuscade_cape.snapshot_roll, -- duration +30
+    main       = roll_knife,              -- +7, duration +45
+    range      = "Compensator",           -- duration +20
+    head       = relic.head,              -- effect +50
+    hands      = empyrean.hands,          -- duration +45/50/55/60
+    legs       = "Desultor Tassets",      -- delay -5
+    neck       = "Regal Necklace",        -- +7, duration +20
+    right_ring = "Luzaf's Ring",          -- range *2 (from 8 to 16 yalms)
+    back       = ambu_cape.snapshot_roll, -- duration +30
   })
   sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
     head = empyrean.head,
@@ -323,20 +323,20 @@ function get_sets()
     body       = "Mirke Wardecors",
     hands      = malignance.hands,
     legs       = malignance.legs,
-    feet       = empyrean.feet,             -- Empy quickdraw trait gives 25/28/31% bonus to next elemental damage of same element
-    neck       = "Marked Gorget",       -- Iskur Gorget
+    feet       = empyrean.feet,           -- Empy quickdraw trait gives 25/28/31% bonus to next elemental damage of same element
+    neck       = "Marked Gorget",         -- Iskur Gorget
     left_ear   = "Telos Earring",
     right_ear  = "Dignitary's Earring",
     left_ring  = "Chirich Ring +1",
-    right_ring = "Rajas Ring",          -- STP +5 without the enmity from Petrov
+    right_ring = "Rajas Ring",            -- STP +5 without the enmity from Petrov
     waist      = "Eschan Stone",
-    back       = ambuscade_cape.leaden_salute,    -- Replace with quickdraw cape: AGI/MDmg/STP/MAB
+    back       = ambu_cape.leaden_salute, -- Replace with quickdraw cape: AGI/MDmg/STP/MAB
   }
   quick_draw_acc = set_combine(quick_draw_stp, {
     ammo       = bullets["macc"],
     head       = artifact.head,
     hands      = artifact.hands,
-    feet       = artifact.feet,               -- AF quickdraw trait gives flat damage +20 and macc +20
+    feet       = artifact.feet,         -- AF quickdraw trait gives flat damage +20 and macc +20
     neck       = jse_neck,
     left_ear   = "Chasseur's Earring",  -- 9 macc
     right_ear  = "Dignitary's Earring",

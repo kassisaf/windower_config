@@ -45,8 +45,8 @@ function get_sets()
     waist      = "Sailfi Belt +1",
     left_ear   = "Moonshade Earring",
     right_ear  = "Thrud Earring",
-    left_ring  = "Rufescent Ring",    -- Get Regal
-    -- right_ring = "Apate Ring",        -- Get Ilabrat
+    left_ring  = "Regal Ring",
+    right_ring = "Ilabrat Ring",
     right_ring = "Ephramad's Ring",
     back       = "Phalangite Mantle",
   })
