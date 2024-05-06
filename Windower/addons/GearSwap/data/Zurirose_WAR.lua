@@ -7,7 +7,7 @@ function get_sets()
   sets.midcast = {}
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     main       = "Hepatizon Axe",
     sub        = "Utu Grip",
     -- ammo = "",
@@ -39,7 +39,7 @@ function get_sets()
   -- Precast sets
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     ammo       = "Knobkierre",
     neck       = "Republican Platinum Medal",
     waist      = "Sailfi Belt +1",

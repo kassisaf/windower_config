@@ -33,12 +33,7 @@ holy_water_set = {
 }
 
 -- All Jobs HP+ set for forcing HP aggro / Omen cure objectives
-cure_cheat_set = {
-  head       = "Nyame Helm",
-  body       = "Nyame Mail",
-  hands      = "Nyame Gauntlets",
-  legs       = "Nyame Flanchard",
-  feet       = "Nyame Sollerets",
+cure_cheat_set = set_combine(nyame, {
   neck       = "Sanctity Necklace",
   waist      = "Plat. Mog. Belt",
   left_ear   = "Odnowa Earring +1",
@@ -46,4 +41,4 @@ cure_cheat_set = {
   left_ring  = "Defending Ring",
   right_ring = "Meridian Ring",
   back       = "Repulse Mantle",
-}
+})

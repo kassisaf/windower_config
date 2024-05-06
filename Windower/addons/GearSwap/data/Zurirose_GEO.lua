@@ -22,21 +22,31 @@ function get_sets()
     'Damage taken-5%',
   }}
 
-  af_head     = "Geomancy Galero +1"
-  af_body     = "Geomancy Tunic +1"
-  af_hands    = "Geomancy Mitaines +3"
-  af_legs     = "Geomancy Pants +1"
-  af_feet     = "Geomancy Sandals +1"
-  relic_head  = "Bagua Galero"
-  relic_body  = "Bagua Tunic +3"
-  -- relic_hands = ""
-  relic_legs  = "Bagua Pants +3"
-  relic_feet  = "Bagua Sandals +3"
-  empy_head   = "Azimuth Hood +2"
-  empy_body   = "Azimuth Coat +3"
-  empy_hands  = "Azimuth Gloves +2"
-  empy_legs   = "Azimuth Tights +3"
-  empy_feet   = "Azimuth Gaiters +3"
+  -- JSE Prefixes:
+  -- Artifact: Geomancy
+  -- Relic:    Bagua
+  -- Empyrean: Azimuth
+  af = {
+    head  = "Geomancy Galero +1",
+    body  = "Geomancy Tunic +1",
+    hands = "Geomancy Mitaines +3",
+    legs  = "Geomancy Pants +1",
+    feet  = "Geomancy Sandals +1",
+  }
+  relic = {
+    head  = "Bagua Galero",
+    body  = "Bagua Tunic +3",
+    -- hands = "",
+    legs  = "Bagua Pants +3",
+    feet  = "Bagua Sandals +3",
+  }
+  empyrean = {
+    head  = "Azimuth Hood +2",
+    body  = "Azimuth Coat +3",
+    hands = "Azimuth Gloves +2",
+    legs  = "Azimuth Tights +3",
+    feet  = "Azimuth Gaiters +3",
+  }
   jse_neck    = "Bagua Charm +1"
 
   -- Basic sets
@@ -45,11 +55,11 @@ function get_sets()
     sub        = "Khonsu",
     range      = "Dunna",
     -- ammo       = "Crepuscular Pebble",
-    head       = empy_head,            -- DT -11%
-    body       = empy_body,            -- Refresh +3, no DT
-    hands      = empy_hands,           -- DT -11%
-    legs       = "Nyame Flanchard",    -- DT -8%
-    feet       = empy_feet,            -- DT -10%
+    head       = empyrean.head,            -- DT -11%
+    body       = empyrean.body,            -- Refresh +3, no DT
+    hands      = empyrean.hands,           -- DT -11%
+    legs       = nyame.legs,           -- DT -8%
+    feet       = empyrean.feet,            -- DT -10%
     neck       = "Loricate Torque +1", -- DT -6%, 55-60 def
     left_ear   = "Eabani Earring",     -- m.eva +8, eva +15
     right_ear  = "Lugalbanda Earring", -- m.eva +10, mdb +5
@@ -61,8 +71,8 @@ function get_sets()
   sets.idle_with_pet = set_combine(sets.idle, {
     main      = "Idris",                -- Luopan DT -25%
     sub       = "Genmei Shield",
-    hands     = af_hands,               -- Luopan DT -13%
-    feet      = relic_feet,             -- pet regen +2-5
+    hands     = artifact.hands,               -- Luopan DT -13%
+    feet      = relic.feet,             -- pet regen +2-5
     neck      = jse_neck,               -- Luopan absorb damage +8%
     left_ear  = "Handler's Earring +1", -- pet PDT -4%
     right_ear = "Handler's Earring",    -- pet PDT -3%
@@ -74,10 +84,10 @@ function get_sets()
     -- legs  = "Telchine Braconi",
     -- feet  = "Bagua Sandals +3",
   })
-  sets.TP = set_combine(full_nyame, {
+  sets.TP = set_combine(nyame, {
     main       = "Idris",
     sub        = "Genmei Shield",
-    head       = empy_head,
+    head       = empyrean.head,
     neck       = "Loricate Torque +1",
     left_ear   = "Dignitary's Earring",
     right_ear  = "Brutal Earring",
@@ -95,8 +105,8 @@ function get_sets()
     range      = "Dunna",              -- Fast Cast +3%
     head       = vanya_head_d,         -- Fast Cast +10%
     body       = "Merlinic Jubbah",    -- Fast Cast +10%
-    hands      = empy_hands,           -- Fast Cast +5%
-    legs       = af_legs,              -- Fast Cast +11%
+    hands      = empyrean.hands,           -- Fast Cast +5%
+    legs       = artifact.legs,              -- Fast Cast +11%
     feet       = "Agwu's Pigaches",    -- Fast Cast +4%
     waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
     left_ear   = "Malignance Earring", -- Fast Cast +4%
@@ -109,11 +119,11 @@ function get_sets()
     main       = "Malignance Pole",
     sub        = "Khonsu",
     ammo       = "Hydrocera",
-    head       = empy_head,
-    body       = empy_body,
-    hands      = empy_hands,
-    legs       = empy_legs,
-    feet       = empy_feet,
+    head       = empyrean.head,
+    body       = empyrean.body,
+    hands      = empyrean.hands,
+    legs       = empyrean.legs,
+    feet       = empyrean.feet,
     neck       = jse_neck,
     left_ear   = "Malignance Earring",
     right_ear  = "Dignitary's Earring",
@@ -134,7 +144,7 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
     left_ring  = "Rufescent Ring",
@@ -143,23 +153,23 @@ function get_sets()
 
   -- Job ability sets
   sets.precast["Full Circle"] = {
-    head = empy_head,
+    head = empyrean.head,
   }
   sets.precast["Radial Arcana"] = {
-    feet = relic_feet,
+    feet = relic.feet,
   }
   sets.precast["Bolster"] = {
-    body = relic_body,
+    body = relic.body,
   }
   sets.precast["Life Cycle"] = {
     body = "Geomancy Tunic +1",
     back = nuke_cape,
   }
   sets.precast["Mending Halation"] = {
-    legs = relic_legs,
+    legs = relic.legs,
   }
   sets.precast["Cardinal Chant"] = {
-    head = af_head,
+    head = artifact.head,
   }
 
   -- Midcast sets
@@ -172,11 +182,11 @@ function get_sets()
     sub   = "Genmei Shield", -- PDT -10%
     range = "Dunna",         -- Skill +18
 
-    head  = empy_head,  -- Skill +20, DT -11%
-    body  = empy_body,  -- For empy bonus... no DT
-    hands = empy_hands, -- DT -11%
-    legs  = relic_legs, -- Indi Duration +18, no DT
-    feet  = empy_feet,  -- Indi Duration +25, DT -10%
+    head  = empyrean.head,  -- Skill +20, DT -11%
+    body  = empyrean.body,  -- For empy bonus... no DT
+    hands = empyrean.hands, -- DT -11%
+    legs  = relic.legs, -- Indi Duration +18, no DT
+    feet  = empyrean.feet,  -- Indi Duration +25, DT -10%
 
     neck       = jse_neck,              -- Luopan duration +20%
     back       = nuke_cape,             -- Indi Duration +20, DT -5%
@@ -199,11 +209,11 @@ function get_sets()
     main       = "Daybreak",
     sub        = "Ammurapi Shield",
     ammo       = "Ghastly Tathlum +1",
-    head       = empy_head,
-    body       = empy_body,
-    hands      = empy_hands,
-    legs       = empy_legs,
-    feet       = empy_feet,
+    head       = empyrean.head,
+    body       = empyrean.body,
+    hands      = empyrean.hands,
+    legs       = empyrean.legs,
+    feet       = empyrean.feet,
     neck       = "Mizukage-no-Kubikazari",
     left_ear   = "Malignance Earring",
     right_ear  = "Azimuth Earring",        -- Regal earring > Barkarole earring
@@ -228,7 +238,7 @@ function get_sets()
   })
   sets.midcast["Dark Magic"] = set_combine(sets.macc, {
     -- head       = "Pixie Hairpin +1",
-    legs       = empy_legs,          -- Dark Magic skill +30
+    legs       = empyrean.legs,          -- Dark Magic skill +30
     right_ring = "Evanescence Ring",
   })
   sets.midcast["Aspir"] = set_combine(sets.midcast["Dark Magic"], {

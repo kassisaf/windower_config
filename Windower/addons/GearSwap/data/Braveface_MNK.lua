@@ -23,7 +23,7 @@ function get_sets()
   }}
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     ammo       = "Thew Bomblet",
     main       = "Kaja Knuckles",
     neck       = "Subtlety Spectacles",
@@ -45,7 +45,7 @@ function get_sets()
   sets.precast.RA = {}
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     neck      = "Anu Torque",
     left_ring = "Rufescent Ring",
     back      = ws_cape,

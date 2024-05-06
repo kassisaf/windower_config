@@ -6,30 +6,36 @@ function get_sets()
   sets.precast = {WS = {crit = {}}}
   sets.midcast = {}
 
-  -- JSE Notes:
+  -- JSE Prefixes:
   -- Artifact: Magus / Assimilator's
   -- Relic:    Mirage / Luhlaza
   -- Empyrean: Mavi / Hashishin
-  af_head     = ""
-  af_body     = ""
-  af_hands    = "Assimilator's Bazubands +1"
-  af_legs     = ""
-  af_feet     = ""
-  relic_head  = ""
-  relic_body  = ""
-  relic_hands = ""
-  relic_legs  = ""
-  relic_feet  = ""
-  empy_head   = ""
-  empy_body   = ""
-  empy_hands  = ""
-  empy_legs   = ""
-  empy_feet   = ""
+  af = { -- Magus / Assimilator's
+    -- head  = "Magus Keffiyeh",
+    -- body  = "Magus Jubbah",
+    hands = "Assimilator's Bazubands +1"
+    -- legs  = "Magus Shalwar",
+    -- feet  = "Magus Charuqs",
+  }
+  relic = {
+    -- head  = "Mirage Keffiyeh",
+    -- body  = "Mirage Jubbah",
+    -- hands = "Mirage Bazubands",
+    -- legs  = "Mirage Shalwar",
+    -- feet  = "Mirage Charuqs",
+  }
+  empyrean = {
+    -- head  = "Mavi Kavuk",
+    -- body  = "Mavi Mintan",
+    -- hands = "Mavi Bazubands",
+    -- legs  = "Mavi Tayt",
+    -- feet  = "Mavi Basmak",
+  }
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     ammo       = "Crepuscular Pebble", -- Staunch Tathlum +1",
-    -- body       = empy_body,
+    -- body       = empyrean.body,
     neck       = "Loricate Torque +1",
     left_ear   = "Eabani Earring",
     right_ear  = "Odnowa Earring +1",
@@ -42,12 +48,12 @@ function get_sets()
     main       = "Naegling",
     sub        = "Iris", -- Machaera for trials
     ammo       = "Coiste Bodhar",
-    head       = "Malignance Chapeau",
+    head       = malignance.head,
     body       = "Adhemar Jacket",
-    -- hands      = af_hands,
-    hands      = "Malignance Gloves",
-    legs       = "Malignance Tights",
-    feet       = "Malignance Boots",
+    -- hands      = artifact.hands,
+    hands      = malignance.hands
+    legs       = malignance.legs,
+    feet       = malignance.feet,
     neck       = "Sanctity Necklace",
     left_ear   = "Telos Earring",
     right_ear  = "Hashishin Earring +1",
@@ -57,7 +63,7 @@ function get_sets()
     back       = "Atheling Mantle",
   })
   sets.FC = {
-    hands      = empy_hands,            -- Fast Cast +5%
+    hands      = empyrean.hands,            -- Fast Cast +5%
     legs       = "Ayanmo Cosciales +2", -- Fast Cast +11%
     feet       = "Agwu's Pigaches",     -- Fast Cast +4%
     waist      = "Cornelia's Belt",     -- For 10% haste if midcast doesn't swap it off
@@ -80,7 +86,7 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  -- sets.precast.WS.melee = set_combine(full_nyame, {
+  -- sets.precast.WS.melee = set_combine(nyame, {
   --   ammo       = "Crepuscular Pebble",
   --   neck       = "Republican Platinum Medal",
   --   waist      = "Sailfi Belt +1",
@@ -93,7 +99,7 @@ function get_sets()
   -- sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
   -- })
 
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     hands      = "Meghanada Gloves +2",
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
@@ -150,6 +156,6 @@ function get_sets()
     -- right_ear = "Odr Earring",
     -- left_ring = "Mummu Ring",
   })
-  sets.Mireu = set_combine(sets.DI, full_nyame)
+  sets.Mireu = set_combine(sets.DI, nyame)
 
 end -- get_sets()

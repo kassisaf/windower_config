@@ -6,13 +6,36 @@ function get_sets()
   sets.precast = {WS = {crit = {}}}
   sets.midcast = {}
 
+  -- Gear Aliases
+
+  -- JSE Prefixes:
+  -- Artifact: Ninja / Hachiya
+  -- Relic:    Koga / Mochizuki
+  -- Empyrean: Iga / Hattori
+  af = {
+    -- head  = "Hachiya Hatsuburi",
+    -- body  = "Hachiya Chainmail",
+    -- hands = "Hachiya Tekko",
+    -- legs  = "Hachiya Hakama",
+    -- feet  = "Hachiya Kyahan",
+  }
+  relic = {
+    -- head  = "Koga Hatsuburi",
+    -- body  = "Koga Chainmail",
+    -- hands = "Koga Tekko",
+    -- legs  = "Koga Hakama",
+    -- feet  = "Koga Kyahan",
+  }
+  empyrean = {
+    -- head  = "Iga Zukin",
+    -- body  = "Iga Ningi",
+    -- hands = "Iga Tekko",
+    -- legs  = "Iga Hakama",
+    -- feet  = "Iga Kyahan",
+  }
+
   -- Basic sets
-  sets.idle = {
-    head       = "Nyame Helm",
-    body       = "Nyame Mail",
-    hands      = "Nyame Gauntlets",
-    legs       = "Nyame Flanchard",
-    feet       = "Nyame Sollerets",
+  sets.idle = set_combine(nyame, {
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",
     left_ear   = "Eabani Earring",
@@ -20,7 +43,7 @@ function get_sets()
     left_ring  = "Defending Ring",
     right_ring = "Shneddick Ring",
     back       = "Solemnity Cape",
-  }
+  })
   sets.TP = {
     -- main       = "Naegling",
     -- sub        = "Tauret",
@@ -29,9 +52,9 @@ function get_sets()
 
     head       = "Adhemar Bonnet",
     body       = "Adhemar Jacket",
-    hands      = "Malignance Gloves",
+    hands      = malignance.hands,
     legs       = "Meghanada Chausses +2",
-    feet       = "Malignance Boots",
+    feet       = malignance.feet,
     neck       = "Subtlety Spectacles",
     waist      = "Sailfi Belt +1",
     left_ear   = "Brutal Earring",        -- Get Sherida
@@ -53,7 +76,7 @@ function get_sets()
     ammo       = empty,
   }
   -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
-  sets.midcast.RA = set_combine(full_malignance, {
+  sets.midcast.RA = set_combine(malignance, {
     body       = "Meghanada Cuirie +2",
     neck       = "Marked Gorget",
     waist      = "Eschan Stone",

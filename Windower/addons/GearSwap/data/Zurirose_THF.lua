@@ -14,27 +14,31 @@ function get_sets()
     'Damage taken-5%',
   }}
 
-  -- JSE Notes:
+  -- JSE Prefixes:
   -- Artifact: Rogue's / Pillager's
   -- Relic:    Assassin's / Plunderer's
   -- Empyrean: Raider's / Skulker's
-  af_head        = "Rogue's Bonnet"
-  af_body        = "Pillager's Vest +2"
-  af_hands       = "Pillager's Armlets"
-  af_legs        = "Rogue's Culottes"
-  af_feet        = "Rogue's Poulaines"
-
-  relic_head     = "Plunderer's Bonnet +1"
-  relic_body     = "Plunderer's Vest +3"
-  relic_hands    = "Plunderer's Armlets"
-  relic_legs     = "Plunderer's Culottes"
-  relic_feet     = "Plunderer's Poulaines +3"
-
-  empy_head      = "Skulker's Bonnet +2"
-  empy_body      = "Skulker's Vest +2"
-  -- empy_hands     = ""
-  empy_legs      = "Raider's Culottes +1"
-  empy_feet      = "Skulker's Poulaines +2"
+  af = {
+    head  = "Rogue's Bonnet",
+    body  = "Pillager's Vest +2",
+    hands = "Pillager's Armlets",
+    legs  = "Rogue's Culottes",
+    feet  = "Rogue's Poulaines",
+  }
+  relic = {
+    head  = "Plunderer's Bonnet +1",
+    body  = "Plunderer's Vest +3",
+    hands = "Plunderer's Armlets",
+    legs  = "Plunderer's Culottes",
+    feet  = "Plunderer's Poulaines +3",
+  }
+  empyrean = {
+    head  = "Skulker's Bonnet +2",
+    body  = "Skulker's Vest +2",
+    -- hands = "Skulker's Armlets +2",
+    legs  = "Raider's Culottes +1",
+    feet  = "Skulker's Poulaines +2",
+  }
   jse_neck       = "Assassin's Gorget +1"
   sortie_earring = "Skulker's Earring +1"
 
@@ -43,9 +47,9 @@ function get_sets()
   }
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     ammo       = "Crepuscular Pebble",
-    feet       = empy_feet,
+    feet       = empyrean.feet,
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",
     left_ear   = "Eabani Earring",
@@ -59,11 +63,11 @@ function get_sets()
     sub        = "Gleti's Knife",
     range      = empty,
     ammo       = "Coiste Bodhar",
-    head       = empy_head,
-    body       = af_body,
+    head       = empyrean.head,
+    body       = artifact.body,
     hands      = "Adhemar Wristbands +1",
     legs       = "Gleti's Breeches",
-    feet       = relic_feet,
+    feet       = relic.feet,
     neck       = jse_neck,
     waist      = "Windbuffet Belt +1",
     left_ear   = "Eabani Earring",
@@ -83,7 +87,7 @@ function get_sets()
     range      = "Jinx Discus",
     ammo       = empty,
   }
-  sets.midcast.RA = set_combine(full_malignance, {
+  sets.midcast.RA = set_combine(malignance, {
     body       = "Meghanada Cuirie +2",
     neck       = "Caro Necklace",
     waist      = "Eschan Stone",
@@ -102,9 +106,9 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     ammo       = "Coiste Bodhar",
-    body       = empy_body,
+    body       = empyrean.body,
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
     left_ring  = "Regal Ring",
@@ -113,9 +117,9 @@ function get_sets()
     right_ear  = "Odr Earring",
     back       = my_only_thf_cape,
   })
-  sets.precast.WS["Rudra's Storm"] = set_combine(full_nyame, {
+  sets.precast.WS["Rudra's Storm"] = set_combine(nyame, {
     ammo       = "Coiste Bodhar",
-    body       = empy_body,
+    body       = empyrean.body,
     neck       = jse_neck,
     left_ring  = "Ilabrat Ring",
     right_ring = "Ephramad's Ring",
@@ -130,9 +134,9 @@ function get_sets()
   sets.precast.WS["Evisceration"] = {
     ammo       = "Yetshila",
     head       = "Blistering Sallet +1",
-    body       = relic_body,
+    body       = relic.body,
     hands      = "Adhemar Wristbands +1",
-    legs       = empy_legs,
+    legs       = empyrean.legs,
     feet       = "Adhemar Gamashes +1",
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
@@ -144,11 +148,11 @@ function get_sets()
   }
   sets.precast.WS["Extenterator"] = {
     ammo       = "Coiste Bodhar",
-    head       = empy_head,
-    body       = empy_body,
-    hands      = empy_hands,
-    legs       = "Nyame Flanchard",
-    feet       = relic_feet,
+    head       = empyrean.head,
+    body       = empyrean.body,
+    hands      = empyrean.hands,
+    legs       = nyame.legs,
+    feet       = relic.feet,
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
     left_ring  = "Ephramad's Ring",
@@ -157,7 +161,7 @@ function get_sets()
     right_ear  = sortie_earring,
     back       = my_only_thf_cape,
   }
-  sets.precast.WS["Aeolian Edge"] = set_combine(full_nyame, {
+  sets.precast.WS["Aeolian Edge"] = set_combine(nyame, {
     ammo       = "Ghastly Tathlum +1",
     neck       = "Sibyl Scarf",        -- Baetyl Pendant
     waist      = "Eschan Stone",       -- Orpheus's Sash
@@ -166,9 +170,9 @@ function get_sets()
     left_ear   = "Moonshade Earring",
     right_ear  = "Friomisi Earring",
   })
-  sets.precast.WS["Savage Blade"] = set_combine(full_nyame, {
+  sets.precast.WS["Savage Blade"] = set_combine(nyame, {
     ammo       = "Oshasha's Treatise",
-    body       = empy_body,
+    body       = empyrean.body,
     neck       = "Republican Platinum Medal",
     waist      = "Sailfi Belt +1",
     left_ring  = "Regal Ring",
@@ -182,16 +186,16 @@ function get_sets()
     body = "Skulker's Vest +2",
   }
   sets.precast["Flee"] = {
-    feet = af_feet,
+    feet = artifact.feet,
   }
   sets.precast["Hide"] = {
-    feet = af_body,
+    feet = artifact.body,
   }
   sets.precast["Feint"] = {
-    feet = relic_legs,
+    feet = relic.legs,
   }
   sets.precast["Perfect Dodge"] = {
-    hands = relic_hands, -- +10 seconds
+    hands = relic.hands, -- +10 seconds
   }
   -- Use TH for targeted JA's
   sets.precast["Despoil"] = set_combine(sets.th, {
@@ -199,13 +203,13 @@ function get_sets()
     feet = "Skulker's Poulaines +2",
   })
   sets.precast["Mug"] = set_combine(sets.th, {
-    head = relic_head,
+    head = relic.head,
   })
   sets.precast["Steal"] = set_combine(sets.th, {
-    head  = relic_head,            -- Enhances Aura Steal
+    head  = relic.head,            -- Enhances Aura Steal
     hands = "Thief's Kote",        -- Steal +3
     legs  = "Assassin's Culottes", -- Steal +5,    lost after reforge
-    feet  = af_feet,               -- Steal +2 NQ, +3/+3/+10/+15 with upgrades
+    feet  = artifact.feet,               -- Steal +2 NQ, +3/+3/+10/+15 with upgrades
   })
   sets.precast["Box Step"]   = sets.TH
   sets.precast["Quick Step"] = sets.TH
@@ -225,7 +229,7 @@ function get_sets()
   sets.precast["Divine Waltz"] = sets.precast["Waltz"]
   
   -- Midcast sets
-  sets.midcast["Aspir"] = set_combine(full_malignance, {
+  sets.midcast["Aspir"] = set_combine(malignance, {
     ammo       = "Hydrocera",
     head       = "Pixie Hairpin +1",
     neck       = "Sanctity Necklace",
@@ -258,6 +262,6 @@ function get_sets()
     right_ear = "Odr Earring",
     left_ring = "Mummu Ring",
   })
-  sets.Mireu = set_combine(sets.DI, full_nyame)
+  sets.Mireu = set_combine(sets.DI, nyame)
 
 end -- get_sets()

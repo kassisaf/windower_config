@@ -334,15 +334,16 @@ ranged_weaponskills = S{
   "Myrkr",
 }
 
-full_nyame = {
-  head  = "Nyame Helm",
-  body  = "Nyame Mail",
-  hands = "Nyame Gauntlets",
-  legs  = "Nyame Flanchard",
-  feet  = "Nyame Sollerets",
+nyame = {
+  head  = " Nyame Helm",
+  body  = " Nyame Mail",
+  hands = " Nyame Gauntlets",
+  legs  = " Nyame Flanchard",
+  feet  = " Nyame Sollerets",
 }
 
-full_malignance = {
+
+malignance = {
   head  = "Malignance Chapeau",
   body  = "Malignance Tabard",
   hands = "Malignance Gloves",
@@ -350,7 +351,7 @@ full_malignance = {
   feet  = "Malignance Boots",
 }
 
-full_sakpata = {
+sakpata = {
   head  = "Sakpata's Helm",
   body  = "Sakpata's Plate",
   hands = "Sakpata's Gauntlets",

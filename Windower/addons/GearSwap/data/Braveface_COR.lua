@@ -7,63 +7,40 @@ function get_sets()
   sets.midcast = {}
 
   -- Gear Aliases
+  
+  -- JSE Prefixes:
+  -- Artifact: Corsair's / Laksamana's
+  -- Relic:    Commodore / Lanun
+  -- Empyrean: Navarch's / Chasseur's
+  af = {
+    -- head  = "Laksamana's Tricorne",
+    -- body  = "Laksamana's Frac +3",
+    -- hands = "Laksamana's Gants +1",
+    -- legs  = "Laksamana's Trews +1",
+    -- feet  = "Laksamana's Bottes +2", -- Upgrade these for quick draw
+  }
+  relic = {
+    -- head  = "Lanun Tricorne",
+    -- body  = "Lanun Frac +3",
+    -- hands = "Lanun Gants +1",
+    -- legs  = "Lanun Trews",
+    -- feet  = "Lanun Bottes +3",
+  }
+  empyrean = {
+    -- head  = "Chasseur's Tricorne +2",
+    -- body  = "Chasseur's Frac +2",
+    -- hands = "Chasseur's Gants +2",
+    -- legs  = "Chasseur's Culottes +2",
+    -- feet  = "Chasseur's Bottes +3",
+  }
+  -- jse_neck    = "Commodore Charm +1"
+
   bullets = {
     physical  = "Eminent Bullet",
     acc       = "Decimating Bullet",
     macc      = "Orichalcum Bullet",
     quickdraw = "Hauksbok Bullet",   -- 1000 DI points
   }
-  -- snapshot_roll_cape = {name="Camulus's Mantle", augments={
-  --     'INT+20',
-  --     'Eva.+20 /Mag. Eva.+20',
-  --     'Mag. Evasion+10',
-  --     '"Snapshot"+10',
-  --     'Mag. Evasion+15',
-  -- }}
-  -- leaden_salute_cape = {name="Camulus's Mantle", augments={
-  --     'AGI+20',
-  --     'Mag. Acc+20 /Mag. Dmg.+20',
-  --     'AGI+10',
-  --     'Weapon skill damage +10%',
-  --     'Damage taken-5%',
-  -- }}
-  -- melee_tp_cape = {name="Camulus's Mantle", augments={
-  --     'DEX+20',
-  --     'Accuracy+20 Attack+20',
-  --     'Accuracy+10',
-  --     '"Dbl.Atk."+10',
-  --     'Damage taken-5%',
-  -- }}
-  -- savage_cape = {name="Camulus's Mantle", augments={
-  --     'STR+20',
-  --     'Accuracy+20 Attack+20',
-  --     'STR+10',
-  --     'Weapon skill damage +10%',
-  --     'Damage taken-5%',
-  -- }}
-  -- roll_knife = {name="Lanun Knife", augments={'Path: C'}}
-  -- stp_knife = {name="Lanun Knife", augments={'Path: A'}}
-
-  -- JSE Notes:
-  -- Artifact: Corsair's / Laksamana's
-  -- Relic:    Commodore / Lanun
-  -- Empyrean: Navarch's / Chasseur's
-  -- af_head     = "Laksamana's Tricorne"
-  -- af_body     = "Laksamana's Frac +3"
-  -- af_hands    = "Laksamana's Gants +1"
-  -- af_legs     = "Laksamana's Trews +1"
-  -- af_feet     = "Laksamana's Bottes +1" -- Upgrade these for quick draw
-  -- relic_head  = "Lanun Tricorne"
-  -- relic_body  = "Lanun Frac +3"
-  -- relic_hands = "Lanun Gants +1"
-  -- relic_legs  = "Lanun Trews"
-  -- relic_feet  = "Lanun Bottes +3"
-  -- empy_head   = "Chasseur's Tricorne +2"
-  -- empy_body   = "Chasseur's Frac +2"
-  -- empy_hands  = "Chasseur's Gants +2"
-  -- empy_legs   = "Chasseur's Culottes +2"
-  -- empy_feet   = "Chasseur's Bottes +3"
-  -- jse_neck    = "Commodore Charm +1"
 
   -- Basic sets
   sets.idle = set_combine(full_nyame, {
@@ -85,7 +62,7 @@ function get_sets()
     -- hands      = "Malignance Gloves",
     -- feet       = "Malignance Boots",
     
-    -- legs       = empy_legs,
+    -- legs       = empyrean.legs,
 
     -- neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
     -- waist      = "Sailfi Belt +1",
@@ -109,7 +86,7 @@ function get_sets()
     ammo  = bullets["acc"],
     -- ammo  = bullets["physical"],
     -- Total from gear: 50 Snapshot, 40 Rapid Shot
-    -- head  = empy_head,                     -- 0 Snapshot, 16 Rapid Shot
+    -- head  = empyrean.head,                     -- 0 Snapshot, 16 Rapid Shot
     -- body  = "Ikenga's Vest",               -- 9 Snapshot
     -- hands = "Carmine Finger Gauntlets +1", -- 8 Snapshot, 11 Rapid Shot (path D)
     -- legs  = "Adhemar Kecks +1",            -- 10 Snapshot, 13 Rapid Shot
@@ -121,9 +98,9 @@ function get_sets()
   -- Midshot should contain: R.acc, STP, crit, R.atk, Recycle, etc.
   sets.midcast.RA = {
     -- head       = "Meghanada Visor +2", -- Ikenga after RP
-    -- body       = empy_body,
-    -- hands      = empy_hands,
-    -- legs       = empy_legs,
+    -- body       = empyrean.body,
+    -- hands      = empyrean.hands,
+    -- legs       = empyrean.legs,
     -- feet       = "Malignance Boots",
     -- back       = "Sokolski Mantle",
     -- neck       = "Marked Gorget",  -- Iskur Gorget
@@ -163,8 +140,8 @@ function get_sets()
   })
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
     -- ammo       = bullets["macc"],
-    -- body       = relic_body,
-    -- feet       = relic_feet,
+    -- body       = relic.body,
+    -- feet       = relic.feet,
     -- neck       = "Sanctity Necklace",
     -- waist      = "Eschan Stone",
     -- right_ear  = "Friomisi Earring",
@@ -176,8 +153,8 @@ function get_sets()
   sets.precast.WS.ranged = set_combine(sets.precast.WS.melee, {
     -- ammo      = bullets["physical"],
     -- head      = "Meghanada Visor +2",
-    -- body      = relic_body,
-    -- hands     = empy_hands,
+    -- body      = relic.body,
+    -- hands     = empyrean.hands,
     -- legs      = "Malignance Tights",
     -- feet      = "Malignance Boots",   -- Replace with Relic
     -- left_ear  = "Ishvara Earring",
@@ -187,10 +164,10 @@ function get_sets()
   sets.precast.WS["Leaden Salute"] = set_combine(sets.precast.WS.ranged, {
     -- ammo       = bullets["macc"],
     -- head       = "Pixie Hairpin +1",
-    -- body       = relic_body,
-    -- hands      = "Nyame Gauntlets",
-    -- legs       = "Nyame Flanchard",
-    -- feet       = relic_feet,
+    -- body       = relic.body,
+    -- hands      = nyame.hands,
+    -- legs       = nyame.legs,
+    -- feet       = relic.feet,
     -- neck       = jse_neck,
     -- left_ear   = "Friomisi Earring",
     -- right_ear  = "Moonshade Earring",
@@ -201,17 +178,17 @@ function get_sets()
   })
   sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Leaden Salute"], {
     -- ammo      = bullets["macc"],
-    -- head      = "Nyame Helm",
+    -- head      = nyame.head,
     -- right_ear = "Hecate's Earring",
   })
   sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Leaden Salute"]
   sets.precast.WS["Hot Shot"] = set_combine(sets.precast.WS["Leaden Salute"], {
     -- ammo       = bullets["macc"],
     -- head       = "Malignance Chapeau",
-    -- body       = af_body,
+    -- body       = artifact.body,
     -- hands      = "Malignance Gloves",
-    -- legs       = empy_legs,
-    -- feet       = empy_feet,
+    -- legs       = empyrean.legs,
+    -- feet       = empyrean.feet,
     -- left_ring  = "Cacoethic Ring +1",
     -- -- right_ring = "Cacoethic Ring",
     -- right_ring = "Ephramad's Ring",
@@ -221,7 +198,7 @@ function get_sets()
     -- back       = leaden_salute_cape,
   })
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS.ranged, {
-    -- body  = af_body,
+    -- body  = artifact.body,
     -- ammo  = bullets["acc"],
     -- neck  = "Fotia Gorget",
     -- waist = "Fotia Belt",
@@ -238,8 +215,8 @@ function get_sets()
     -- -- Actually helps with rolls
     -- main       = roll_knife,
     range      = "Compensator",
-    -- head       = relic_head,
-    -- hands      = empy_hands,
+    -- head       = relic.head,
+    -- hands      = empyrean.hands,
     -- legs       = "Desultor Tassets",
     -- -- neck       = "Regal Necklace",
     left_ring  = "Barataria Ring",
@@ -247,30 +224,30 @@ function get_sets()
     -- back       = snapshot_roll_cape,
   })
   sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    head = empy_head,
+    head = empyrean.head,
   })
   sets.precast["Tactician's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    body = empy_body,
+    body = empyrean.body,
   })
   sets.precast["Caster's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    legs = empy_legs,
+    legs = empyrean.legs,
   })
   sets.precast["Courser's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    feet = empy_feet,
+    feet = empyrean.feet,
   })
 
   -- Other JA's
   sets.precast["Fold"] = {
-    hands = relic_hands,
+    hands = relic.hands,
   }
   sets.precast["Random Deal"] = {
-    body = relic_body,
+    body = relic.body,
   }
   sets.precast["Snake Eye"] = {
-    legs = relic_legs,
+    legs = relic.legs,
   }
   sets.precast["Wild Card"] = {
-    feet = relic_feet,
+    feet = relic.feet,
   }
 
   -- Quick Draw sets
@@ -280,7 +257,7 @@ function get_sets()
     -- body       = "Mirke Wardecors",
     -- hands      = "Malignance Gloves",
     -- legs       = "Malignance Tights",
-    -- feet       = empy_feet,             -- Empy quickdraw traight gives 25/28/31% bonus to next elemental damage of same element
+    -- feet       = empyrean.feet,             -- Empy quickdraw traight gives 25/28/31% bonus to next elemental damage of same element
     -- neck       = "Marked Gorget",       -- Iskur Gorget
     -- left_ear   = "Telos Earring",
     -- right_ear  = "Dignitary's Earring",
@@ -291,9 +268,9 @@ function get_sets()
   }
   quick_draw_acc = set_combine(quick_draw_stp, {
     -- ammo       = bullets["macc"],
-    -- head       = af_head,
-    -- hands      = af_hands,
-    -- feet       = af_feet,               -- AF quickdraw trait gives flat damage +20 and macc +20
+    -- head       = artifact.head,
+    -- hands      = artifact.hands,
+    -- feet       = artifact.feet,               -- AF quickdraw trait gives flat damage +20 and macc +20
     -- neck       = jse_neck,
     -- left_ear   = "Chasseur's Earring",  -- 9 macc
     -- right_ear  = "Dignitary's Earring",
@@ -301,11 +278,11 @@ function get_sets()
     -- right_ring = "Stikini Ring",
   })
   quick_draw_dmg = set_combine(quick_draw_stp, {
-    -- head       = "Nyame Helm",
-    -- body       = relic_body,
+    -- head       = nyame.head,
+    -- body       = relic.body,
     -- hands      = "Carmine Finger Gauntlets +1",
-    -- legs       = "Nyame Flanchard",
-    -- -- feet       = relic_feet,
+    -- legs       = nyame.legs,
+    -- -- feet       = relic.feet,
     -- neck       = jse_neck,
     -- left_ear   = "Friomisi Earring",
     -- right_ear  = "Hecate's Earring",

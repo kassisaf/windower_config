@@ -9,26 +9,32 @@ function get_sets()
 
   -- Gear Aliases
 
-  -- JSE Notes:
+  -- JSE Prefixes:
   -- Artifact: Gallant / Reverence
   -- Relic:    Valor / Caballarius
   -- Empyrean: Creed / Chevalier
-  -- af_head     = "Gallant "
-  -- af_body     = "Gallant "
-  -- af_hands    = "Gallant "
-  -- af_legs     = "Gallant "
-  -- af_feet     = "Gallant "
-  relic_head  = "Valor Coronet"
-  relic_body  = "Valor Surcoat"
-  relic_hands = "Valor Gauntlets"
-  relic_legs  = "Valor Breeches"
-  relic_feet  = "Valor Leggings"
-  empy_head   = "Chevalier's Armet +2"
-  empy_body   = "Chevalier's Cuirass +2"
-  empy_hands  = "Chevalier's Gauntlets +2"
-  empy_legs   = "Chevalier's Cuisses +2"
-  empy_feet   = "Chevalier's Sabatons +2"
-  -- jse_neck    = "Creed "
+  af = {
+    -- head  = "Gallant Coronet",
+    -- body  = "Gallant Surcoat",
+    -- hands = "Gallant Gauntlets",
+    -- legs  = "Gallant Breeches",
+    feet  = "Gallant Leggings",
+  }
+  relic = {
+    head  = "Valor Coronet",
+    body  = "Valor Surcoat",
+    hands = "Valor Gauntlets",
+    legs  = "Valor Breeches",
+    feet  = "Valor Leggings",
+  }
+  empyrean = {
+    head  = "Creed Armet +2",
+    body  = "Creed Cuirass +2",
+    hands = "Creed Gauntlets +2",
+    legs  = "Creed Cuisses +2",
+    feet  = "Creed Sabatons +2",
+  }
+
   odyssean_head = {
     phalanx = {name="Odyssean Helm", augments={
       'Pet: "Subtle Blow"+8',
@@ -52,6 +58,7 @@ function get_sets()
       'Phalanx +4',
     }}
   }
+
   ambu_cape = {
     meva = {name = "Rudianos's Mantle", augments = {
       'HP+60',
@@ -66,21 +73,20 @@ function get_sets()
       '"Cure" potency +10%',
       'Spell interruption rate down-10%'
     }},
-
     -- fast_cast = {name = "Rudianos's Mantle", augments = {}},
     -- tp = {name = "Rudianos's Mantle", augments = {}},
   }
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
 		main       = "Malignance Sword",
 		sub        = "Srivatsa",
 		ammo       = "Sapience Orb",           -- "Staunch Tathlum +1",
-		head       = empy_head,
-		body       = full_sakpata.body,
-		hands      = full_sakpata.hands,
-		legs       = empy_legs,
-		feet       = full_sakpata.feet,
+		head       = empyrean.head,
+		body       = sakpata.body,
+		hands      = sakpata.hands,
+		legs       = empyrean.legs,
+		feet       = sakpata.feet,
 		neck       = "Unmoving Collar +1",
 		back       = ambu_cape.meva,
 		waist      = "Platinum Moogle Belt",
@@ -91,7 +97,7 @@ function get_sets()
   })
 
   sets.TP = set_combine(sets.idle, {
-    -- legs       = empy_legs,
+    -- legs       = empyrean.legs,
 
     -- neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
     -- waist      = "Sailfi Belt +1",
@@ -104,9 +110,9 @@ function get_sets()
   sets.FC = {
     ammo       = "Sapience Orb",       -- 2% FC
     head       = "Carmine Mask +1",    -- 14% FC
-    -- body       = af_body,
+    -- body       = artifact.body,
     hands      = "Leyline Gloves",     -- 5+1% FC
-    feet       = empy_feet,            -- 10% FC at +2
+    feet       = empyrean.feet,            -- 10% FC at +2
     left_ear   = "Loquacious Earring", -- 2% FC
     right_ear  = "Odnowa Earring +1",
     right_ring = "Kishar Ring",        -- 4% FC
@@ -130,9 +136,9 @@ function get_sets()
     ammo       = "Sapience Orb",           -- Enmity +2
     head       = "Loess Barbuta +1",       -- Enmity +24
     body       = "Souveran Cuirass +1",    -- Enmity +20
-    legs       = relic_legs,               -- Enmity +
+    legs       = relic.legs,               -- Enmity +
     hands      = "Souveran Handschuhs +1", -- Enmity +9 with path ???
-    feet       = empy_feet,                -- Enmity +
+    feet       = empyrean.feet,                -- Enmity +
     neck       = "Unmoving Collar +1",     -- Enmity +10
     waist      = "Creed Baudrier",         -- Enmity +5
     back       = ambu_cape.meva,           -- Enmity +10 (swap with physical def cape?)
@@ -169,26 +175,16 @@ function get_sets()
   }
 
   -- Precast sets
-  sets.precast["Chivalry"] = set_combine(sets.enmity, {
-    hands = relic_hands
-  })
-  sets.precast["Fealty"] = set_combine(sets.enmity, {
-    body = relic_body
-  })
-  sets.precast["Invincible"] = set_combine(sets.enmity, {
-    legs = relic_legs
-  })
-  sets.precast["Rampart"] = set_combine(sets.enmity, {
-    head = relic_head
-  })
-  sets.precast["Sentinel"] = set_combine(sets.enmity, {
-    feet = relic_feet
-  })
+  sets.precast["Chivalry"]    = set_combine(sets.enmity, {hands = relic.hands})
+  sets.precast["Fealty"]      = set_combine(sets.enmity, {body = relic.body})
+  sets.precast["Invincible"]  = set_combine(sets.enmity, {legs = relic.legs})
+  sets.precast["Rampart"]     = set_combine(sets.enmity, {head = relic.head})
+  sets.precast["Sentinel"]    = set_combine(sets.enmity, {feet = relic.feet})
   sets.precast["Shield Bash"] = set_combine(sets.enmity, {
-    hands     = relic_hands,
+    hands     = relic.hands,
     right_ear = "Knightly Earring",
   })
-  sets.precast["Holy Circle"]  = set_combine(sets.enmity, {feet = af_feet})
+  sets.precast["Holy Circle"]  = set_combine(sets.enmity, {feet = artifact.feet})
 
   sets.precast["Divine Emblem"]  = sets.enmity
   sets.precast["Majesty"]        = sets.enmity
@@ -203,7 +199,7 @@ function get_sets()
   sets.precast["Vallation"]      = sets.enmity
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     hands      = "Meghanada Gloves +2",
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
@@ -223,8 +219,8 @@ function get_sets()
   --   -- back = "" MND/Atk./Acc./DA
   -- })
   -- sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
-  --   body       = relic_body,
-  --   feet       = relic_feet,
+  --   body       = relic.body,
+  --   feet       = relic.feet,
   --   neck       = "Sanctity Necklace",
   --   waist      = "Eschan Stone",
   --   right_ear  = "Friomisi Earring",
@@ -234,16 +230,16 @@ function get_sets()
   
   -- Job ability sets
   -- sets.precast["Fold"] = {
-  --   hands = relic_hands,
+  --   hands = relic.hands,
   -- }
   -- sets.precast["Random Deal"] = {
-  --   body = relic_body,
+  --   body = relic.body,
   -- }
   -- sets.precast["Snake Eye"] = {
-  --   legs = relic_legs,
+  --   legs = relic.legs,
   -- }
   -- sets.precast["Wild Card"] = {
-  --   feet = relic_feet,
+  --   feet = relic.feet,
   -- }
 
   -- Use TH for targeted JA's

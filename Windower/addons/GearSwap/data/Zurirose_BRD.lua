@@ -21,21 +21,31 @@ function get_sets()
     lullaby_h2 = "Daurdabla",   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
     dummy      = "Daurdabla",
   }
-  af_head     = "Brioso Roundlet +3"
-  af_body     = "Brioso Justaucorps +2"
-  af_hands    = "Brioso Cuffs +2"
-  af_legs     = "Brioso Cannions +2"
-  af_feet     = "Brioso Slippers +3"
-  relic_head  = "Bihu Roundlet"
-  relic_body  = "Bihu Justaucorps +3"
-  relic_hands = "Bihu Cuffs"
-  relic_legs  = "Bihu Cannions"
-  relic_feet  = "Bihu Slippers +3"
-  empy_head   = "Fili Calot +2"
-  empy_body   = "Fili Hongreline +2"
-  empy_hands  = "Fili Manchettes +2"
-  empy_legs   = "Fili Rhingrave +2"
-  empy_feet   = "Fili Cothurnes +2"
+  -- JSE prefixes:
+  -- Artifact: Choral / Brioso
+  -- Relic:    Bard's / Bihu
+  -- Empyrean: Aoidos' / Fili
+  af = {
+    head  = "Brioso Roundlet +3",
+    body  = "Brioso Justaucorps +2",
+    hands = "Brioso Cuffs +2",
+    legs  = "Brioso Cannions +2",
+    feet  = "Brioso Slippers +3",
+  }
+  relic = {
+    head  = "Bihu Roundlet",
+    body  = "Bihu Justaucorps +3",
+    hands = "Bihu Cuffs",
+    legs  = "Bihu Cannions",
+    feet  = "Bihu Slippers +3",
+  }
+  empyrean = {
+    head  = "Fili Calot +2",
+    body  = "Fili Hongreline +2",
+    hands = "Fili Manchettes +2",
+    legs  = "Fili Rhingrave +2",
+    feet  = "Fili Cothurnes +2",
+  }
   jse_neck    = "Bard's Charm +1"
 
   ambu_cape = {
@@ -105,10 +115,10 @@ function get_sets()
     main       = "Sangoma",
     sub        = "Genmei Shield",
     range      = linos.defense,
-    head       = empy_head,
+    head       = empyrean.head,
     body       = "Inyanga Jubbah +2",
-    hands      = empy_hands,
-    legs       = empy_legs,
+    hands      = empyrean.hands,
+    legs       = empyrean.legs,
     feet       = "Inyanga Crackows +2",
     neck       = "Loricate Torque +1",
     waist      = "Carrier's Sash",
@@ -125,8 +135,8 @@ function get_sets()
     head       = "Ayanmo Zucchetto +2", -- Bunzi's Hat after RP
     body       = "Ayanmo Corazza +2",   -- Ashera (lol)
     hands      = "Bunzi's Gloves",
-    legs       = "Nyame Flanchard",
-    feet       = "Nyame Sollerets",     -- Battlecast Gaiters?
+    legs       = nyame.legs,
+    feet       = nyame.feet,     -- Battlecast Gaiters?
     neck       = jse_neck,
     waist      = "Sailfi Belt +1",
     left_ear   = "Dignitary's Earring",
@@ -145,7 +155,7 @@ function get_sets()
     body       = "Inyanga Jubbah +2",   -- FC +14%
     hands      = "Inyan. Dastanas +2",
     legs       = "Ayanmo Cosciales +2", -- FC +6%
-    feet       = empy_feet,             -- FC +10%
+    feet       = empyrean.feet,             -- FC +10%
     waist      = "Cornelia's Belt",     -- For 10% haste if midcast doesn't swap it off
     left_ear   = "Malignance Earring",  -- FC +4%
     right_ear  = "Loquacious Earring",  -- FC +2%
@@ -160,9 +170,9 @@ function get_sets()
     range      = linos.defense,
     head       = "Halitus Helm",       -- Enmity +8
     body       = "Emet Harness +1",    -- Enmity +10
-    hands      = empy_hands,
+    hands      = empyrean.hands,
     legs       = "Zoar Subligar +1",   -- Enmity +6
-    feet       = "Nyame Sollerets",
+    feet       = nyame.feet,
     neck       = "Unmoving Collar +1", -- Enmity +10
     waist      = "Kasiri Belt",        -- Enmity +3
     left_ear   = "Cryptic Earring",    -- Enmity +4
@@ -186,9 +196,9 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     range      = linos.savage,
-    body       = relic_body,
+    body       = relic.body,
     neck       = "Republican Platinum Medal",
     waist      = "Sailfi Belt +1",
     left_ear   = "Moonshade Earring",
@@ -200,13 +210,13 @@ function get_sets()
 
   -- Job ability sets
   sets.precast["Soul Voice"] = {
-    legs = relic_legs -- Soul Voice duration +30s
+    legs = relic.legs -- Soul Voice duration +30s
   }
   sets.precast["Nightingale"] = {
-    feet = relic_feet -- Nightingale duration +20s (with full merits)
+    feet = relic.feet -- Nightingale duration +20s (with full merits)
   }
   sets.precast["Troubador"] = {
-    body = relic_body -- Troubador duration +20s (with full merits)
+    body = relic.body -- Troubador duration +20s (with full merits)
   }
 
   -- Midcast sets
@@ -246,11 +256,11 @@ function get_sets()
     main       = kali.path_a,
     sub        = "Genbu's Shield",
     range      = "Gjallarhorn",
-    head       = empy_head,
-    body       = empy_body,
-    hands      = empy_hands,
+    head       = empyrean.head,
+    body       = empyrean.body,
+    hands      = empyrean.hands,
     legs       = "Inyanga Shalwar +2",
-    feet       = af_feet,
+    feet       = artifact.feet,
     neck       = "Moonbow Whistle +1",
     -- waist      = "Flume Belt +1",
     left_ear   = "Dignitary's Earring",
@@ -267,21 +277,21 @@ function get_sets()
   sets.midcast["DebuffSong"] = set_combine(sets.midcast["BuffSong"], {
     main  = kali.path_a,
     sub   = "Amurappi Shield",
-    feet  = empy_feet,
+    feet  = empyrean.feet,
     waist = "Luminary Sash",
   })
   -- No swaps needed for minuet, march
   sets.midcast["Madrigal"] = {
-    feet = empy_feet, -- Normalizes duration, extra DEX from set bonus
+    feet = empyrean.feet, -- Normalizes duration, extra DEX from set bonus
   }
   sets.midcast["Paeon"] = {
-    head = af_head,
+    head = artifact.head,
   }
   sets.midcast["Prelude"] = {
-    feet = empy_feet, -- Normalizes duration
+    feet = empyrean.feet, -- Normalizes duration
   }
   sets.midcast["Sentinel's Scherzo"] = {
-    feet = empy_feet,
+    feet = empyrean.feet,
   }
   -- sets.midcast["Etude"] = {
   --     head = "Mousai Turban +1",
@@ -300,11 +310,11 @@ function get_sets()
   -- }
   sets.midcast["Lullaby"] = set_combine(sets.midcast["DebuffSong"], {
     -- Carnwenhan (Level 119 III)
-    head  = af_head,
-    body  = empy_body,
-    hands = af_hands,
+    head  = artifact.head,
+    body  = empyrean.body,
+    hands = artifact.hands,
     legs  = "Inyanga Shalwar +2",
-    feet  = af_feet,
+    feet  = artifact.feet,
     -- waist = "Acuity Belt +1", -- Need to RP this
   })
 
@@ -324,8 +334,8 @@ function get_sets()
     -- right_ring = "Stikini Ring + 1",    -- Combined +16
     -- waist      = "Harfner's Sash",      -- Combined +10
     -- back       = "Erato's Cape",        -- String +4
-    body  = relic_body,
-    hands = empy_hands,
+    body  = relic.body,
+    hands = empyrean.hands,
   })
 
   tanking_in_odyssey = false  -- TODO add a toggle for this

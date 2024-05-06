@@ -9,7 +9,7 @@ function get_sets()
   -- Gear aliases
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     ammo       = "Ghastly Tathlum",
     neck       = "Sanctity Necklace",
     waist      = "Eschan Stone",
