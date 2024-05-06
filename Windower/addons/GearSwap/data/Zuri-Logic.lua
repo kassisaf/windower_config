@@ -212,13 +212,13 @@ function equip_instrument(spell)
   if spell.english == "Honor March" then
     instrument_to_equip = "Marsyas"
   elseif string.find(spell.english, "Horde Lullaby II") then
-    instrument_to_equip = instrument_lullaby_h2
+    instrument_to_equip = instruments.lullaby_h2
   elseif string.find(spell.english, "Lullaby") then
-    instrument_to_equip = instrument_lullaby
+    instrument_to_equip = instruments.lullaby
   elseif modes["dummy_songs"] then
-    instrument_to_equip = instrument_dummy
+    instrument_to_equip = instruments.dummy
   else
-    instrument_to_equip = instrument_general
+    instrument_to_equip = instruments.general
   end
   equip({range = instrument_to_equip, ammo = empty})
 end
@@ -370,7 +370,7 @@ end -- midcast()
 
 function aftercast(spell)
   if string.find(spell.english, "Lullaby") or (player.main_job == "BRD" and player.equipment['range'] == empty) then
-    equip({range = instrument_general, ammo = empty})
+    equip({range = instruments.general, ammo = empty})
   -- TODO: Unequip lockables (warp ring, dim ring, etc.) after using them
   -- elseif spell.type == "Item" and lockables_set[spell.english] then
   --     equip_idle_or_tp_set(true)

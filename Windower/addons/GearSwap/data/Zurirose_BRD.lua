@@ -1,6 +1,6 @@
 -- Usage notes:
 -- Create the following macro to toggle dummy modes: /console gs c dummy
--- When enabled, your +songs instrument defined below in `instrument_dummy` will be equipped in midcast
+-- When enabled, your +songs instrument defined below in `instruments.dummy` will be equipped in midcast
 -- When disabled, normal instrument logic applies
 
 function get_sets()
@@ -15,10 +15,12 @@ function get_sets()
   dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait
 
   -- Gear aliases
-  instrument_general    = "Gjallarhorn"
-  instrument_lullaby    = "Marsyas"     -- All lullaby except Horde II
-  instrument_lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
-  instrument_dummy      = "Daurdabla"
+  instruments = {
+    general    = "Gjallarhorn",
+    lullaby    = "Marsyas"     -- All lullaby except Horde II
+    lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
+    dummy      = "Daurdabla"
+  }
   af_head     = "Brioso Roundlet +3"
   af_body     = "Brioso Justaucorps +2"
   af_hands    = "Brioso Cuffs +2"
