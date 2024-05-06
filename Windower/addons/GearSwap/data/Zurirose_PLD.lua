@@ -12,7 +12,7 @@ function get_sets()
   -- JSE Prefixes:
   -- Artifact: Gallant / Reverence
   -- Relic:    Valor / Caballarius
-  -- Empyrean: Creed / Chevalier
+  -- Empyrean: Creed / Chevalier's
   artifact = {
     -- head  = "Gallant Coronet",
     -- body  = "Gallant Surcoat",
@@ -28,11 +28,11 @@ function get_sets()
     feet  = "Valor Leggings",
   }
   empyrean = {
-    head  = "Creed Armet +2",
-    body  = "Creed Cuirass +2",
-    hands = "Creed Gauntlets +2",
-    legs  = "Creed Cuisses +2",
-    feet  = "Creed Sabatons +2",
+    head  = "Chevalier's Armet +2",
+    body  = "Chevalier's Cuirass +2",
+    hands = "Chevalier's Gauntlets +2",
+    legs  = "Chevalier's Cuisses +2",
+    feet  = "Chevalier's Sabatons +2",
   }
   -- jse_neck = ""
   sortie_earring = "Chevalier's Earring +1"
