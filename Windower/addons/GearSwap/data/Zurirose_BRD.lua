@@ -25,7 +25,7 @@ function get_sets()
   -- Artifact: Choral / Brioso
   -- Relic:    Bard's / Bihu
   -- Empyrean: Aoidos' / Fili
-  af = {
+  artifact = {
     head  = "Brioso Roundlet +3",
     body  = "Brioso Justaucorps +2",
     hands = "Brioso Cuffs +2",

@@ -26,7 +26,7 @@ function get_sets()
   -- Artifact: Geomancy
   -- Relic:    Bagua
   -- Empyrean: Azimuth
-  af = {
+  artifact = {
     head  = "Geomancy Galero +1",
     body  = "Geomancy Tunic +1",
     hands = "Geomancy Mitaines +3",

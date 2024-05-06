@@ -12,7 +12,7 @@ function get_sets()
   -- Artifact: Corsair's / Laksamana's
   -- Relic:    Commodore / Lanun
   -- Empyrean: Navarch's / Chasseur's
-  af = {
+  artifact = {
     -- head  = "Laksamana's Tricorne",
     -- body  = "Laksamana's Frac +3",
     -- hands = "Laksamana's Gants +1",
@@ -43,7 +43,7 @@ function get_sets()
   }
 
   -- Basic sets
-  sets.idle = set_combine(full_nyame, {
+  sets.idle = set_combine(nyame, {
     main       = "Eminent Scimitar",
     sub        = "Nusku Shield",
     range      = "Compensator",
@@ -120,7 +120,7 @@ function get_sets()
   })
 
   -- Weaponskill sets
-  sets.precast.WS.melee = set_combine(full_nyame, {
+  sets.precast.WS.melee = set_combine(nyame, {
     -- hands      = "Meghanada Gloves +2",
     -- neck       = "Fotia Gorget",
     -- waist      = "Fotia Belt",

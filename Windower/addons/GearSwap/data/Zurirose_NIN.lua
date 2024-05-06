@@ -12,7 +12,7 @@ function get_sets()
   -- Artifact: Ninja / Hachiya
   -- Relic:    Koga / Mochizuki
   -- Empyrean: Iga / Hattori
-  af = {
+  artifact = {
     -- head  = "Hachiya Hatsuburi",
     -- body  = "Hachiya Chainmail",
     -- hands = "Hachiya Tekko",

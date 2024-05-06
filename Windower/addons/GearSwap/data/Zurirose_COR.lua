@@ -16,7 +16,7 @@ function get_sets()
   -- Artifact: Corsair's / Laksamana's
   -- Relic:    Commodore / Lanun
   -- Empyrean: Navarch's / Chasseur's
-  af = {
+  artifact = {
     head  = "Laksamana's Tricorne",
     body  = "Laksamana's Frac +3",
     hands = "Laksamana's Gants +1",

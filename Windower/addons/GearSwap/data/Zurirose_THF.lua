@@ -18,7 +18,7 @@ function get_sets()
   -- Artifact: Rogue's / Pillager's
   -- Relic:    Assassin's / Plunderer's
   -- Empyrean: Raider's / Skulker's
-  af = {
+  artifact = {
     head  = "Rogue's Bonnet",
     body  = "Pillager's Vest +2",
     hands = "Pillager's Armlets",

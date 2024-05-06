@@ -10,7 +10,7 @@ function get_sets()
   -- Artifact: Magus / Assimilator's
   -- Relic:    Mirage / Luhlaza
   -- Empyrean: Mavi / Hashishin
-  af = { -- Magus / Assimilator's
+  artifact = { -- Magus / Assimilator's
     -- head  = "Magus Keffiyeh",
     -- body  = "Magus Jubbah",
     hands = "Assimilator's Bazubands +1"

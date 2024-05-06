@@ -13,7 +13,7 @@ function get_sets()
   -- Artifact: Gallant / Reverence
   -- Relic:    Valor / Caballarius
   -- Empyrean: Creed / Chevalier
-  af = {
+  artifact = {
     -- head  = "Gallant Coronet",
     -- body  = "Gallant Surcoat",
     -- hands = "Gallant Gauntlets",
