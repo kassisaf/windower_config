@@ -272,10 +272,14 @@ function precast(spell, position)
   -- FC first for all magic
   if spell.action_type == "Magic" then
     safe_equip(sets.FC)
+
+    -- Equip required item for item-specific spells
     if spell.english == "Honor March" then
       equip({range = "Marsyas"})
     elseif spell.english == "Dispelga" then
       equip({main = "Daybreak"})
+    elseif spell.english == "Impact" then
+      equip({body = "Crepuscular Cloak"})
     end
   end
 

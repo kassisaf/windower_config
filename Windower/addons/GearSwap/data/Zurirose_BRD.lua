@@ -17,9 +17,9 @@ function get_sets()
   -- Gear aliases
   instruments = {
     general    = "Gjallarhorn",
-    lullaby    = "Marsyas"     -- All lullaby except Horde II
-    lullaby_h2 = "Daurdabla"   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
-    dummy      = "Daurdabla"
+    lullaby    = "Marsyas",     -- All lullaby except Horde II
+    lullaby_h2 = "Daurdabla",   -- Use Blurred +1 if/when 567 string skill can be obtained without the +20 from Daurdabla
+    dummy      = "Daurdabla",
   }
   af_head     = "Brioso Roundlet +3"
   af_body     = "Brioso Justaucorps +2"
