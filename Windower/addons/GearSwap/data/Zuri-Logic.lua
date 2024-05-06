@@ -364,7 +364,7 @@ function midcast(spell)
   end
 
   -- For songs, equip the appropriate instrument last
-  if spell.type == "BardSong" then
+  if spell.type == "BardSong" and player.main_job == "BRD" then
     equip_instrument(spell)
   end
 

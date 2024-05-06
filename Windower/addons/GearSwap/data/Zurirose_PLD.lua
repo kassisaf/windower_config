@@ -16,7 +16,7 @@ function get_sets()
   artifact = {
     -- head  = "Gallant Coronet",
     -- body  = "Gallant Surcoat",
-    -- hands = "Gallant Gauntlets",
+    hands = "Gallant Gauntlets",
     -- legs  = "Gallant Breeches",
     feet  = "Gallant Leggings",
   }
@@ -210,7 +210,7 @@ function get_sets()
     right_ear  = "Ishvara Earring",
     left_ring  = "Regal Ring",
     right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-    
+
     -- back       = ambu_cape.savage_blade,
   })
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
