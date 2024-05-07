@@ -392,15 +392,15 @@ function pet_change(pet, gain)
 end -- pet_change()
 
 function buff_change(name, gain, buff_details)
-  -- if name == "Doom" then
-  --     if gain then
-  --         equip(sets.doomed)
-  --         send_command("input /p Doomed.")
-  --     else 
-  --         equip_idle_or_tp_set()
-  --         send_command("input /p Doom removed.")
-  --     end
-  -- end
+  if name == "Doom" then
+      if gain then
+          equip(sets.doomed)
+          send_command("@input /p I'M DOOMED I'M DOOMED, oh god get it off!")
+      else 
+          equip_idle_or_tp_set()
+          send_command("@input /p No longer doomed.")
+      end
+  end
   if gain then
     if sets.status and sets.status[name] ~= nil then
       equip(sets.status[name])

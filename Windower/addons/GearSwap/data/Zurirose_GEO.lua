@@ -50,7 +50,7 @@ function get_sets()
       'INT+10',
       '"Mag.Atk.Bns."+10',
       'Damage taken-5%',
-    }}
+    }},
   }
 
   -- Basic sets

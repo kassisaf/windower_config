@@ -15,9 +15,9 @@ function get_sets()
   -- Empyrean: Creed / Chevalier's
   artifact = {
     -- head  = "Gallant Coronet",   -- Stored, consider using for Cover after upgrading
-    body  = "Gallant Surcoat",
+    body  = "Reverence Surcoat",
     -- hands = "Gallant Gauntlets", -- Stored
-    legs  = "Gallant Breeches",
+    legs  = "Reverence Breeches",
     -- feet  = "Gallant Leggings",  -- Stored
   }
   relic = {
@@ -110,29 +110,21 @@ function get_sets()
     -- back       = melee_tp_cape,
   })
   sets.FC = {
-    ammo       = "Sapience Orb",       -- 2% FC
-    head       = "Carmine Mask +1",    -- 14% FC
-    -- body       = artifact.body,
-    hands      = "Leyline Gloves",     -- 5+1% FC
-    feet       = empyrean.feet,        -- 10% FC at +2
-    left_ear   = "Loquacious Earring", -- 2% FC
-    right_ear  = "Odnowa Earring +1",
-    right_ring = "Kishar Ring",        -- 4% FC
-    waist      = "Cornelia's Belt",    -- For 10% haste if midcast doesn't swap it off
-    
-		-- ammo="Sapience Orb",						--2
-		-- head="Carmine Mask +1",						--14
-		-- neck="Baetyl Pendant",						--4 							"Orunmila's Torque", --5
-		-- ear1="Odnowa Earring +1",					--HP +110 						"Enchanter's Earring +1", --2
-		-- ear2="Loquacious Earring",					--2
-		-- body="Reverence Surcoat +3", 				--10
-		-- hands="Leyline Gloves",						--7
-		-- ring1="Gelatinous Ring +1",					--HP +135
-		-- ring2="Medada's Ring",						--10
-		-- back=gear.PLD_FC_Cape,						--10
-		-- waist="Plat. Mog. Belt",					--HP +10%
-		-- legs="Enif Cosciales",						--8
-		-- feet="Chevalier's Sabatons +3", 			--13
+    ammo       = "Sapience Orb",         -- 2% FC
+    head       = "Carmine Mask +1",      -- 14% FC
+    hands      = "Leyline Gloves",       -- 5+1% FC
+    feet       = empyrean.feet,          -- 10% FC at +2
+    left_ear   = "Loquacious Earring",   -- 2% FC
+    right_ear  = "Odnowa Earring +1",    -- HP +110
+    left_ring  = "Gelatinous Ring +1"    -- HP +135
+    right_ring = "Kishar Ring",          -- 4% FC (Medada's Ring for 10%)
+    waist      = "Platinum Moogle Belt",
+
+		-- head = "Carmine Mask +1", --14% FC
+    -- body = artifact.body, -- 10% FC at +3
+		-- legs = "Enif Cosciales" --8% FC
+    -- back = ambu_cape.fc, -- 10% FC
+		-- neck = "Baetyl Pendant", -- 4% FC (Orunmila's Torque gets 5)
   }
   sets.enmity = {
     ammo       = "Sapience Orb",           -- Enmity +2
@@ -150,15 +142,15 @@ function get_sets()
     right_ring = "Supershear Ring",        -- Enmity +5
   }
   sets.sird = {
-    head = "Souveran Schaller +1",
-    feet = empyrean.feet,
-    waist = "Platinum Moogle Belt",
+    head      = "Souveran Schaller +1",
+    feet      = empyrean.feet,
+    waist     = "Platinum Moogle Belt",
+    left_ear  = "Magnetic Earring",
     right_ear = "Knightly Earring",
 
     -- body = af_body,
     -- legs = "Founder's Hose",
     -- neck = "Moonlight Necklace"
-    -- left_ear = "Magnetic Earring",
     -- right_ring = "Moonlight Ring",
   }
   sets.phalanx_received = set_combine(sets.sird, {
