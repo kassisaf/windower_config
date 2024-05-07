@@ -14,18 +14,18 @@ function get_sets()
   -- Relic:    Valor / Caballarius
   -- Empyrean: Creed / Chevalier's
   artifact = {
-    -- head  = "Gallant Coronet",
-    -- body  = "Gallant Surcoat",
-    hands = "Gallant Gauntlets",
-    -- legs  = "Gallant Breeches",
-    feet  = "Gallant Leggings",
+    -- head  = "Gallant Coronet",   -- Stored, consider using for Cover after upgrading
+    body  = "Gallant Surcoat",
+    -- hands = "Gallant Gauntlets", -- Stored
+    legs  = "Gallant Breeches",
+    -- feet  = "Gallant Leggings",  -- Stored
   }
   relic = {
-    head  = "Valor Coronet",
-    body  = "Valor Surcoat",
-    hands = "Valor Gauntlets",
-    legs  = "Valor Breeches",
-    feet  = "Valor Leggings",
+    -- head  = "Valor Coronet",   -- Stored
+    -- body  = "Valor Surcoat",   -- Stored
+    -- hands = "Valor Gauntlets", -- Stored
+    -- legs  = "Valor Breeches",  -- Stored
+    -- feet  = "Valor Leggings",  -- Stored
   }
   empyrean = {
     head  = "Chevalier's Armet +2",
@@ -78,7 +78,6 @@ function get_sets()
       'Phalanx +4',
     }}
   }
-
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
@@ -150,7 +149,18 @@ function get_sets()
     left_ring  = "Provocare Ring",         -- Enmity +5 (get Apeile Ring +1, Eiwaz Ring)
     right_ring = "Supershear Ring",        -- Enmity +5
   }
-  sets.sird = {}
+  sets.sird = {
+    head = "Souveran Schaller +1",
+    feet = empyrean.feet,
+    waist = "Platinum Moogle Belt",
+    right_ear = "Knightly Earring",
+
+    -- body = af_body,
+    -- legs = "Founder's Hose",
+    -- neck = "Moonlight Necklace"
+    -- left_ear = "Magnetic Earring",
+    -- right_ring = "Moonlight Ring",
+  }
   sets.phalanx_received = set_combine(sets.sird, {
     main  = "Sakpata's Sword",        -- Phalanx +5
     sub   = "Priwen",                 -- Phalanx +2
@@ -160,22 +170,20 @@ function get_sets()
     legs  = "Sakpata's Cuisses",      -- Phalanx +5
     feet  = "Souveran Schuhs +1",     -- Phalanx +5
     back  = "Weard Mantle",           -- Phalanx +3 (can roll up to +5 with refractive crystals)
-    waist = "Gishdubar Sash",         -- Refresh duration +20, CPR +10
-    -- left_ear = "Mimir Earring",       -- Enhancing +10 for self-cast
-  })
-  sets.cursna_received = {              -- Total 67%
+    waist = "Gishdubar Sash",         -- Because maybe we get refresh at the same time
+  })                                  -- Total: +32
+  sets.cursna_received = {
     legs       = "Shabti Cuisses +1",   -- 15%
     neck       = "Nicander's Necklace", -- 20%
     waist      = "Gishdubar Sash",      -- 10%
     left_ring  = "Purity Ring",         -- 7%
-    -- right_ring = "Saida Ring",          -- 15% (20% possible with HQ (Eshmun's))
     left_ear   = "Odnowa Earring +1",   -- More DT to offset the +10% PDT from Nicander's
     
-    -- body="Reverence Surcoat +3",
-		-- hands=gear.Souveran_ShieldSkill_Hands,
-		-- ear1="Odnowa Earring +1",
-		-- back="Moonbeam Cape",
-  }
+    -- body = artifact.body,
+		-- hands = "Souveran Handschuhs +1",   -- Path C for shield skill
+    -- right_ring = "Saida Ring",          -- 15% (20% possible with HQ (Eshmun's))
+		-- back = "Moonbeam Cape",
+  }                                     -- Total 67%
 
   -- Precast sets
   sets.precast["Chivalry"]    = set_combine(sets.enmity, {hands = relic.hands})
@@ -250,13 +258,17 @@ function get_sets()
   -- sets.precast["Box Step"]   = sets.TH
   -- sets.precast["Quick Step"] = sets.TH
 
+  -- sets.precast["Cure"] = set_combine(sets.FC, {
+  --   -- HP conversion gear to force hate generation... but only for self
+  -- })
+
   -- Midcast sets
   sets.midcast["Cure"] = {
     back = ambu_cape.cure,
   }
 
-  sets.midcast["Phalanx"] = set_combine(sets.phalanx_received, {
-    -- Enhancing skill gear
+  sets.midcast["Phalanx"] = set_combine(sets.sird, sets.phalanx_received, {
+    left_ear = "Mimir Earring", -- Enhancing +10
   })
 
   -- Other sets
