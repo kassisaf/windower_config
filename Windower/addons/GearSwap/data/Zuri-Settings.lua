@@ -34,11 +34,11 @@ holy_water_set = {
 
 -- All Jobs HP+ set for forcing HP aggro / Omen cure objectives
 cure_cheat_set = set_combine(nyame, {
-  neck       = "Sanctity Necklace",
-  waist      = "Plat. Mog. Belt",
-  left_ear   = "Odnowa Earring +1",
-  right_ear  = "Cryptic Earring",
+  neck       = "Sanctity Necklace",    -- HP +35
+  waist      = "Platinum Moogle Belt", -- HP +10%
+  left_ear   = "Odnowa Earring +1",    -- 110 MP to HP
+  right_ear  = "Cryptic Earring",      -- HP +40, enmity +4
   left_ring  = "Defending Ring",
-  right_ring = "Meridian Ring",
+  right_ring = "Meridian Ring",        -- HP +90, dark res -20
   back       = "Repulse Mantle",
 })

@@ -44,7 +44,7 @@ function get_sets()
       'Enmity+10',
       'Occ. inc. resist. to stat. ailments+10'
     }},
-    cure = {name = "Rudianos's Mantle", augments = {
+    cure_potency = {name = "Rudianos's Mantle", augments = {
       'MND+20',
       'Eva.+20 /Mag. Eva.+20',
       'VIT+10',
@@ -69,14 +69,21 @@ function get_sets()
       '"Treasure Hunter"+2',
       'Accuracy+7 Attack+7',
       'Mag. Acc.+5 "Mag.Atk.Bns."+5'
-    }}
+    }},
   }
   odyssean_body = {
     phalanx = {name="Odyss. Chestplate", augments={
       'Magic dmg. taken -2%',
       '"Mag.Atk.Bns."+20',
       'Phalanx +4',
-    }}
+    }},
+  }
+  odyssean_feet = {
+    cure_potency = {name="Odyssean Greaves", augments={
+      '"Mag.Atk.Bns."+18',
+      '"Cure" potency +5%',
+      'MND+9',
+    }},
   }
 
   -- Basic sets
@@ -251,24 +258,51 @@ function get_sets()
   -- sets.precast["Quick Step"] = sets.TH
 
   sets.precast["Cure"] = set_combine(sets.FC, {
-    neck     = "Diemer Gorget",       -- Cure spellcasting time -4%
-    left_ear = "Mendicant's Earring", -- Cure spellcasting time -5%
+    neck      = "Diemer Gorget",       -- Cure spellcasting time -4%
+    left_ear  = "Mendicant's Earring", -- Cure spellcasting time -5%
     
     -- waist = "Acerbic Sash +1", -- Cure spellcasting time -8%
   })
-
   sets.precast["CureSelf"] = set_combine(sets.precast["Cure"], {
-    -- HP conversion gear to lower HP before self cures (free hate generation)
-    left_ring  = "Mephitas's Ring",
-    right_ring = "Mephitas's Ring +1",
-    
-    -- right_ear = "Influx Earring",
+    -- Lose (convert) HP before self-curing for more hate generation
+    right_ear  = "Influx Earring",    -- 55 HP to MP
+
+    -- left_ring  = "Mephitas's Ring",
+    -- right_ring = "Mephitas's Ring +1",
   })
 
   -- Midcast sets
   sets.midcast["Cure"] = {
-    back = ambu_cape.cure,
+    head      = "Souveran Schaller +1",     -- CPR +15%, +9 Enmity, +280 HP, SIRD -20
+    body      = "Souveran Cuirass +1",      -- CP, CPR, Enmity, HP, DT
+    back      = ambu_cape.cure_potency,
+    legs      = empyrean.legs,              -- HP, enmity retention, DT
+    feet      = odyssean_feet.cure_potency,
+    right_ear = sortie_earring,             -- CP, DT
+
+		-- neck  = "Sacro Gorget",                  -- CP1 +10
+		-- ear2  = "Chev. Earring +1",              -- CP1 +11
+		-- ring2 = "Gelatinous Ring +1",
+		-- body  = "Souveran Cuirass +1",           -- CP1 +11
+		-- hands = gear.Souveran_ShieldSkill_Hands,
+		-- back  = gear.PLD_CurePot_Cape,           -- CP1 +10
   }
+  sets.midcast["CureSelf"] = set_combine(nyame, sets.midcast["Cure"], {
+    -- Raise max HP before the cure lands for more hate generation
+  neck       = "Sanctity Necklace",    -- HP +35
+  waist      = "Platinum Moogle Belt", -- HP +10%
+  left_ear   = "Odnowa Earring +1",    -- 110 MP to HP
+  right_ear  = "Cryptic Earring",      -- HP +40, enmity +4
+  left_ring  = "Defending Ring",
+  right_ring = "Meridian Ring",        -- HP +90, dark res -20
+
+		-- ammo  = "Egoist's Tathlum",         --	+45 HP
+		-- neck  = "Sacro Gorget",             --	CP1 +10%,  +5 Enmity,        +50 HP
+		-- hands = "Macabre Gauntlets +1",     --	CP1 +11%,  +89 HP,           PDT -4
+		-- ring2 = "Moonlight Ring",           --	+100 HP,   DT -4
+		-- back  = "Moonbeam Cape",            --	+250 HP,   DT -5
+		-- feet  = gear.Odyssean_CurePot_Feet, --	CP1 +10%,  SIRD -20
+  })
 
   sets.midcast["Phalanx"] = set_combine(sets.sird, sets.phalanx_received, {
     left_ear = "Mimir Earring", -- Enhancing +10
@@ -293,9 +327,14 @@ function get_sets()
   }
 end -- get_sets()
 
--- Job-specific "cure cheating"
+-- PLD-specific "cure cheating"
 function job_precast(spell, mapped_spell)
   if spell.target.type == "SELF" and (mapped_spell == "Cure" or mapped_spell == "Curaga") then
     equip(sets.precast["CureSelf"])
+  end
+end
+function job_midcast(spell, mapped_spell)
+  if spell.target.type == "SELF" and (mapped_spell == "Cure" or mapped_spell == "Curaga") then
+    equip(sets.midcast["CureSelf"])
   end
 end
