@@ -14,17 +14,17 @@ return {
   ['Ctrl+9'] = 'input /ja "Snake Eye" <me>',
   ['Ctrl+0'] = 'input /ja "Double Up" <me>',
   -- Shooting
-  ['Alt+1']  = 'input /ra <stnpc>',
-  ['Alt+2']  = 'input /ja "Ice Shot" <stnpc>',
+  ['Alt+1'] = 'input /ra <stnpc>',
+  ['Alt+2'] = 'input /ja "Ice Shot" <stnpc>',
   -- Weaponskills
-  ['Alt+3']  = 'input /ws "Savage Blade" <stnpc>',
-  ['Alt+4']  = 'input /ja "Light Shot" <stnpc>',
-  ['Alt+5']  = 'input /ja "Dark Shot" <stnpc>',
-  ['Alt+6']  = '',
-  ['Alt+7']  = '',
-  ['Alt+8']  = 'input /ws "Last Stand" <stnpc>',
-  ['Alt+9']  = 'input /ws "Wildfire" <stnpc>',
-  ['Alt+0']  = 'input /ws "Leaden Salute" <stnpc>',
+  ['Alt+3'] = 'input /ws "Savage Blade" <stnpc>',
+  ['Alt+4'] = 'input /ja "Light Shot" <stnpc>',
+  ['Alt+5'] = 'input /ja "Dark Shot" <stnpc>',
+  ['Alt+6'] = '',
+  ['Alt+7'] = '',
+  ['Alt+8'] = 'input /ws "Last Stand" <stnpc>',
+  ['Alt+9'] = 'input /ws "Wildfire" <stnpc>',
+  ['Alt+0'] = 'input /ws "Leaden Salute" <stnpc>',
 
-  ['Win+0']  = 'gs enable main range sub; gs c cycle shooting; gs disable main range sub',
+  ['Win+0'] = 'gs enable main range sub; gs c cycle shooting; gs disable main range sub'
 }

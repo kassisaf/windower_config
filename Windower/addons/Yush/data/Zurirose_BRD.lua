@@ -4,10 +4,8 @@
 --   end
 --   return 'input /ma "' .. song_name .. '" <me>'
 -- end
-
 -- 2x march, ltncarol, 2x int
 -- ethren
-
 return {
   ['Ctrl+1'] = 'input /ja "Pianissimo" <me>',
   ['Ctrl+2'] = 'input /ma "Knight\'s Minne V" <me>',
@@ -20,16 +18,16 @@ return {
   ['Ctrl+9'] = 'input /ma "Mage\'s Ballad II" <me>',
   ['Ctrl+0'] = 'input /ma "Mage\'s Ballad III" <me>',
 
-  ['Alt+1']  = 'input /ma "Carnage Elegy" <stnpc>',
-  ['Alt+2']  = 'input /ma "Pining Nocturne" <stnpc>',
-  ['Alt+3']  = 'input /ma "Foe Requiem VII" <stnpc>',
-  ['Alt+4']  = 'input /ma "Magic Finale" <stnpc>',
-  ['Alt+5']  = 'input /ma "Silence" <stnpc>',
-  ['Alt+6']  = 'input /ma "Light Threnody" <stnpc>',
-  ['Alt+7']  = 'input /ma "Earth Threnody II" <stnpc>',
-  ['Alt+8']  = 'input /ma "Foe Lullaby II" <stnpc>',
-  ['Alt+9']  = 'input /ma "Horde Lullaby" <stnpc>',
-  ['Alt+0']  = 'input /ma "Horde Lullaby II" <stnpc>',
+  ['Alt+1'] = 'input /ma "Carnage Elegy" <stnpc>',
+  ['Alt+2'] = 'input /ma "Pining Nocturne" <stnpc>',
+  ['Alt+3'] = 'input /ma "Foe Requiem VII" <stnpc>',
+  ['Alt+4'] = 'input /ma "Magic Finale" <stnpc>',
+  ['Alt+5'] = 'input /ma "Silence" <stnpc>',
+  ['Alt+6'] = 'input /ma "Light Threnody" <stnpc>',
+  ['Alt+7'] = 'input /ma "Earth Threnody II" <stnpc>',
+  ['Alt+8'] = 'input /ma "Foe Lullaby II" <stnpc>',
+  ['Alt+9'] = 'input /ma "Horde Lullaby" <stnpc>',
+  ['Alt+0'] = 'input /ma "Horde Lullaby II" <stnpc>',
 
   -- Ongo
   ['Win+1'] = 'input /ma "Learned Etude" <me>',
@@ -37,7 +35,7 @@ return {
   ['Win+3'] = 'input /ma "Lightning Carol" <me>',
   ['Win+4'] = 'input /ma "Victory March" <me>',
   ['Win+5'] = 'input /ma "Honor March" <me>',
-  
+
   ['Win+6'] = 'input /ja "Pianissimo" <me>',
   ['Win+7'] = 'input /ma "Mage\'s Ballad III" Legasan',
   ['Win+8'] = 'input /ja "Pianissimo" <me>',
@@ -59,7 +57,7 @@ return {
   -- ['Win+7'] = 'input /ma "Sage Etude" <stpt>',
   -- ['Win+8'] = 'input /ma "Adventurer\'s Dirge" <stpt>', -- Enmity DOWN
   -- ['Win+9'] = 'input /ma "Foe Sirvente" <stpt>', -- Enmity UP
-  ['Win+0'] = 'gs c dummy', -- Toggles use of Daurdabla in midcast
+  ['Win+0'] = 'gs c dummy' -- Toggles use of Daurdabla in midcast
 }
 
 -- TODO: Separate pages for:

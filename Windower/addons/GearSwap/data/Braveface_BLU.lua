@@ -1,29 +1,33 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(1, 1, 1)  -- Macro book, macro page, lockstyle set
+  job_init(1, 1, 1) -- Macro book, macro page, lockstyle set
 
   -- Leave these empty
-  sets.precast = {WS = {crit = {}}}
+  sets.precast = {
+    WS = {
+      crit = {}
+    }
+  }
   sets.midcast = {}
 
   -- Gear aliases
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
-    ammo       = "Ghastly Tathlum",
-    neck       = "Sanctity Necklace",
-    waist      = "Eschan Stone",
-    back       = "Solemnity Cape",
-    left_ear   = "Odr Earring",
-    right_ear  = "Steelflash Earring",
-    left_ring  = "Shneddick Ring",
-    right_ring = "Ayanmo Ring",
+    ammo = "Ghastly Tathlum",
+    neck = "Sanctity Necklace",
+    waist = "Eschan Stone",
+    back = "Solemnity Cape",
+    left_ear = "Odr Earring",
+    right_ear = "Steelflash Earring",
+    left_ring = "Shneddick Ring",
+    right_ring = "Ayanmo Ring"
   })
   sets.TP = set_combine(sets.idle, {
-    main  = "Eminent Scimitar",
-    sub   = "Machaera",
+    main = "Eminent Scimitar",
+    sub = "Machaera",
     hands = "Magus Bazubands",
-    neck  = "Lissome Necklace",
+    neck = "Lissome Necklace"
   })
   sets.FC = {}
 
@@ -32,21 +36,21 @@ function get_sets()
 
   -- Weaponskill sets
   sets.precast.WS.melee = {
-    right_ring = "Rufescent Ring",
+    right_ring = "Rufescent Ring"
   }
   -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
   -- sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
   -- })
 
   -- Job ability sets
-  
+
   -- Midcast sets
   sets.midcast["BlueMagic"] = {
-    head      = "Jhakri Coronal +2",
-    body      = "Jhakri Robe +2",
-    hands     = "Jhakri Cuffs +2",
-    legs      = "Jhakri Slops +2",
-    feet      = "Jhakri Pigaches +2",
+    head = "Jhakri Coronal +2",
+    body = "Jhakri Robe +2",
+    hands = "Jhakri Cuffs +2",
+    legs = "Jhakri Slops +2",
+    feet = "Jhakri Pigaches +2"
   }
 
   -- Other sets

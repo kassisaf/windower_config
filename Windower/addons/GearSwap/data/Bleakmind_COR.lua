@@ -1,9 +1,13 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(3, 3, 3)   -- Macro book, macro page, lockstyle set
+  job_init(3, 3, 3) -- Macro book, macro page, lockstyle set
 
   -- Leave these empty
-  sets.precast = {WS = {crit = {}}}
+  sets.precast = {
+    WS = {
+      crit = {}
+    }
+  }
   sets.midcast = {}
 
   -- Gear Aliases
@@ -36,32 +40,32 @@ function get_sets()
   -- jse_neck    = "Commodore Charm +1"
 
   bullets = {
-    physical  = "Eminent Bullet",
-    acc       = "Decimating Bullet",
-    macc      = "Orichalcum Bullet",
-    quickdraw = "Hauksbok Bullet",   -- 1000 DI points
+    physical = "Eminent Bullet",
+    acc = "Decimating Bullet",
+    macc = "Orichalcum Bullet",
+    quickdraw = "Hauksbok Bullet" -- 1000 DI points
   }
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
-    main       = "Eminent Scimitar",
-    sub        = "Nusku Shield",
-    range      = "Compensator",
-    ammo       = bullets["physical"],
-    neck       = "Dampener's Torque",
-    waist      = "Eschan Stone",
-    left_ear   = "Bloodbead Earring",
-    right_ear  = "Odr Earring",
-    left_ring  = "Shneddick Ring",
+    main = "Eminent Scimitar",
+    sub = "Nusku Shield",
+    range = "Compensator",
+    ammo = bullets["physical"],
+    neck = "Dampener's Torque",
+    waist = "Eschan Stone",
+    left_ear = "Bloodbead Earring",
+    right_ear = "Odr Earring",
+    left_ring = "Shneddick Ring",
     right_ring = "Defending Ring",
-    back       = "Solemnity Cape",
+    back = "Solemnity Cape"
   })
   sets.TP = set_combine(sets.idle, {
     -- head       = "Malignance Chapeau",
     -- body       = "Adhemar Jacket",
     -- hands      = "Malignance Gloves",
     -- feet       = "Malignance Boots",
-    
+
     -- legs       = empyrean.legs,
 
     -- neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
@@ -83,7 +87,7 @@ function get_sets()
   -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
   -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc
   sets.precast.RA = {
-    ammo  = bullets["acc"],
+    ammo = bullets["acc"]
     -- ammo  = bullets["physical"],
     -- Total from gear: 50 Snapshot, 40 Rapid Shot
     -- head  = empyrean.head,                     -- 0 Snapshot, 16 Rapid Shot
@@ -203,7 +207,7 @@ function get_sets()
     -- neck  = "Fotia Gorget",
     -- waist = "Fotia Belt",
   })
-  
+
   -- Job ability sets
 
   -- Rolls
@@ -214,40 +218,40 @@ function get_sets()
 
     -- -- Actually helps with rolls
     -- main       = roll_knife,
-    range      = "Compensator",
+    range = "Compensator",
     -- head       = relic.head,
     -- hands      = empyrean.hands,
     -- legs       = "Desultor Tassets",
     -- -- neck       = "Regal Necklace",
-    left_ring  = "Barataria Ring",
-    right_ring = "Luzaf's Ring",
+    left_ring = "Barataria Ring",
+    right_ring = "Luzaf's Ring"
     -- back       = snapshot_roll_cape,
   })
   sets.precast["Blitzer's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    head = empyrean.head,
+    head = empyrean.head
   })
   sets.precast["Tactician's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    body = empyrean.body,
+    body = empyrean.body
   })
   sets.precast["Caster's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    legs = empyrean.legs,
+    legs = empyrean.legs
   })
   sets.precast["Courser's Roll"] = set_combine(sets.precast["Phantom Roll"], {
-    feet = empyrean.feet,
+    feet = empyrean.feet
   })
 
   -- Other JA's
   sets.precast["Fold"] = {
-    hands = relic.hands,
+    hands = relic.hands
   }
   sets.precast["Random Deal"] = {
-    body = relic.body,
+    body = relic.body
   }
   sets.precast["Snake Eye"] = {
-    legs = relic.legs,
+    legs = relic.legs
   }
   sets.precast["Wild Card"] = {
-    feet = relic.feet,
+    feet = relic.feet
   }
 
   -- Quick Draw sets
@@ -294,7 +298,7 @@ function get_sets()
   sets.precast["CorsairShot"] = quick_draw_stp
   -- Light and dark shots optimized for m.acc
   sets.precast["Light Shot"] = quick_draw_acc
-  sets.precast["Dark Shot"]  = set_combine(quick_draw_acc, {
+  sets.precast["Dark Shot"] = set_combine(quick_draw_acc, {
     -- right_ring = "Archon Ring",
   })
 
@@ -306,7 +310,7 @@ function get_sets()
   }
 
   -- Use TH for targeted JA's
-  sets.precast["Box Step"]   = sets.TH
+  sets.precast["Box Step"] = sets.TH
   sets.precast["Quick Step"] = sets.TH
 
   -- Midcast sets
@@ -320,9 +324,9 @@ function get_sets()
   sets.DI = set_combine(sets.TP, {
     -- main      = "Voluspa Knife",
     -- sub       = "Gleti's Knife",
-    hands     = "Mummu Wrists +2",
-    left_ear  = "Odr Earring",
-    left_ring = "Mummu Ring",
+    hands = "Mummu Wrists +2",
+    left_ear = "Odr Earring",
+    left_ring = "Mummu Ring"
   })
   sets.dynamis_rp = {
     -- sub  = stp_knife,

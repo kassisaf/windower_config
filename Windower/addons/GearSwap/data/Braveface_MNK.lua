@@ -3,43 +3,41 @@ function get_sets()
   -- job_init(2, 2, 17)  -- Macro book, macro page, lockstyle set
 
   -- Leave these empty
-  sets.precast = {WS = {crit = {}}}
+  sets.precast = {
+    WS = {
+      crit = {}
+    }
+  }
   sets.midcast = {}
 
   -- Gear aliases
   ambu_cape = {
-    tp = {name="Segomo's Mantle", augments={
-      'DEX+20',
-      'Accuracy+20 Attack+20',
-      'DEX+10',
-      '"Dbl.Atk."+10',
-      'Damage taken-5%',
-    }}
-    ws = {name="Segomo's Mantle", augments={
-      'STR+20',
-      'Accuracy+20 Attack+20',
-      'STR+10',
-      '"Dbl.Atk."+10',
-      'Damage taken-5%',
-    }}
+    tp = {
+      name = "Segomo's Mantle",
+      augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+    },
+    ws = {
+      name = "Segomo's Mantle",
+      augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+    }
   }
 
   -- Basic sets
   sets.idle = set_combine(nyame, {
-    ammo       = "Thew Bomblet",
-    main       = "Kaja Knuckles",
-    neck       = "Subtlety Spectacles",
-    waist      = "Eschan Stone",
-    left_ear   = "Odr Earring",
-    right_ear  = "Steelflash Earring",
-    left_ring  = "Shneddick Ring",
+    ammo = "Thew Bomblet",
+    main = "Kaja Knuckles",
+    neck = "Subtlety Spectacles",
+    waist = "Eschan Stone",
+    left_ear = "Odr Earring",
+    right_ear = "Steelflash Earring",
+    left_ring = "Shneddick Ring",
     right_ring = "Gelatinous Ring",
-    back       = ambu_cape.tp,
+    back = ambu_cape.tp
   })
   sets.TP = set_combine(sets.idle, {
-    left_ring  = "Mummu Ring",
+    left_ring = "Mummu Ring",
     right_ring = "Hizamaru Ring",
-    feet       = "Shukuyu Sune-Ate",
+    feet = "Shukuyu Sune-Ate"
   })
   sets.FC = {}
 
@@ -48,16 +46,16 @@ function get_sets()
 
   -- Weaponskill sets
   sets.precast.WS.melee = set_combine(nyame, {
-    neck      = "Anu Torque",
+    neck = "Anu Torque",
     left_ring = "Rufescent Ring",
-    back      = ambu_cape.ws,
+    back = ambu_cape.ws
   })
   -- sets.precast.WS["Rudra's Storm"] = sets.precast.WS.melee
   -- sets.precast.WS["Evisceration"] = set_combine(sets.precast.WS.melee,{
   -- })
 
   -- Job ability sets
-  
+
   -- Midcast sets
 
   -- Other sets
