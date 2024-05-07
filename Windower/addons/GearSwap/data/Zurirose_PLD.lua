@@ -210,48 +210,42 @@ function get_sets()
 
   -- Weaponskill sets
   sets.precast.WS.melee = set_combine(nyame, {
-    hands      = "Meghanada Gloves +2",
+    ammo       = "Oshasha's Treatise",
+    back       = "Atheling mantle",    -- Replace with ambu str cape
     neck       = "Fotia Gorget",
     waist      = "Fotia Belt",
-    left_ear   = "Moonshade Earring",
-    right_ear  = "Ishvara Earring",
-    left_ring  = "Regal Ring",
-    right_ring = "Ephramad's Ring",     -- Fall back to Regal or Apate if swapping TVR ring
-
-    -- back       = ambu_cape.savage_blade,
+    left_ear   = "Thrud Earring",
+    right_ear  = "Moonshade Earring",
+    left_ring  = "Ephramad's Ring",    -- Epaminondas's Ring
+    right_ring = "Regal Ring",
   })
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS.melee, {
+    ammo  = "Coiste Bodhar",
     neck  = "Republican Platinum Medal",
     waist = "Sailfi Belt +1",
   })
-  -- sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS.melee, {
-  --   left_ear  = "Telos Earring",
-  --   right_ear = "Ishvara Earring",
-  --   -- back = "" MND/Atk./Acc./DA
-  -- })
-  -- sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
-  --   body       = relic.body,
-  --   feet       = relic.feet,
-  --   neck       = "Sanctity Necklace",
-  --   waist      = "Eschan Stone",
-  --   right_ear  = "Friomisi Earring",
-  --   left_ring  = "Dingir Ring",
-  --   right_ring = "Shiva Ring +1",
-  -- })
+  sets.precast.WS["Sanguine Blade"] = set_combine(sets.precast.WS.melee, {
+    neck = "Erra Pendant",
+  })
+  sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
+    neck = "Erra Pendant",
+    -- left_ring = "Mephitas's Ring +1",
+  })
+  sets.precast.WS["Chant du Cygne"] = set_combine(sets.precast.WS.melee, sakpata, {
+    ammo      = "Coiste Bodhar",
+    body      = "Hjarrandi Breastplate",
+    left_ring = "Begrudging Ring",
+    -- back = ambu_cape.dex,
+    -- left_ear = "Mache Earring +1",
+  })
+  sets.precast.WS["Requiescat"] = set_combine(sets.precast.WS.melee, sakpata, {
+    ammo      = "Coiste Bodhar",
+    left_ring = "Beithir Ring",
+    -- back      = "Vespid Mantle",
+    -- left_ear  = "Cessance Earring",
+  })
   
   -- Job ability sets
-  -- sets.precast["Fold"] = {
-  --   hands = relic.hands,
-  -- }
-  -- sets.precast["Random Deal"] = {
-  --   body = relic.body,
-  -- }
-  -- sets.precast["Snake Eye"] = {
-  --   legs = relic.legs,
-  -- }
-  -- sets.precast["Wild Card"] = {
-  --   feet = relic.feet,
-  -- }
 
   -- Use TH for targeted JA's
   -- sets.precast["Box Step"]   = sets.TH
@@ -326,6 +320,8 @@ function get_sets()
     -- neck = jse_neck,
   }
 end -- get_sets()
+
+sets.doomed = sets.cursna_received
 
 -- PLD-specific "cure cheating"
 function job_precast(spell, mapped_spell)
