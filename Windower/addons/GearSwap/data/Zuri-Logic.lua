@@ -39,6 +39,16 @@ function get_table_length(t)
   return count
 end
 
+function lock_or_unlock_set(gear_set, lock)
+  for key, _ in pairs(gear_set) do
+    if lock then
+      enable(key)
+    else
+      disable(key)
+    end
+  end
+end
+
 ---------------------
 -- Misc. variables --
 ---------------------
@@ -431,13 +441,15 @@ function buff_change(name, gain, buff_details)
     if gain then
       if sets.doomed then
         equip(sets.doomed)
-      else
-        equip(sets.global.holy_water)
+        lock_or_unlock_set(sets.doomed, true)
       end
       send_command("@input /p I'M DOOMED I'M DOOMED, oh god get it off!")
     else
-      equip_idle_or_tp_set()
-      send_command("@input /p No longer doomed.")
+      if sets.doomed then
+        lock_or_unlock_set(sets.doomed, false)
+        equip_idle_or_tp_set()
+      end
+      send_command("@input /p DOOM crisis averted.")
     end
   end
   if gain then
