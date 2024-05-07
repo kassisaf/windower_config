@@ -116,7 +116,7 @@ function get_sets()
     feet       = empyrean.feet,          -- 10% FC at +2
     left_ear   = "Loquacious Earring",   -- 2% FC
     right_ear  = "Odnowa Earring +1",    -- HP +110
-    left_ring  = "Gelatinous Ring +1"    -- HP +135
+    left_ring  = "Gelatinous Ring +1",   -- HP +135
     right_ring = "Kishar Ring",          -- 4% FC (Medada's Ring for 10%)
     waist      = "Platinum Moogle Belt",
 
@@ -250,9 +250,20 @@ function get_sets()
   -- sets.precast["Box Step"]   = sets.TH
   -- sets.precast["Quick Step"] = sets.TH
 
-  -- sets.precast["Cure"] = set_combine(sets.FC, {
-  --   -- HP conversion gear to force hate generation... but only for self
-  -- })
+  sets.precast["Cure"] = set_combine(sets.FC, {
+    neck     = "Diemer Gorget",       -- Cure spellcasting time -4%
+    left_ear = "Mendicant's Earring", -- Cure spellcasting time -5%
+    
+    -- waist = "Acerbic Sash +1", -- Cure spellcasting time -8%
+  })
+
+  sets.precast["CureSelf"] = set_combine(sets.precast["Cure"], {
+    -- HP conversion gear to lower HP before self cures (free hate generation)
+    left_ring  = "Mephitas's Ring",
+    right_ring = "Mephitas's Ring +1",
+    
+    -- right_ear = "Influx Earring",
+  })
 
   -- Midcast sets
   sets.midcast["Cure"] = {
@@ -280,5 +291,11 @@ function get_sets()
     -- sub  = stp_knife,
     -- neck = jse_neck,
   }
-
 end -- get_sets()
+
+-- Job-specific "cure cheating"
+function job_precast(spell, mapped_spell)
+  if spell.target.type == "SELF" and (mapped_spell == "Cure" or mapped_spell == "Curaga") then
+    equip(sets.precast["CureSelf"])
+  end
+end

@@ -325,6 +325,11 @@ function precast(spell, position)
   if spell.action_type == "Ability" and player.target.type == "MONSTER" then
     handle_elemental_obi(spell)
   end
+  
+  -- Callback to job-specific precast, if defined
+  if type(job_precast) == "function" then
+    job_precast(spell, spell_tier_map[spell.english], player)
+  end
 end -- precast()
 
 function midcast(spell)
@@ -370,6 +375,11 @@ function midcast(spell)
 
   -- Always handle obi in midcast
   handle_elemental_obi(spell)
+
+  -- Callback to job-specific midcast, if defined
+  if type(job_midcast) == "function" then
+    job_midcast(spell, spell_tier_map[spell.english], player)
+  end
 end -- midcast()
 
 function aftercast(spell)
