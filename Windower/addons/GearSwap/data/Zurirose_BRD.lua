@@ -413,5 +413,4 @@ function get_sets()
   sets.DI = set_combine(sets.TP, {
     main = "Voluspa Knife"
   })
-
 end -- get_sets()

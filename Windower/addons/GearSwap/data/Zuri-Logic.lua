@@ -1,3 +1,4 @@
+sets.global = {}
 include('Zuri-Globals.lua')
 include('Zuri-Settings.lua')
 
@@ -68,16 +69,13 @@ function toggle_mode(key)
     send_command("input /echo " .. key .. " mode " .. ENABLED_OR_DISABLED[tostring(modes[key])])
     equip_idle_or_tp_set()
   else
-    send_command("input /echo Warning: tried to toggle " .. key ..
-                     " mode but key does not exist. (Check Zuri-Common `modes` table)")
+    send_command("input /echo Warning: tried to toggle " .. key .. " mode but key does not exist. (Check Zuri-Common `modes` table)")
   end
 end
 
 function print_spell_info_if_debug_enabled(spell)
   if modes["debug"] then
-    send_command(
-        'input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' ..
-            spell.action_type)
+    send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
   end
 end
 
@@ -101,8 +99,7 @@ function job_init(macro_book, macro_page, lockstyleset)
     send_command("wait 3; input /lockstyleset " .. lockstyleset)
   end
   send_command(
-      "wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " ..
-          macro_book .. " Page " .. macro_page .. ". **")
+      "wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
 
   load_job_specific_addons()
 end
@@ -259,9 +256,9 @@ function handle_geomancy_midcast(spell)
 end
 
 function handle_elemental_obi(spell)
-  use_obi = (spell.action_type == "Magic" and spell.type ~= "Trust") or
-                (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english]) -- Obi WS list from Zuri-Globals.lua
-  or spell.type ~= "CorsairShot"
+  use_obi =
+      (spell.action_type == "Magic" and spell.type ~= "Trust") or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english]) -- Obi WS list from Zuri-Globals.lua
+      or spell.type ~= "CorsairShot"
 
   -- world.weather_element reports SCH weather over zone weather, if present
   if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
@@ -365,7 +362,7 @@ function midcast(spell)
     safe_equip(sets.midcast.RA)
     return
   elseif spell.english == "Holy Water" and not sets.midcast["Holy Water"] then
-    equip(holy_water_set)
+    equip(sets.global.holy_water)
     return
   end
 
@@ -432,13 +429,11 @@ end -- pet_change()
 function buff_change(name, gain, buff_details)
   if name == "Doom" then
     if gain then
-      -- Callback to job-specific doom logic, if defined
-      -- if type(job_doom_handler) == "function" then
-      --   job_precast(spell, spell_tier_map[spell.english], player)
-      -- elseif sets.doomed then
-      --   equip(sets.doomed)
-      -- end
-      equip(sets.doomed)
+      if sets.doomed then
+        equip(sets.doomed)
+      else
+        equip(sets.global.holy_water)
+      end
       send_command("@input /p I'M DOOMED I'M DOOMED, oh god get it off!")
     else
       equip_idle_or_tp_set()
@@ -456,7 +451,8 @@ end -- buff_change()
 --  //gs c u|update:       Calls an update to equip idle or TP set
 --  //gs c th:             Toggles TH mode
 --  //gs c melee:          Locks/unlocks main and sub slots
---  //gs c cycle set_name: Cycles through sets in sets.cycles[set_name] (must be defined)
+--  //gs c cycle set_name: Cycles through sets in sets.cycles[set_name] (must be defined in job file)
+--  //gs c cc:             Spike HP for "cure cheat"
 function self_command(command_str)
   params = split_by_space(command_str)
 
@@ -473,10 +469,7 @@ function self_command(command_str)
     send_command("gs showswaps")
     send_command("gs debugmode")
     toggle_mode("debug")
-    -- Toggle HP on and off
-  elseif params[1] == "equip_cure_cheat_set" then
-    equip(cure_cheat_set)
   elseif params[1] == "cc" then
-    send_command("gs equip naked; wait 1; gs c equip_cure_cheat_set")
+    send_command("gs equip naked; wait 1; gs equip sets.global.hp_spike")
   end
 end -- self_command()

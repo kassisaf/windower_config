@@ -194,10 +194,10 @@ function get_sets()
     waist = "Gishdubar Sash" -- Because maybe we get refresh at the same time
   }) -- Total: +32
   sets.cursna_received = {
-    legs = "Shabti Cuisses +1", -- 15%
-    neck = "Nicander's Necklace", -- 20%
-    waist = "Gishdubar Sash", -- 10%
-    left_ring = "Purity Ring", -- 7%
+    legs = "Shabti Cuisses +1", -- Cursna Received +15%
+    neck = "Nicander's Necklace", -- Cursna Received +20%, Holy Water +30%, PDT+10%
+    waist = "Gishdubar Sash", -- Cursna Received +10%
+    left_ring = "Purity Ring", -- Cursna Received +7%
     left_ear = "Odnowa Earring +1" -- More DT to offset the +10% PDT from Nicander's
 
     -- body = artifact.body,
@@ -353,9 +353,9 @@ function get_sets()
     -- sub  = stp_knife,
     -- neck = jse_neck,
   }
-end -- get_sets()
 
-sets.doomed = sets.cursna_received
+  sets.doomed = set_combine(sets.global.holy_water, sets.cursna_received)
+end -- get_sets()
 
 -- PLD-specific "cure cheating"
 function job_precast(spell, mapped_spell)

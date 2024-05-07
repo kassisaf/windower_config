@@ -303,5 +303,4 @@ function get_sets()
   }
   -- Maximize crit rate for Domain Invasion
   -- sets.DI = set_combine(sets.tp, {})
-
 end -- get_sets()

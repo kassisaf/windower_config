@@ -164,5 +164,4 @@ function get_sets()
     -- left_ring = "Mummu Ring",
   })
   sets.Mireu = set_combine(sets.DI, nyame)
-
 end -- get_sets()

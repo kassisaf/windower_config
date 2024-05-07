@@ -142,5 +142,4 @@ function get_sets()
     left_ear = "Odr Earring",
     left_ring = "Mummu Ring"
   })
-
 end -- get_sets()

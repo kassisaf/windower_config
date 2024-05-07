@@ -14,11 +14,23 @@ function get_sets()
   ambu_cape = {
     tp = {
       name = "Segomo's Mantle",
-      augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+      augments = {
+        'DEX+20',
+        'Accuracy+20 Attack+20',
+        'DEX+10',
+        '"Dbl.Atk."+10',
+        'Damage taken-5%'
+      }
     },
     ws = {
       name = "Segomo's Mantle",
-      augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+      augments = {
+        'STR+20',
+        'Accuracy+20 Attack+20',
+        'STR+10',
+        '"Dbl.Atk."+10',
+        'Damage taken-5%'
+      }
     }
   }
 
@@ -64,9 +76,5 @@ function get_sets()
   }
   -- Maximize crit rate for Domain Invasion
   sets.DI = set_combine(sets.TP, {})
-  sets.doomed = {
-    -- left_ring  = "Blenmot's Ring +1",
-    -- right_ring = "Blenmot's Ring +1",
-  }
-
+  sets.doomed = {}
 end -- get_sets()

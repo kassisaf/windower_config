@@ -424,5 +424,4 @@ function get_sets()
     -- sub  = stp_knife,
     -- neck = jse_neck,
   }
-
 end -- get_sets()

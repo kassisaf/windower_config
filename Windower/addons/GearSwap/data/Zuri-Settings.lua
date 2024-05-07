@@ -27,13 +27,15 @@ elemental_obi_weaponskills = S {
   "Leaden Salute"
 }
 
-holy_water_set = {
-  left_ring = "Blenmot's Ring +1",
-  right_ring = "Blenmot's Ring +1"
+-- All Jobs Holy Water set
+sets.global.holy_water = {
+  neck = "Nicander's Necklace", -- +30%
+  left_ring = "Blenmot's Ring +1", -- +10%
+  right_ring = "Blenmot's Ring +1" -- +10%
 }
 
 -- All Jobs HP+ set for forcing HP aggro / Omen cure objectives
-cure_cheat_set = set_combine(nyame, {
+sets.global.hp_spike = set_combine(nyame, {
   neck = "Sanctity Necklace", -- HP +35
   waist = "Platinum Moogle Belt", -- HP +10%
   left_ear = "Odnowa Earring +1", -- 110 MP to HP

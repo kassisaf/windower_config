@@ -332,5 +332,5 @@ function get_sets()
     -- sub  = stp_knife,
     -- neck = jse_neck,
   }
-
+  sets.doomed = {}
 end -- get_sets()
