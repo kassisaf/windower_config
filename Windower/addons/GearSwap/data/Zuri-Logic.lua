@@ -465,6 +465,7 @@ end -- buff_change()
 --  //gs c melee:          Locks/unlocks main and sub slots
 --  //gs c cycle set_name: Cycles through sets in sets.cycles[set_name] (must be defined in job file)
 --  //gs c cc:             Spike HP for "cure cheat"
+--  //gs c cp:             Locks capacity point back piece
 function self_command(command_str)
   params = split_by_space(command_str)
 
@@ -483,5 +484,10 @@ function self_command(command_str)
     toggle_mode("debug")
   elseif params[1] == "cc" then
     send_command("gs equip naked; wait 1; gs equip sets.global.hp_spike")
+  elseif params[1] == "cp" then
+    disable("back")
+    equip({
+      back = "Mecistopins Mantle"
+    })
   end
 end -- self_command()

@@ -304,3 +304,13 @@ function get_sets()
   -- Maximize crit rate for Domain Invasion
   -- sets.DI = set_combine(sets.tp, {})
 end -- get_sets()
+
+-- Notify when an indi effect is lost (experimental)
+function indi_change(indi_table, gain)
+  if gain ~= true then
+    -- for key, _ in pairs(indi_table) do
+    --   send_command('input /echo ' .. key .. ': ' .. _)
+    -- end
+    -- send_command('input /echo ' .. indi_table.name .. ' lost')
+  end
+end

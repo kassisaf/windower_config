@@ -2,14 +2,12 @@
 <settings>
     <global>
         <accroll>Hunter&apos;s Roll</accroll>
-        <acumen>Indi-Acumen</acumen>
-        <agi>Swift Etude</agi>
-        <agi1>Quick Etude</agi1>
-        <agi2>Swift Etude</agi2>
+        <ae>Aeolian Edge</ae>
         <ajido>Ajido-Marujido</ajido>
         <altep>Teleport-Altep</altep>
         <apu>Apururu (UC)</apu>
         <apururu>Apururu (UC)</apururu>
+        <ato>Atonement</ato>
         <av>Aquaveil</av>
         <ballad>Mage&apos;s Ballad III</ballad>
         <ballad1>Mage&apos;s Ballad</ballad1>
@@ -21,6 +19,7 @@
         <barf>Barfira</barf>
         <barp>Barpoisonra</barp>
         <barpa>Barparalyzra</barpa>
+        <barpara>Barparalyzra</barpara>
         <barpe>Barpetra</barpe>
         <bars>Barstonra</bars>
         <barsl>Barsleepra</barsl>
@@ -28,6 +27,11 @@
         <barv>Barvira</barv>
         <bl>Blink</bl>
         <blaze>Blaze of Glory</blaze>
+        <blizz>Blizzard</blizz>
+        <blizz2>Blizzard II</blizz2>
+        <blizz3>Blizzard III</blizz3>
+        <blizz4>Blizzard IV</blizz4>
+        <blizz5>Blizzard V</blizz5>
         <bna>Blindna</bna>
         <bolt>Bolter&apos;s Roll</bolt>
         <bolters>Bolter&apos;s Roll</bolters>
@@ -39,59 +43,82 @@
         <c4>Cure IV</c4>
         <c5>Cure V</c5>
         <c6>Cure VI</c6>
+        <cata>Cataclysm</cata>
+        <cdc>Chant du Cygne</cdc>
         <cel>Celerity</cel>
+        <chaos>Chaos Roll</chaos>
         <cher>Cherukiki</cher>
         <cheru>Cherukiki</cheru>
-        <chr>Bewitching Etude</chr>
-        <chr1>Enchanting Etude</chr1>
-        <chr2>Bewitching Etude</chr2>
         <cna>Cursna</cna>
+        <coc>Cocoon</coc>
         <corroll>Corsair&apos;s Roll</corroll>
+        <crook>Crooked Cards</crook>
+        <crooked>Crooked Cards</crooked>
         <cw1>Curing Waltz</cw1>
         <cw2>Curing Waltz II</cw2>
         <cw3>Curing Waltz III</cw3>
         <cw4>Curing Waltz IV</cw4>
         <cw5>Curing Waltz V</cw5>
         <da>Dark Arts</da>
+        <dbl>Double-Up</dbl>
         <dcarol>Dark Carol</dcarol>
         <dcarol2>Dark Carol II</dcarol2>
         <dem>Teleport-Dem</dem>
         <demat>Dematerialize</demat>
-        <dex>Uncanny Etude</dex>
-        <dex1>Dextrous Etude</dex1>
-        <dex2>Uncanny Etude</dex2>
         <dirge>Adventurer&apos;s Dirge</dirge>
         <dist>Distract</dist>
         <dman>Dark Maneuver</dman>
         <ds>Divine Seal</ds>
         <dthren>Dark Threnody</dthren>
+        <eagi>Swift Etude</eagi>
+        <eagi1>Quick Etude</eagi1>
+        <eagi2>Swift Etude</eagi2>
+        <ec>Earth Crusher</ec>
         <ecarol>Earth Carol</ecarol>
         <ecarol2>Earth Carol II</ecarol2>
+        <echr>Bewitching Etude</echr>
+        <echr1>Enchanting Etude</echr1>
+        <echr2>Bewitching Etude</echr2>
         <ecl>Ecliptic Attrition</ecl>
         <ecliptic>Ecliptic Attrition</ecliptic>
+        <edex>Uncanny Etude</edex>
+        <edex1>Dextrous Etude</edex1>
+        <edex2>Uncanny Etude</edex2>
+        <eint>Sage Etude</eint>
+        <eint1>Learned Etude</eint1>
+        <eint2>Sage Etude</eint2>
         <elegy>Carnage Elegy</elegy>
         <elegy1>Battlefield Elegy</elegy1>
         <elegy2>Carnage Elegy</elegy2>
         <eman>Earth Maneuver</eman>
+        <emnd>Logical Etude</emnd>
+        <emnd1>Spirited Etude</emnd1>
+        <emnd2>Logical Etude</emnd2>
         <es>Elemental Seal</es>
+        <estr>Herculean Etude</estr>
+        <estr1>Sinewy Etude</estr1>
+        <estr2>Herculean Etude</estr2>
+        <evit>Vital Etude</evit>
+        <evit1>Vivacious Etude</evit1>
+        <evit2>Vital Etude</evit2>
         <fcarol>Fire Carol</fcarol>
         <fcarol2>Fire Carol II</fcarol2>
         <ferr>Ferreous Coffin</ferr>
         <fman>Fire Maneuver</fman>
-        <focus>Indi-Focus</focus>
-        <frailty>Geo-Frailty</frailty>
+        <fri>Frightful Roar</fri>
         <fthren>Fire Threnody</fthren>
-        <fury>Indi-Fury</fury>
-        <gacc>Indi-Precision</gacc>
+        <gacc>Geo-Precision</gacc>
         <gacumen>Geo-Acumen</gacumen>
         <gad>Gadalar</gad>
         <gagi>Geo-Agility</gagi>
-        <gatk>Indi-Fury</gatk>
-        <gatt>Geo-Attunement</gatt>
+        <gatk>Geo-Fury</gatk>
         <gbar>Geo-Barrier</gbar>
         <gchr>Geo-Charisma</gchr>
-        <gdef>Indi-Barrier</gdef>
+        <gdef>Geo-Barrier</gdef>
         <gdex>Geo-Dexterity</gdex>
+        <geist>Geist Wall</geist>
+        <georef>Geo-Refresh</georef>
+        <georeg>Geo-Regen</georeg>
         <gfade>Geo-Fade</gfade>
         <gfend>Geo-Fend</gfend>
         <gfocus>Geo-Focus</gfocus>
@@ -101,10 +128,11 @@
         <ghaste>Geo-Haste</ghaste>
         <gint>Geo-Intelligence</gint>
         <glang>Geo-Languor</glang>
-        <gmacc>Indi-Focus</gmacc>
+        <gmacc>Geo-Focus</gmacc>
         <gmal>Geo-Malaise</gmal>
-        <gmatk>Indi-Acumen</gmatk>
-        <gmdef>Indi-Fend</gmdef>
+        <gmatk>Geo-Acumen</gmatk>
+        <gmdef>Geo-Fend</gmdef>
+        <gmeva>Geo-Attunement</gmeva>
         <gmnd>Geo-Mind</gmnd>
         <gpara>Geo-Paralysis</gpara>
         <gpre>Geo-Precision</gpre>
@@ -118,13 +146,18 @@
         <gvex>Geo-Vex</gvex>
         <gvit>Geo-Vitality</gvit>
         <gvoid>Geo-Voidance</gvoid>
+        <gw>Geist Wall</gw>
         <gwilt>Geo-Wilt</gwilt>
         <hlull>Horde Lullaby II</hlull>
         <hlull1>Horde Lullaby</hlull1>
         <hlull2>Horde Lullaby II</hlull2>
         <holla>Teleport-Holla</holla>
         <hren>Earth Threnody</hren>
+        <hs>Haste Samba</hs>
         <hsamba>Haste Samba</hsamba>
+        <hunt>Hunter&apos;s Roll</hunt>
+        <hunter>Hunter&apos;s Roll</hunter>
+        <hunters>Hunter&apos;s Roll</hunters>
         <hw>Healing Waltz</hw>
         <hymn>Goddess&apos;s Hymnus</hymn>
         <hymnus>Goddess&apos;s Hymnus</hymnus>
@@ -136,6 +169,11 @@
         <ibar>Indi-Barrier</ibar>
         <icarol>Ice Carol</icarol>
         <icarol2>Ice Carol II</icarol2>
+        <ice>Blizzard</ice>
+        <ice2>Blizzard II</ice2>
+        <ice3>Blizzard III</ice3>
+        <ice4>Blizzard IV</ice4>
+        <ice5>Blizzard V</ice5>
         <ichi>Utsusemi: Ichi</ichi>
         <ichr>Indi-Charisma</ichr>
         <idef>Indi-Barrier</idef>
@@ -156,9 +194,8 @@
         <imdef>Indi-Fend</imdef>
         <imnd>Indi-Mind</imnd>
         <in>Invisible</in>
-        <int>Sage Etude</int>
-        <int1>Learned Etude</int1>
-        <int2>Sage Etude</int2>
+        <indiref>Indi-Refresh</indiref>
+        <indireg>Indi-Regen</indireg>
         <ipara>Indi-Paralysis</ipara>
         <ipre>Indi-Precision</ipre>
         <iref>Indi-Refresh</iref>
@@ -197,8 +234,8 @@
         <lull>Foe Lullaby II</lull>
         <mad1>Sword Madrigal</mad1>
         <mad2>Blade Madrigal</mad2>
+        <maj>Majesty</maj>
         <makki>Makki-Chebukki</makki>
-        <malaise>Geo-Malaise</malaise>
         <march>Victory March</march>
         <march1>Advancing March</march1>
         <march2>Victory March</march2>
@@ -228,9 +265,6 @@
         <minuet3>Valor Minuet III</minuet3>
         <minuet4>Valor Minuet IV</minuet4>
         <minuet5>Valor Minuet V</minuet5>
-        <mnd>Logical Etude</mnd>
-        <mnd1>Spirited Etude</mnd1>
-        <mnd2>Logical Etude</mnd2>
         <mon>Monberaux</mon>
         <mum>Mumor</mum>
         <mum2>Mumor II</mum2>
@@ -239,7 +273,6 @@
         <nanaa>Nanaa Mihgo</nanaa>
         <nat>Naturalist&apos;s Roll</nat>
         <ni>Utsusemi: Ni</ni>
-        <paeon>Army&apos;s Paeon VI</paeon>
         <paeon1>Army&apos;s Paeon</paeon1>
         <paeon2>Army&apos;s Paeon II</paeon2>
         <paeon3>Army&apos;s Paeon III</paeon3>
@@ -251,18 +284,33 @@
         <pash>Recall-Pashh</pash>
         <pashh>Recall-Pashh</pashh>
         <pen>Penury</pen>
+        <ph>Phalanx</ph>
+        <ph2>Phalanx II</ph2>
         <pia>Pianissimo</pia>
         <pna>Poisona</pna>
+        <pra1>Protectra</pra1>
+        <pra2>Protectra II</pra2>
+        <pra3>Protectra III</pra3>
+        <pra4>Protectra IV</pra4>
+        <pra5>Protectra V</pra5>
         <pre1>Hunter&apos;s Prelude</pre1>
         <pre2>Archer&apos;s Prelude</pre2>
         <prelude>Archer&apos;s Prelude</prelude>
         <prelude1>Hunter&apos;s Prelude</prelude1>
         <prelude2>Archer&apos;s Prelude</prelude2>
-        <pro1>Protectra</pro1>
-        <pro2>Protectra II</pro2>
-        <pro3>Protectra III</pro3>
-        <pro4>Protectra IV</pro4>
-        <pro5>Protectra V</pro5>
+        <pro>Protect V</pro>
+        <pro1>Protect</pro1>
+        <pro2>Protect II</pro2>
+        <pro3>Protect III</pro3>
+        <pro4>Protect IV</pro4>
+        <pro5>Protect V</pro5>
+        <prora1>Protectra</prora1>
+        <prora2>Protectra II</prora2>
+        <prora3>Protectra III</prora3>
+        <prora4>Protectra IV</prora4>
+        <prora5>Protectra V</prora5>
+        <prorav>Protectra V</prorav>
+        <prov>Protect V</prov>
         <pupoff>Deactivate</pupoff>
         <pupon>Activate</pupon>
         <qstep>Quickstep</qstep>
@@ -278,6 +326,8 @@
         <raga3>Curaga III</raga3>
         <raga4>Curaga IV</raga4>
         <raga5>Curaga V</raga5>
+        <ram>Rampart</ram>
+        <ramp>Rampart</ramp>
         <re1>Regen</re1>
         <re2>Regen II</re2>
         <re3>Regen III</re3>
@@ -287,7 +337,7 @@
         <ref1>Refresh</ref1>
         <ref2>Refresh II</ref2>
         <rep>Repose</rep>
-        <req>Foe Requiem VII</req>
+        <req>Requiescat</req>
         <robel>Robel-Akbel</robel>
         <rr>Reraise</rr>
         <rr1>Reraise</rr1>
@@ -298,19 +348,27 @@
         <sa>Sneak Attack</sa>
         <sam>Samurai Roll</sam>
         <sams>Samurai Roll</sams>
+        <sav>Savage Blade</sav>
         <sel>Selh&apos;teus</sel>
         <semi>Semih Lafihna</semi>
-        <sh1>Shellra</sh1>
-        <sh2>Shellra II</sh2>
-        <sh3>Shellra III</sh3>
-        <sh4>Shellra IV</sh4>
-        <sh5>Shellra V</sh5>
+        <sent>Sentinel</sent>
+        <sh1>Shell</sh1>
+        <sh2>Shell II</sh2>
+        <sh3>Shell III</sh3>
+        <sh4>Shell IV</sh4>
+        <sh5>Shell V</sh5>
         <shan2>Shantotto II</shan2>
         <she1>Shellra</she1>
         <she2>Shellra II</she2>
         <she3>Shellra III</she3>
         <she4>Shellra IV</she4>
         <she5>Shellra V</she5>
+        <sheep>Sheep Song</sheep>
+        <shra1>Shellra</shra1>
+        <shra2>Shellra II</shra2>
+        <shra3>Shellra III</shra3>
+        <shra4>Shellra IV</shra4>
+        <shra5>Shellra V</shra5>
         <sibyl>Star Sibyl</sibyl>
         <sil>Silence</sil>
         <sirv>Foe Sirvente</sirv>
@@ -321,10 +379,8 @@
         <slga2>Sleepga II</slga2>
         <sn>Sneak</sn>
         <sna>Silena</sna>
+        <snake>Snake Eye</snake>
         <ss>Stoneskin</ss>
-        <str>Herculean Etude</str>
-        <str1>Sinewy Etude</str1>
-        <str2>Herculean Etude</str2>
         <sybil>Star Sibyl</sybil>
         <sylv>Sylvie (UC)</sylv>
         <sylvie>Sylvie (UC)</sylvie>
@@ -332,6 +388,11 @@
         <tact>Tactician&apos;s Roll</tact>
         <tcarol>Thunder Carol</tcarol>
         <tcarol2>Thunder Carol II</tcarol2>
+        <thu>Thunder</thu>
+        <thu2>Thunder II</thu2>
+        <thu3>Thunder III</thu3>
+        <thu4>Thunder IV</thu4>
+        <thu5>Thunder V</thu5>
         <tman>Thunder Maneuver</tman>
         <tthren>Lightning Threnody</tthren>
         <uka>Uka Totlihn</uka>
@@ -342,9 +403,6 @@
         <vahzl>Teleport-Vahzl</vahzl>
         <val>Valaineral</val>
         <virelai>Maiden&apos;s Virelai</virelai>
-        <vit>Vital Etude</vit>
-        <vit1>Vivacious Etude</vit1>
-        <vit2>Vital Etude</vit2>
         <vna>Viruna</vna>
         <wacarol>Water Carol</wacarol>
         <wacarol2>Water Carol II</wacarol2>

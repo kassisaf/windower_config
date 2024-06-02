@@ -30,16 +30,15 @@ return {
   ['Alt+0'] = 'input /ma "Horde Lullaby II" <stnpc>',
 
   -- Ongo
-  ['Win+1'] = 'input /ma "Learned Etude" <me>',
-  ['Win+2'] = 'input /ma "Sage Etude" <me>',
-  ['Win+3'] = 'input /ma "Lightning Carol" <me>',
-  ['Win+4'] = 'input /ma "Victory March" <me>',
-  ['Win+5'] = 'input /ma "Honor March" <me>',
-
-  ['Win+6'] = 'input /ja "Pianissimo" <me>',
-  ['Win+7'] = 'input /ma "Mage\'s Ballad III" Legasan',
-  ['Win+8'] = 'input /ja "Pianissimo" <me>',
-  ['Win+9'] = 'input /ma "Knight\'s Minne V" <me>',
+  -- ['Win+1'] = 'input /ma "Learned Etude" <me>',
+  -- ['Win+2'] = 'input /ma "Sage Etude" <me>',
+  -- ['Win+3'] = 'input /ma "Lightning Carol" <me>',
+  -- ['Win+4'] = 'input /ma "Victory March" <me>',
+  -- ['Win+5'] = 'input /ma "Honor March" <me>',
+  -- ['Win+6'] = 'input /ja "Pianissimo" <me>',
+  -- ['Win+7'] = 'input /ma "Mage\'s Ballad III" Legasan',
+  -- ['Win+8'] = 'input /ja "Pianissimo" <me>',
+  -- ['Win+9'] = 'input /ma "Knight\'s Minne V" <me>',
 
   -- Xevioso
   -- ['Win+1'] = 'input /ma "Sentinel\'s Scherzo" <me>',
@@ -48,6 +47,7 @@ return {
   -- ['Win+4'] = 'input /ma "Knight\'s Minne V" <me>',
   -- ['Win+5'] = 'input /ma "Honor March" <me>',
 
+  -- General
   -- ['Win+1'] = 'input /ja "Pianissimo" <me>',
   -- ['Win+2'] = 'input /ma "Mage\'s Ballad II" <stpt>',
   -- ['Win+3'] = 'input /ma "Mage\'s Ballad III" <stpt>',

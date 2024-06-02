@@ -1,6 +1,8 @@
 -- Any items defined here will be locked when equipped manually
 lockables = {
   "Warp Ring",
+  "Reraise Ring",
+  "White Rarab Cap +1",
   "Dim. Ring (Mea)",
   -- "Dim. Ring (Holla)",
   -- "Dim. Ring (Dem)",
@@ -11,7 +13,6 @@ lockables = {
   -- "Caliber Ring",
   -- "Facility Ring",
   "Guide Beret",
-  "Reraise Ring",
   "Warp Cudgel",
   -- "Nexus Cape",
   "Portafurnace" -- lol

@@ -19,17 +19,17 @@ function get_sets()
   -- Empyrean: Creed / Chevalier's
   artifact = {
     -- head  = "Gallant Coronet",   -- Stored, consider using for Cover after upgrading
-    body = "Reverence Surcoat",
+    body = "Reverence Surcoat +1",
     -- hands = "Gallant Gauntlets", -- Stored
-    legs = "Reverence Breeches"
+    legs = "Reverence Breeches +1"
     -- feet  = "Gallant Leggings",  -- Stored
   }
   relic = {
-    -- head  = "Valor Coronet",   -- Stored
-    -- body  = "Valor Surcoat",   -- Stored
-    -- hands = "Valor Gauntlets", -- Stored
-    -- legs  = "Valor Breeches",  -- Stored
-    -- feet  = "Valor Leggings",  -- Stored
+    head = "Caballarius Coronet",
+    body = "Valor Surcoat +2",
+    hands = "Caballarius Gauntlets",
+    legs = "Caballarius Breeches",
+    feet = "Caballarius Leggings"
   }
   empyrean = {
     head = "Chevalier's Armet +2",
@@ -60,8 +60,17 @@ function get_sets()
         '"Cure" potency +10%',
         'Spell interruption rate down-10%'
       }
+    },
+    fast_cast = {
+      name = "Rudianos's Mantle",
+      augments = {
+        'HP+60',
+        'Eva.+20 /Mag. Eva.+20',
+        'Mag. Evasion+10',
+        '"Fast Cast"+10',
+        'Spell interruption rate down-10%'
+      }
     }
-    -- fast_cast = {name = "Rudianos's Mantle", augments = {}},
     -- tp = {name = "Rudianos's Mantle", augments = {}},
   }
 
@@ -108,11 +117,31 @@ function get_sets()
     }
   }
 
+  -- Weapon cycles
+  sets.cycles.weapons = {
+    physical_tank = {
+      main = "Sakpata's Sword",
+      sub = "Srivatsa"
+    },
+    magic_tank = {
+      main = "Malignance Sword",
+      sub = "Aegis"
+    },
+    aeolian = {
+      main = "Levante Dagger",
+      sub = "Duban"
+    }
+    -- cata_cleave = {
+    --   main = "Malignance Pole",
+    --   sub = "Willpower Grip"
+    -- }
+  }
+
   -- Basic sets
   sets.idle = set_combine(nyame, {
     main = "Malignance Sword",
     sub = "Srivatsa",
-    ammo = "Sapience Orb", -- "Staunch Tathlum +1",
+    ammo = "Staunch Tathlum",
     head = empyrean.head,
     body = sakpata.body,
     hands = sakpata.hands,
@@ -141,18 +170,20 @@ function get_sets()
   sets.FC = {
     ammo = "Sapience Orb", -- 2% FC
     head = "Carmine Mask +1", -- 14% FC
+    -- body = artifact.body, -- 5% at +2, 10% at +3
     hands = "Leyline Gloves", -- 5+1% FC
+    legs = "Enif Cosciales", -- 8% FC
     feet = empyrean.feet, -- 10% FC at +2
     left_ear = "Loquacious Earring", -- 2% FC
     right_ear = "Odnowa Earring +1", -- HP +110
     left_ring = "Gelatinous Ring +1", -- HP +135
     right_ring = "Kishar Ring", -- 4% FC (Medada's Ring for 10%)
-    waist = "Platinum Moogle Belt"
+    waist = "Platinum Moogle Belt",
+    back = ambu_cape.fast_cast -- 10% FC
 
     -- head = "Carmine Mask +1", --14% FC
     -- body = artifact.body, -- 10% FC at +3
     -- legs = "Enif Cosciales" --8% FC
-    -- back = ambu_cape.fc, -- 10% FC
     -- neck = "Baetyl Pendant", -- 4% FC (Orunmila's Torque gets 5)
   }
   sets.enmity = {
@@ -171,18 +202,19 @@ function get_sets()
     right_ring = "Supershear Ring" -- Enmity +5
   }
   sets.sird = {
-    head = "Souveran Schaller +1",
+    ammo = "Staunch Tathlum", -- 10% SIRD
+    head = "Souveran Schaller +1", -- 20% SIRD
+    legs = "Founder's Hose", -- 30% SIRD
     feet = empyrean.feet,
     waist = "Platinum Moogle Belt",
-    left_ear = "Magnetic Earring",
-    right_ear = "Knightly Earring"
+    left_ear = "Magnetic Earring", -- 8% SIRD
+    right_ear = "Knightly Earring" -- 9% SIRD
 
     -- body = af_body,
-    -- legs = "Founder's Hose",
     -- neck = "Moonlight Necklace"
     -- right_ring = "Moonlight Ring",
   }
-  sets.phalanx_received = set_combine(sets.sird, {
+  sets.phalanx_received = set_combine(sets.idle, sets.sird, {
     main = "Sakpata's Sword", -- Phalanx +5
     sub = "Priwen", -- Phalanx +2
     head = odyssean_head.phalanx, -- Phalanx +3
@@ -191,7 +223,8 @@ function get_sets()
     legs = "Sakpata's Cuisses", -- Phalanx +5
     feet = "Souveran Schuhs +1", -- Phalanx +5
     back = "Weard Mantle", -- Phalanx +3 (can roll up to +5 with refractive crystals)
-    waist = "Gishdubar Sash" -- Because maybe we get refresh at the same time
+    waist = "Gishdubar Sash", -- Because maybe we get refresh at the same time
+    left_ear = "Odnowa Earring +1" -- Just for defense
   }) -- Total: +32
   sets.cursna_received = {
     legs = "Shabti Cuisses +1", -- Cursna Received +15%
@@ -259,12 +292,23 @@ function get_sets()
     waist = "Sailfi Belt +1"
   })
   sets.precast.WS["Sanguine Blade"] = set_combine(sets.precast.WS.melee, {
-    neck = "Erra Pendant"
+    ammo = "Ghastly Tathlum +1",
+    head = "Pixie Hairpin +1",
+    neck = "Sibyl Scarf",
+    left_ear = "Thrud Earring",
+    right_ear = "Friomisi Earring", -- Halasz, Crematio?
+    left_ring = "Archon Ring",
+    right_ring = "Shiva Ring +1", -- Medada's?
+    back = "Toro Cape",
+    waist = "Eschan Stone" -- "Orpheus's Sash",
   })
-  sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS.melee, {
-    neck = "Erra Pendant"
-    -- left_ring = "Mephitas's Ring +1",
+  sets.precast.WS["Cataclysm"] = sets.precast.WS["Sanguine Blade"]
+  sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Sanguine Blade"], {
+    head = nyame.head,
+    right_ear = "Moonshade Earring"
+    -- back = "Mecistopins Mantle"
   })
+  sets.precast.WS["Earth Crusher"] = sets.precast.WS["Aeolian Edge"]
   sets.precast.WS["Chant du Cygne"] = set_combine(sets.precast.WS.melee, sakpata, {
     ammo = "Coiste Bodhar",
     body = "Hjarrandi Breastplate",
@@ -279,24 +323,16 @@ function get_sets()
     -- left_ear  = "Cessance Earring",
   })
 
-  -- Job ability sets
-
-  -- Use TH for targeted JA's
-  -- sets.precast["Box Step"]   = sets.TH
-  -- sets.precast["Quick Step"] = sets.TH
-
   sets.precast["Cure"] = set_combine(sets.FC, {
     neck = "Diemer Gorget", -- Cure spellcasting time -4%
-    left_ear = "Mendicant's Earring" -- Cure spellcasting time -5%
-
-    -- waist = "Acerbic Sash +1", -- Cure spellcasting time -8%
+    left_ear = "Mendicant's Earring", -- Cure spellcasting time -5%
+    waist = "Acerbic Sash +1" -- Cure spellcasting time -8%
   })
   sets.precast["CureSelf"] = set_combine(sets.precast["Cure"], {
     -- Lose (convert) HP before self-curing for more hate generation
-    right_ear = "Influx Earring" -- 55 HP to MP
-
-    -- left_ring  = "Mephitas's Ring",
-    -- right_ring = "Mephitas's Ring +1",
+    right_ear = "Influx Earring", -- 55 HP to MP
+    left_ring = "Mephitas's Ring", -- 100 HP to MP
+    right_ring = "Mephitas's Ring +1" -- 110 HP to MP
   })
 
   -- Midcast sets
@@ -309,7 +345,6 @@ function get_sets()
     right_ear = sortie_earring -- CP, DT
 
     -- neck  = "Sacro Gorget",                  -- CP1 +10
-    -- ear2  = "Chev. Earring +1",              -- CP1 +11
     -- ring2 = "Gelatinous Ring +1",
     -- body  = "Souveran Cuirass +1",           -- CP1 +11
     -- hands = gear.Souveran_ShieldSkill_Hands,
@@ -322,18 +357,20 @@ function get_sets()
     left_ear = "Odnowa Earring +1", -- 110 MP to HP
     right_ear = "Cryptic Earring", -- HP +40, enmity +4
     left_ring = "Defending Ring",
-    right_ring = "Meridian Ring" -- HP +90, dark res -20
+    right_ring = "Moonbeam Ring" -- HP +100, DT-4
 
     -- ammo  = "Egoist's Tathlum",         --	+45 HP
     -- neck  = "Sacro Gorget",             --	CP1 +10%,  +5 Enmity,        +50 HP
     -- hands = "Macabre Gauntlets +1",     --	CP1 +11%,  +89 HP,           PDT -4
-    -- ring2 = "Moonlight Ring",           --	+100 HP,   DT -4
     -- back  = "Moonbeam Cape",            --	+250 HP,   DT -5
     -- feet  = gear.Odyssean_CurePot_Feet, --	CP1 +10%,  SIRD -20
   })
-
   sets.midcast["Phalanx"] = set_combine(sets.sird, sets.phalanx_received, {
     left_ear = "Mimir Earring" -- Enhancing +10
+  })
+  sets.midcast["Refresh"] = set_combine(sets.sird, {
+    -- TODO: selfcast only
+    waist = "Gishdubar Sash" -- Refresh duration +20
   })
 
   -- Other sets
@@ -360,11 +397,13 @@ end -- get_sets()
 -- PLD-specific "cure cheating"
 function job_precast(spell, mapped_spell)
   if spell.target.type == "SELF" and (mapped_spell == "Cure" or mapped_spell == "Curaga") then
-    equip(sets.precast["CureSelf"])
+    safe_equip(sets.precast["CureSelf"])
   end
 end
 function job_midcast(spell, mapped_spell)
   if spell.target.type == "SELF" and (mapped_spell == "Cure" or mapped_spell == "Curaga") then
-    equip(sets.midcast["CureSelf"])
+    safe_equip(sets.midcast["CureSelf"])
+  elseif buffactive["Rampart"] == false then
+    safe_equip(sets.sird)
   end
 end

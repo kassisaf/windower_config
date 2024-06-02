@@ -69,7 +69,7 @@ function get_sets()
   })
   sets.TP = {
     main = "Aeneas",
-    sub = "Gleti's Knife",
+    sub = "Crepuscular Knife",
     range = empty,
     ammo = "Coiste Bodhar",
     head = empyrean.head,

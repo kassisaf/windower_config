@@ -40,10 +40,10 @@
                 <5>Kupipi</5>
             </di>
             <dyna>
-                <1>Sakura</1>
-                <2>Mayakov</2>
+                <1>Mayakov</1>
+                <2>Mumor</2>
                 <3>Uka Totlihn</3>
-                <4>Kupipi</4>
+                <4>Cherukiki</4>
                 <5>Koru-Moru</5>
             </dyna>
             <exp>
@@ -85,6 +85,20 @@
                 <4>Kupipi</4>
                 <5>Koru-Moru</5>
             </skillup>
+            <solocor>
+                <1>Mayakov</1>
+                <2>Kupipi</2>
+                <3>Cherukiki</3>
+                <4>King of Hearts</4>
+                <5>Sylvie (UC)</5>
+            </solocor>
+            <solothf>
+                <1>Sylvie (UC)</1>
+                <2>Ulmia</2>
+                <3>Kupipi</3>
+                <4>Koru-Moru</4>
+                <5>Kupofried</5>
+            </solothf>
             <taxet>
                 <1>Trion</1>
                 <2>Zeid II</2>

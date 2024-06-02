@@ -100,8 +100,8 @@ function get_sets()
   bullets = {
     physical = "Chrono Bullet",
     macc = "Orichalcum Bullet",
-    qd_dmg = "Hauksbok Bullet",
-    qd_acc = "Animikii Bullet"
+    quick_draw_damage = "Hauksbok Bullet",
+    quick_draw_accuracy = "Animikii Bullet"
   }
   roll_knife = {
     name = "Lanun Knife",
@@ -116,10 +116,32 @@ function get_sets()
     }
   }
 
+  -- Weapon cycles
+  sets.cycles.shooting = {
+    physical = {
+      main = "Kustawi +1",
+      sub = "Nusku Shield",
+      range = "Fomalhaut",
+      ammo = bullets["physical"]
+    },
+    magic = {
+      main = stp_knife,
+      sub = "Tauret",
+      range = "Molybdosis",
+      ammo = bullets["macc"]
+    },
+    statue_crusher = {
+      main = "Naegling",
+      sub = "Tauret",
+      range = "Ataktos",
+      ammo = bullets["macc"]
+    }
+  }
+
   -- Basic sets
   sets.idle = {
     main = "Naegling",
-    sub = "Gleti's Knife",
+    sub = "Crepuscular Knife",
     range = "Ataktos",
     ammo = bullets["physical"],
     head = nyame.head,
@@ -153,27 +175,6 @@ function get_sets()
   }
 
   -- Shooting sets
-  sets.cycles.shooting = {
-    physical = {
-      main = "Kustawi +1",
-      sub = "Nusku Shield",
-      range = "Fomalhaut",
-      ammo = bullets["physical"]
-    },
-    magic = {
-      main = stp_knife,
-      sub = "Tauret",
-      range = "Molybdosis",
-      ammo = bullets["macc"]
-    },
-    statue_crusher = {
-      main = "Naegling",
-      sub = "Tauret",
-      range = "Ataktos",
-      ammo = bullets["macc"]
-    }
-  }
-
   -- Preshot should contain: Snapshot, Rapid Shot
   -- Snapshot caps at 70% (-10% from gifts) and applies to aiming delay directly
   -- Rapid Shot caps at 99%, and reduces aiming delay by up to 50% on proc
@@ -346,7 +347,7 @@ function get_sets()
 
   -- Quick Draw sets
   quick_draw_stp = {
-    ammo = bullets["qd_acc"],
+    ammo = bullets["quick_draw_accuracy"],
     head = malignance.head,
     body = "Mirke Wardecors",
     hands = malignance.hands,
@@ -372,7 +373,7 @@ function get_sets()
     right_ring = "Stikini Ring"
   })
   quick_draw_dmg = set_combine(quick_draw_stp, {
-    ammo = bullets["qd_dmg"],
+    ammo = bullets["quick_draw_damage"],
     head = nyame.head,
     body = relic.body,
     hands = "Carmine Finger Gauntlets +1",
@@ -415,7 +416,7 @@ function get_sets()
   -- Maximize crit rate for Domain Invasion
   sets.DI = set_combine(sets.TP, {
     main = "Voluspa Knife",
-    sub = "Gleti's Knife",
+    sub = "Crepuscular Knife",
     hands = "Mummu Wrists +2",
     left_ear = "Odr Earring",
     left_ring = "Mummu Ring"
