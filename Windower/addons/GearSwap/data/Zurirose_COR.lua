@@ -1,15 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
   job_init(2, 1, 2) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
-  sets.cycles = {}
+  initialize_empty_sets()
 
   -- State flags
   dual_wield_available = player.sub_job == "NIN" -- TODO check for DW trait

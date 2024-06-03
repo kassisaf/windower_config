@@ -5,6 +5,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
   job_init(1, 1, 1) -- Macro book, macro page, lockstyle set
+  initialize_empty_sets()
 
   -- Leave these empty
   sets.precast = {

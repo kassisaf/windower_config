@@ -1,14 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
   job_init(4, 1, 4) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
+  initialize_empty_sets()
 
   -- JSE Prefixes:
   -- Artifact: Rogue's / Pillager's
@@ -98,7 +91,6 @@ function get_sets()
   }
   sets.midcast.RA = set_combine(malignance, {
     body = "Meghanada Cuirie +2",
-    neck = "Caro Necklace",
     waist = "Eschan Stone",
     left_ring = "Cacoethic Ring +1",
     -- right_ring = "Cacoethic Ring",
@@ -174,6 +166,7 @@ function get_sets()
     ammo = "Ghastly Tathlum +1",
     neck = "Sibyl Scarf", -- Baetyl Pendant
     waist = "Eschan Stone", -- Orpheus's Sash
+    back = "Toro Cape",
     left_ring = "Shiva Ring +1", -- Epaminondas
     right_ring = "Dingir Ring",
     left_ear = "Moonshade Earring",

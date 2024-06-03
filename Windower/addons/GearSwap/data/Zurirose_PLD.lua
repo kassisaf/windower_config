@@ -1,15 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(6, 1, 6) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
-  sets.cycles = {}
+  job_init(6, 1, 7, "Noble Chocobo") -- Macro book, macro page, lockstyle set, preferred mount
+  initialize_empty_sets()
 
   -- Gear Aliases
 
@@ -25,11 +17,11 @@ function get_sets()
     -- feet  = "Gallant Leggings",  -- Stored
   }
   relic = {
-    head = "Caballarius Coronet",
-    body = "Valor Surcoat +2",
-    hands = "Caballarius Gauntlets",
-    legs = "Caballarius Breeches",
-    feet = "Caballarius Leggings"
+    head = "Caballarius Coronet +1",
+    body = "Caballarius Surcoat +1",
+    hands = "Caballarius Gauntlets +1",
+    legs = "Caballarius Breeches +1",
+    feet = "Caballarius Leggings +1"
   }
   empyrean = {
     head = "Chevalier's Armet +2",
@@ -74,45 +66,47 @@ function get_sets()
     -- tp = {name = "Rudianos's Mantle", augments = {}},
   }
 
-  odyssean_head = {
-    phalanx = {
-      name = "Odyssean Helm",
-      augments = {
-        'Pet: "Subtle Blow"+8',
-        'Rng.Atk.+14',
-        'Phalanx +3',
-        'Accuracy+19 Attack+19',
-        'Mag. Acc.+3 "Mag.Atk.Bns."+3'
+  odyssean = {
+    head = {
+      phalanx = {
+        name = "Odyssean Helm",
+        augments = {
+          'Pet: "Subtle Blow"+8',
+          'Rng.Atk.+14',
+          'Phalanx +3',
+          'Accuracy+19 Attack+19',
+          'Mag. Acc.+3 "Mag.Atk.Bns."+3'
+        }
+      },
+      th = {
+        name = "Odyssean Helm",
+        augments = {
+          'MND+3',
+          'Magic burst dmg.+6%',
+          '"Treasure Hunter"+2',
+          'Accuracy+7 Attack+7',
+          'Mag. Acc.+5 "Mag.Atk.Bns."+5'
+        }
       }
     },
-    th = {
-      name = "Odyssean Helm",
-      augments = {
-        'MND+3',
-        'Magic burst dmg.+6%',
-        '"Treasure Hunter"+2',
-        'Accuracy+7 Attack+7',
-        'Mag. Acc.+5 "Mag.Atk.Bns."+5'
+    body = {
+      phalanx = {
+        name = "Odyss. Chestplate",
+        augments = {
+          'Magic dmg. taken -2%',
+          '"Mag.Atk.Bns."+20',
+          'Phalanx +4'
+        }
       }
-    }
-  }
-  odyssean_body = {
-    phalanx = {
-      name = "Odyss. Chestplate",
-      augments = {
-        'Magic dmg. taken -2%',
-        '"Mag.Atk.Bns."+20',
-        'Phalanx +4'
-      }
-    }
-  }
-  odyssean_feet = {
-    cure_potency = {
-      name = "Odyssean Greaves",
-      augments = {
-        '"Mag.Atk.Bns."+18',
-        '"Cure" potency +5%',
-        'MND+9'
+    },
+    feet = {
+      cure_potency = {
+        name = "Odyssean Greaves",
+        augments = {
+          '"Mag.Atk.Bns."+18',
+          '"Cure" potency +5%',
+          'MND+9'
+        }
       }
     }
   }
@@ -156,6 +150,19 @@ function get_sets()
     right_ring = "Shneddick Ring"
   })
 
+  -- For sweaty magic tanking
+  sets.idle_magic = set_combine(sets.idle, {
+    neck = "Warder's Charm +1",
+    left_ear = "Eabani Earring",
+    right_ear = "Hearty Earring",
+    right_ring = "Shadow Ring"
+  })
+
+  sets.tp = set_combine(sets.idle, {
+    -- neck = "Warder's Charm +1" -- For sweaty magic tanking
+    right_ring = "Shadow Ring"
+  })
+
   sets.TP = set_combine(sets.idle, {
     -- legs       = empyrean.legs,
 
@@ -171,6 +178,7 @@ function get_sets()
     ammo = "Sapience Orb", -- 2% FC
     head = "Carmine Mask +1", -- 14% FC
     -- body = artifact.body, -- 5% at +2, 10% at +3
+    body = "Sacro Breastplate", -- 10% FC HP+182
     hands = "Leyline Gloves", -- 5+1% FC
     legs = "Enif Cosciales", -- 8% FC
     feet = empyrean.feet, -- 10% FC at +2
@@ -217,14 +225,16 @@ function get_sets()
   sets.phalanx_received = set_combine(sets.idle, sets.sird, {
     main = "Sakpata's Sword", -- Phalanx +5
     sub = "Priwen", -- Phalanx +2
-    head = odyssean_head.phalanx, -- Phalanx +3
-    body = odyssean_body.phalanx, -- Phalanx +4
+    head = odyssean.head.phalanx, -- Phalanx +3
+    body = odyssean.body.phalanx, -- Phalanx +4
     hands = "Souveran Handschuhs +1", -- Phalanx +5, path D for shield skill
     legs = "Sakpata's Cuisses", -- Phalanx +5
     feet = "Souveran Schuhs +1", -- Phalanx +5
     back = "Weard Mantle", -- Phalanx +3 (can roll up to +5 with refractive crystals)
-    waist = "Gishdubar Sash", -- Because maybe we get refresh at the same time
-    left_ear = "Odnowa Earring +1" -- Just for defense
+    left_ear = "Odnowa Earring +1", -- Just for defense
+
+    waist = "Gishdubar Sash", -- Because we might get Refresh at the same time
+    right_ear = "Brachyura Earring" -- Because we might get Shell at the same time
   }) -- Total: +32
   sets.cursna_received = {
     legs = "Shabti Cuisses +1", -- Cursna Received +15%
@@ -336,12 +346,24 @@ function get_sets()
   })
 
   -- Midcast sets
+  sets.midcast["Enhancing Magic"] = {
+    body = "Shabti Cuirass"
+
+    -- hands = "Regal Gauntlets",
+    -- left_ring = "Stikini Ring",
+    -- right_ring = "Stikini Ring",
+  }
+  sets.midcast["Protect"] = set_combine(sets.midcast["Enhancing Magic"], {
+    sub = "Srivatsa",
+    left_ear = "Brachyura Earring"
+  })
   sets.midcast["Cure"] = {
     head = "Souveran Schaller +1", -- CPR +15%, +9 Enmity, +280 HP, SIRD -20
     body = "Souveran Cuirass +1", -- CP, CPR, Enmity, HP, DT
+    hands = "Macabre Gauntlets",
     back = ambu_cape.cure_potency,
     legs = empyrean.legs, -- HP, enmity retention, DT
-    feet = odyssean_feet.cure_potency,
+    feet = odyssean.feet.cure_potency,
     right_ear = sortie_earring -- CP, DT
 
     -- neck  = "Sacro Gorget",                  -- CP1 +10
@@ -372,11 +394,14 @@ function get_sets()
     -- TODO: selfcast only
     waist = "Gishdubar Sash" -- Refresh duration +20
   })
+  sets.midcast["Flash"] = sets.enmity
+  sets.midcast["Banishga"] = sets.enmity
+  sets.midcast["Blue Magic"] = sets.sird
 
   -- Other sets
   sets.TH = {
     ammo = "Perfect Lucky Egg",
-    head = odyssean_head.th
+    head = odyssean.head.th
   }
   -- Maximize crit rate for Domain Invasion
   sets.DI = set_combine(sets.TP, {

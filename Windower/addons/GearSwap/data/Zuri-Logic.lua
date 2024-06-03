@@ -59,6 +59,7 @@ weapon_slots = {
   "main",
   "range"
 }
+default_mount = "red crab"
 
 ------------------------
 -- Modes and commands --
@@ -76,16 +77,16 @@ local modes = {
 function toggle_mode(key)
   if modes[key] ~= nil then
     modes[key] = not modes[key]
-    send_command("input /echo " .. key .. " mode " .. ENABLED_OR_DISABLED[tostring(modes[key])])
+    add_to_chat(key .. " mode " .. ENABLED_OR_DISABLED[tostring(modes[key])])
     equip_idle_or_tp_set()
   else
-    send_command("input /echo Warning: tried to toggle " .. key .. " mode but key does not exist. (Check Zuri-Common `modes` table)")
+    add_to_chat("Warning: tried to toggle " .. key .. " mode but key does not exist. (Check Zuri-Common `modes` table)")
   end
 end
 
 function print_spell_info_if_debug_enabled(spell)
   if modes["debug"] then
-    send_command('input /echo precast spell.english:' .. spell.english .. ', type: ' .. spell.type .. ', action_type:' .. spell.action_type)
+    add_to_chat("precast spell.english:" .. spell.english .. ", type: " .. spell.type .. ", action_type:" .. spell.action_type)
   end
 end
 
@@ -102,7 +103,7 @@ function load_job_specific_addons()
 end
 
 -- Sets macro page and lockstyle set, to be called on job load
-function job_init(macro_book, macro_page, lockstyleset)
+function job_init(macro_book, macro_page, lockstyleset, preferred_mount)
   send_command("wait 1; input /macro book " .. macro_book)
   send_command("wait 2; input /macro set " .. macro_page)
   if lockstyleset then
@@ -110,8 +111,20 @@ function job_init(macro_book, macro_page, lockstyleset)
   end
   send_command(
       "wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
+  send_command("alias m input /mount \"" .. (preferred_mount or default_mount) .. "\"")
+  send_command("alias d input /dismount")
 
   load_job_specific_addons()
+end
+
+function initialize_empty_sets()
+  sets.precast = {
+    WS = {
+      crit = {}
+    }
+  }
+  sets.midcast = {}
+  sets.cycles = {}
 end
 
 -- Cycles between sets defined in sets.cycles
@@ -119,7 +132,7 @@ cycle_state = {}
 cycle_sizes = {}
 function cycle(cycle_name)
   if not sets.cycles[cycle_name] then
-    send_command("input /echo Error: Cycle group '" .. cycle_name .. "' is undefined")
+    add_to_chat("Error: Cycle group '" .. cycle_name .. "' is undefined")
     return
   end
 
@@ -134,7 +147,7 @@ function cycle(cycle_name)
     end
     if cycle_state[cycle_name] == k then
       equip(v)
-      send_command("input /echo Equipped " .. cycle_name .. " set " .. set_index .. ": " .. k)
+      add_to_chat("Equipped " .. cycle_name .. " set " .. set_index .. ": " .. k)
       if set_index == cycle_sizes[cycle_name] then
         set_index = 1
       else
@@ -164,7 +177,7 @@ function safe_equip(gearset, skip_lockables)
     for slot, item in pairs(gearset) do
       if lockables_set[player.equipment[slot]] then
         disable(slot)
-        send_command('input /echo ' .. player.equipment[slot] .. ' is equipped, ' .. slot .. ' is locked.')
+        add_to_chat(player.equipment[slot] .. " is equipped, " .. slot .. " is locked.")
       end
     end
   end

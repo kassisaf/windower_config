@@ -1,14 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(2, 1, 17) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
+  -- job_init(2, 1, 17) -- Macro book, macro page, lockstyle set
+  initialize_empty_sets()
 
   -- Gear Aliases
 
@@ -62,7 +55,7 @@ function get_sets()
     feet = malignance.feet,
     neck = "Subtlety Spectacles",
     waist = "Sailfi Belt +1",
-    left_ear = "Brutal Earring", -- Get Sherida
+    left_ear = "Brutal Earring",
     right_ear = "Telos Earring",
     left_ring = "Chirich Ring +1",
     right_ring = "Petrov Ring",
@@ -111,7 +104,6 @@ function get_sets()
     left_ear = "Moonshade Earring",
     right_ear = "Odr Earring",
     left_ring = "Rufescent Ring",
-    -- right_ring = "Apate Ring",
     right_ring = "Ephramad's Ring",
     waist = "Fotia Belt"
     -- back      = snapshot_roll_cape,

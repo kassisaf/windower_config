@@ -1,14 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
-  job_init(1, 1, 1) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
+  job_init(1, 1, 1) -- Macro book, macro page, lockstyle set_combine
+  initialize_empty_sets()
 
   -- Gear aliases
 

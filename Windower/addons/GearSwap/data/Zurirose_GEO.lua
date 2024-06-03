@@ -1,14 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
   job_init(3, 1, 3) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
+  initialize_empty_sets()
 
   -- Gear aliases
 
@@ -122,7 +115,7 @@ function get_sets()
     body = "Merlinic Jubbah", -- Fast Cast +10%
     hands = empyrean.hands, -- Fast Cast +5%
     legs = artifact.legs, -- Fast Cast +11%
-    feet = "Agwu's Pigaches", -- Fast Cast +4%
+    feet = "Navon Crackows", -- Fast Cast +5% (Agwu's Pigaches are 4% if we need to save a slot...)
     waist = "Cornelia's Belt", -- For 10% haste if midcast doesn't swap it off
     left_ear = "Malignance Earring", -- Fast Cast +4%
     right_ear = "Loquacious Earring", -- Fast Cast +2%

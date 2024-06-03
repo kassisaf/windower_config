@@ -1,14 +1,7 @@
 function get_sets()
   include('Zuri-Logic.lua')
   job_init(5, 1, 5) -- Macro book, macro page, lockstyle set
-
-  -- Leave these empty
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
+  initialize_empty_sets()
 
   -- JSE Prefixes:
   -- Artifact: Magus / Assimilator's
