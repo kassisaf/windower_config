@@ -66,22 +66,17 @@ default_mount = "red crab"
 ------------------------
 
 -- State flags for various modes and settings
-local modes = {
-  TH = false,
-  has_pet = false,
-  dummy_songs = false,
-  debug = false
-}
+local modes = {}
 
 -- Function for toggling boolean modes via macro or console commands
 function toggle_mode(key)
-  if modes[key] ~= nil then
-    modes[key] = not modes[key]
-    add_to_chat(key .. " mode " .. ENABLED_OR_DISABLED[tostring(modes[key])])
-    equip_idle_or_tp_set()
+  if modes[key] == nil then
+    modes[key] = true
   else
-    add_to_chat("Warning: tried to toggle " .. key .. " mode but key does not exist. (Check Zuri-Common `modes` table)")
+    modes[key] = not modes[key]
   end
+  add_to_chat(key .. " mode " .. ENABLED_OR_DISABLED[tostring(modes[key])])
+  equip_idle_or_tp_set()
 end
 
 function print_spell_info_if_debug_enabled(spell)

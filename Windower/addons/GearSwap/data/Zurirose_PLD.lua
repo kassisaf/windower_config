@@ -146,7 +146,7 @@ function get_sets()
     waist = "Platinum Moogle Belt",
     left_ear = "Foresti Earring",
     right_ear = sortie_earring,
-    left_ring = "Warden's Ring",
+    left_ring = "Fortified Ring",
     right_ring = "Shneddick Ring"
   })
 
@@ -160,7 +160,7 @@ function get_sets()
 
   sets.tp = set_combine(sets.idle, {
     -- neck = "Warder's Charm +1" -- For sweaty magic tanking
-    right_ring = "Shadow Ring"
+    right_ring = "Warden's Ring"
   })
 
   sets.TP = set_combine(sets.idle, {
