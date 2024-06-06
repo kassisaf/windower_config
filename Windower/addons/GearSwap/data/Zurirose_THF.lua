@@ -201,6 +201,7 @@ function get_sets()
   }
   -- Use TH for targeted JA's
   sets.precast["Despoil"] = set_combine(sets.th, {
+    ammo = "Barathrum", -- Despoil +3
     legs = "Raider's Culottes +1",
     feet = "Skulker's Poulaines +2"
   })
@@ -208,6 +209,7 @@ function get_sets()
     head = relic.head
   })
   sets.precast["Steal"] = set_combine(sets.th, {
+    ammo = "Barathrum", -- Steal +3
     head = relic.head, -- Enhances Aura Steal
     hands = "Thief's Kote", -- Steal +3
     legs = "Assassin's Culottes", -- Steal +5,    lost after reforge
@@ -257,7 +259,7 @@ function get_sets()
   -- Maximize crit rate for Domain Invasion
   sets.DI = set_combine(sets.TP, {
     main = "Voluspa Knife",
-    sub = "Gleti's Knife",
+    sub = "Crepuscular Knife",
     ammo = "Yetshila",
     hands = "Mummu Wrists +2",
     legs = "Meghanada Chausses +2",

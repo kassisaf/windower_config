@@ -53,20 +53,29 @@ end
 -- Misc. variables --
 ---------------------
 
-lockables_set = to_set(lockables) -- from Zuri-Settings.lua
-special_ammo_set = to_set(special_ammo)
+lockables_set = to_set(settings.lockables) -- from Zuri-Settings.lua
+special_ammo_set = to_set(settings.special_ammo)
 weapon_slots = {
   "main",
   "range"
 }
-default_mount = "red crab"
+truthy_values = S {
+  "enable",
+  "true",
+  "on"
+}
+falsey_values = S {
+  "disable",
+  "false",
+  "off"
+}
 
 ------------------------
 -- Modes and commands --
 ------------------------
 
 -- State flags for various modes and settings
-local modes = {}
+modes = {}
 
 -- Function for toggling boolean modes via macro or console commands
 function toggle_mode(key)
@@ -88,39 +97,6 @@ end
 ----------------------------------------------
 -- Utility functions for use in job scripts --
 ----------------------------------------------
-
-function load_job_specific_addons()
-  if player.main_job == "BLU" then
-    send_command("lua l blualert")
-  else
-    send_command("lua u blualert")
-  end
-end
-
--- Sets macro page and lockstyle set, to be called on job load
-function job_init(macro_book, macro_page, lockstyleset, preferred_mount)
-  send_command("wait 1; input /macro book " .. macro_book)
-  send_command("wait 2; input /macro set " .. macro_page)
-  if lockstyleset then
-    send_command("wait 3; input /lockstyleset " .. lockstyleset)
-  end
-  send_command(
-      "wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
-  send_command("alias m input /mount \"" .. (preferred_mount or default_mount) .. "\"")
-  send_command("alias d input /dismount")
-
-  load_job_specific_addons()
-end
-
-function initialize_empty_sets()
-  sets.precast = {
-    WS = {
-      crit = {}
-    }
-  }
-  sets.midcast = {}
-  sets.cycles = {}
-end
 
 -- Cycles between sets defined in sets.cycles
 cycle_state = {}
@@ -153,6 +129,40 @@ function cycle(cycle_name)
       break
     end
     set_index = set_index + 1
+  end
+end
+
+-- Declares any empty sets that are expected to be indexed in the job file
+function initialize_empty_sets()
+  sets.precast = {
+    WS = {
+      crit = {}
+    }
+  }
+  sets.midcast = {}
+  sets.cycles = {}
+end
+
+-- Sets macro page and lockstyle set, to be called on job load
+function job_init(macro_book, macro_page, lockstyleset, _preferred_mount)
+  send_command("wait 1; input /macro book " .. macro_book)
+  send_command("wait 2; input /macro set " .. macro_page)
+  if lockstyleset then
+    send_command("wait 3; input /lockstyleset " .. lockstyleset)
+  end
+  send_command(
+      "wait 3; input /echo ** Job is " .. player.main_job .. "/" .. player.sub_job .. ". Macros set to Book " .. macro_book .. " Page " .. macro_page .. ". **")
+  send_command("alias m input /mount \"" .. (_preferred_mount or settings.default_mount) .. "\"")
+  send_command("alias d input /dismount")
+
+  load_job_specific_addons()
+end
+
+function load_job_specific_addons()
+  if player.main_job == "BLU" then
+    send_command("lua l blualert")
+  else
+    send_command("lua u blualert")
   end
 end
 
@@ -204,9 +214,10 @@ end -- equip_idle_or_tp_set()
 function equip_idle_set(skip_lockables)
   if modes["has_pet"] and sets.idle_with_pet then
     safe_equip(sets.idle_with_pet, skip_lockables)
-  else
-    safe_equip(sets.idle, skip_lockables)
+    return
   end
+
+  safe_equip(sets.idle, skip_lockables)
 
   if string.find(world.zone, "Adoulin") then
     equip({
@@ -274,9 +285,8 @@ function handle_geomancy_midcast(spell)
 end
 
 function handle_elemental_obi(spell)
-  use_obi =
-      (spell.action_type == "Magic" and spell.type ~= "Trust") or (spell.type == "WeaponSkill" and elemental_obi_weaponskills[spell.english]) -- Obi WS list from Zuri-Globals.lua
-      or spell.type ~= "CorsairShot"
+  use_obi = (spell.action_type == "Magic" and spell.type ~= "Trust") or (spell.type == "WeaponSkill" and settings.elemental_obi_weaponskills[spell.english]) or
+                spell.type ~= "CorsairShot"
 
   -- world.weather_element reports SCH weather over zone weather, if present
   if use_obi and (spell.element == world.weather_element or spell.element == world.day_element) then
@@ -432,6 +442,12 @@ function aftercast(spell)
     -- elseif spell.type == "Item" and lockables_set[spell.english] then
     --     equip_idle_or_tp_set(true)
   end
+
+  -- Callback to job-specific aftercast, if defined
+  if type(job_aftercast) == "function" then
+    job_aftercast(spell, spell_tier_map[spell.english], player)
+  end
+
   equip_idle_or_tp_set()
 end -- aftercast()
 
@@ -474,13 +490,29 @@ end -- buff_change()
 --  //gs c cycle set_name: Cycles through sets in sets.cycles[set_name] (must be defined in job file)
 --  //gs c cc:             Spike HP for "cure cheat"
 --  //gs c cp:             Locks capacity point back piece
+--  //gs c mode [mode] [on/off]: Toggles a mode on or off
 function self_command(command_str)
   params = split_by_space(command_str)
 
   if params[1] == "u" or params[1] == "update" then
     equip_idle_or_tp_set(true)
-  elseif params[1] == "dummy" then
-    toggle_mode("dummy_songs")
+  elseif params[1] == "mode" then
+    -- 
+    if not params[2] then
+      add_to_chat("Error: No mode specified")
+      return
+    end
+    if not params[3] then
+      toggle_mode(params[2])
+      return
+    end
+    if truthy_values[params[3]] then
+      modes[params[2]] = true
+    elseif falsey_values[params[3]] then
+      modes[params[2]] = false
+    else
+      toggle_mode(params[2])
+    end
   elseif params[1] == "cycle" then
     cycle(params[2])
   elseif params[1] == "th" then
@@ -497,5 +529,8 @@ function self_command(command_str)
     equip({
       back = "Mecistopins Mantle"
     })
+    -- TODO command for setting mode directly
+    -- TODO command for customizing idle set
+    -- TODO allow adding commands in job file
   end
 end -- self_command()

@@ -57,7 +57,7 @@ return {
   -- ['Win+7'] = 'input /ma "Sage Etude" <stpt>',
   -- ['Win+8'] = 'input /ma "Adventurer\'s Dirge" <stpt>', -- Enmity DOWN
   -- ['Win+9'] = 'input /ma "Foe Sirvente" <stpt>', -- Enmity UP
-  ['Win+0'] = 'gs c dummy' -- Toggles use of Daurdabla in midcast
+  ['Win+0'] = 'gs c mode dummy_songs' -- Toggles use of Daurdabla in midcast
 }
 
 -- TODO: Separate pages for:

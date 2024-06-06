@@ -132,6 +132,8 @@ function get_sets()
   }
 
   -- Basic sets
+
+  -- Idle set is customized when switching modes.magic (//gs c mode magic [on/off])
   sets.idle = set_combine(nyame, {
     main = "Malignance Sword",
     sub = "Srivatsa",
@@ -149,8 +151,6 @@ function get_sets()
     left_ring = "Fortified Ring",
     right_ring = "Shneddick Ring"
   })
-
-  -- For sweaty magic tanking
   sets.idle_magic = set_combine(sets.idle, {
     neck = "Warder's Charm +1",
     left_ear = "Eabani Earring",
@@ -158,21 +158,8 @@ function get_sets()
     right_ring = "Shadow Ring"
   })
 
-  sets.tp = set_combine(sets.idle, {
-    -- neck = "Warder's Charm +1" -- For sweaty magic tanking
-    right_ring = "Warden's Ring"
-  })
-
   sets.TP = set_combine(sets.idle, {
-    -- legs       = empyrean.legs,
-
-    -- neck       = "Loricate Torque +1", -- Sacrificing neck for DT, consider using ring slot instead after Iskur Gorget
-    -- waist      = "Sailfi Belt +1",
-    -- left_ear   = "Eabani Earring",
-    -- right_ear  = "Telos Earring",
-    -- left_ring  = "Chirich Ring +1",
-    -- right_ring = "Chirich Ring +1",
-    -- back       = melee_tp_cape,
+    right_ring = "Warden's Ring"
   })
   sets.FC = {
     ammo = "Sapience Orb", -- 2% FC
@@ -432,3 +419,4 @@ function job_midcast(spell, mapped_spell)
     safe_equip(sets.sird)
   end
 end
+

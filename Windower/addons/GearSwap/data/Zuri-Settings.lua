@@ -1,31 +1,40 @@
--- Any items defined here will be locked when equipped manually
-lockables = {
-  "Warp Ring",
-  "Reraise Ring",
-  "White Rarab Cap +1",
-  "Dim. Ring (Mea)",
-  -- "Dim. Ring (Holla)",
-  -- "Dim. Ring (Dem)",
-  "Endorsement Ring",
-  "Trizek Ring",
-  -- "Emporox's Ring",
-  "Echad Ring",
-  -- "Caliber Ring",
-  -- "Facility Ring",
-  "Guide Beret",
-  "Warp Cudgel",
-  -- "Nexus Cape",
-  "Portafurnace" -- lol
-}
+settings = {
+  -- Default mount to be called when using //m shortcut unless overridden in call to job_init
+  default_mount = "red crab",
 
-special_ammo = {
-  "Hauksbok Bullet",
-  "Animikii Bullet"
-}
+  -- Any items defined here will be locked when equipped manually
+  lockables = {
+    "Warp Ring",
+    "Reraise Ring",
+    "White Rarab Cap +1",
+    "Dim. Ring (Mea)",
+    -- "Dim. Ring (Holla)",
+    -- "Dim. Ring (Dem)",
+    "Endorsement Ring",
+    "Trizek Ring",
+    -- "Emporox's Ring",
+    "Echad Ring",
+    -- "Caliber Ring",
+    -- "Facility Ring",
+    "Guide Beret"
+    -- "Warp Cudgel",
+    -- "Nexus Cape",
+    -- "Portafurnace" -- lol
+  },
 
-elemental_obi_weaponskills = S {
-  "Aeolian Edge",
-  "Leaden Salute"
+  -- Avoid throwing or shooting any ammo listed here
+  special_ammo = {
+    "Hauksbok Bullet",
+    "Animikii Bullet"
+  },
+
+  -- Equip elemental obi during proper weather/day for weaponskills listed here
+  elemental_obi_weaponskills = S {
+    "Aeolian Edge",
+    "Cataclysm",
+    "Leaden Salute",
+    "Wildfire"
+  }
 }
 
 -- All Jobs Holy Water set
