@@ -74,8 +74,26 @@ falsey_values = S {
 -- Modes and commands --
 ------------------------
 
--- State flags for various modes and settings
 modes = {}
+function handle_mode_command(params)
+  if params[2] == nil then
+    add_to_chat("Error: No mode name specified")
+    return
+  elseif modes[params[2]] == nil then
+    modes[params[2]] = false
+  end
+
+  if params[3] == nil then
+    toggle_mode(params[2])
+    return
+  elseif truthy_values[params[3]] then
+    modes[params[2]] = true
+    equip_idle_or_tp_set()
+  elseif falsey_values[params[3]] then
+    modes[params[2]] = false
+    equip_idle_or_tp_set()
+  end
+end
 
 -- Function for toggling boolean modes via macro or console commands
 function toggle_mode(key)
@@ -217,7 +235,11 @@ function equip_idle_set(skip_lockables)
     return
   end
 
-  safe_equip(sets.idle, skip_lockables)
+  if type(get_custom_idle_set) == "function" then
+    safe_equip(get_custom_idle_set(), skip_lockables)
+  else
+    safe_equip(sets.idle, skip_lockables)
+  end
 
   if string.find(world.zone, "Adoulin") then
     equip({
@@ -234,7 +256,12 @@ function equip_tp_set(skip_lockables)
       safe_equip(sets.DI, skip_lockables)
     end
   else
-    safe_equip(sets.TP, skip_lockables)
+    equip_idle_set()
+    if type(get_custom_tp_set) == "function" then
+      safe_equip(get_custom_tp_set(), skip_lockables)
+    else
+      safe_equip(sets.TP, skip_lockables)
+    end
   end
 end -- equip_tp()
 
@@ -497,22 +524,7 @@ function self_command(command_str)
   if params[1] == "u" or params[1] == "update" then
     equip_idle_or_tp_set(true)
   elseif params[1] == "mode" then
-    -- 
-    if not params[2] then
-      add_to_chat("Error: No mode specified")
-      return
-    end
-    if not params[3] then
-      toggle_mode(params[2])
-      return
-    end
-    if truthy_values[params[3]] then
-      modes[params[2]] = true
-    elseif falsey_values[params[3]] then
-      modes[params[2]] = false
-    else
-      toggle_mode(params[2])
-    end
+    handle_mode_command(params)
   elseif params[1] == "cycle" then
     cycle(params[2])
   elseif params[1] == "th" then

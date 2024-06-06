@@ -152,15 +152,18 @@ function get_sets()
     right_ring = "Shneddick Ring"
   })
   sets.idle_magic = set_combine(sets.idle, {
+    main = "Malignance Sword",
+    sub = "Aegis",
     neck = "Warder's Charm +1",
     left_ear = "Eabani Earring",
     right_ear = "Hearty Earring",
-    right_ring = "Shadow Ring"
+    left_ring = "Shadow Ring"
   })
 
-  sets.TP = set_combine(sets.idle, {
+  sets.TP = {
     right_ring = "Warden's Ring"
-  })
+  }
+
   sets.FC = {
     ammo = "Sapience Orb", -- 2% FC
     head = "Carmine Mask +1", -- 14% FC
@@ -420,3 +423,11 @@ function job_midcast(spell, mapped_spell)
   end
 end
 
+-- Allow swapping between physical and magic tanking modes with //gs c mode magic [on/off]
+function get_custom_idle_set()
+  if modes.magic then
+    return sets.idle_magic
+  else
+    return sets.idle
+  end
+end

@@ -79,7 +79,9 @@ function get_sets()
     back = ambu_cape.tp
   }
   sets.FC = {
-    legs = "Limbo Trousers", -- 3%
+    ammo = "Sapience Orb", -- 2%
+    hands = "Leyline Gloves", -- 5+1% FC
+    legs = "Enif Cosciales", -- 8%
     left_ear = "Loquacious Earring", -- "Enhances"
     waist = "Cornelia's Belt" -- For 10% haste if midcast doesn't swap it off
   }

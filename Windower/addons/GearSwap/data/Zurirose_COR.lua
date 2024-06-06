@@ -161,6 +161,8 @@ function get_sets()
     back = ambu_cape.melee_tp
   })
   sets.FC = {
+    head = "Carmine Mask +1", -- 14% FC
+    hands = "Leyline Gloves", -- 5+1% FC
     left_ear = "Loquacious Earring", -- "Enhances"
     right_ring = "Kishar Ring", -- 4%
     waist = "Cornelia's Belt" -- For 10% haste if midcast doesn't swap it off
