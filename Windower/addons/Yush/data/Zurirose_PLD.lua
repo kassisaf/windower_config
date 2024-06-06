@@ -24,6 +24,8 @@ return {
   ['Win+3'] = 'input /ma "Reprisal" <me>',
   ['Win+4'] = 'input /ma "Palisade" <me>',
 
-  ['Win+9'] = 'gs equip sets.phalanx_received; input /p Ready for Phalanx!  <scall21>',
-  ['Win+0'] = 'gs enable main sub; gs c cycle weapons; gs disable main sub'
+  ['Win+8'] = 'gs enable sub; gs equip sets.phalanx_received; input /p Ready for Phalanx!  <scall21>',
+  ['Win+9'] = 'gs disable sub; input /equip sub "Duban"',
+  ['Win+0'] = 'gs c mode magic'
+  -- ['Win+0'] = 'gs enable main sub; gs c cycle weapons; gs disable main sub'
 }
