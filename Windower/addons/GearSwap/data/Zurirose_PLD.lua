@@ -196,8 +196,8 @@ function get_sets()
     back = ambu_cape.meva, -- Enmity +10 (swap with physical def cape?)
     left_ear = "Cryptic Earring", -- Enmity +4
     right_ear = "Friomisi Earring", -- Enmity +2 (get Trux from Divine Might for +5)
-    left_ring = "Provocare Ring", -- Enmity +5 (get Apeile Ring +1, Eiwaz Ring)
-    right_ring = "Supershear Ring" -- Enmity +5
+    left_ring = "Apeile Ring +1", -- Enmity +5
+    right_ring = "Supershear Ring" -- Enmity +5 -- Get Eiwahz Ring
   }
   sets.sird = {
     ammo = "Staunch Tathlum", -- 10% SIRD
@@ -350,7 +350,7 @@ function get_sets()
   sets.midcast["Cure"] = {
     head = "Souveran Schaller +1", -- CPR +15%, +9 Enmity, +280 HP, SIRD -20
     body = "Souveran Cuirass +1", -- CP, CPR, Enmity, HP, DT
-    hands = "Macabre Gauntlets",
+    hands = "Macabre Gauntlets +1",
     back = ambu_cape.cure_potency,
     legs = empyrean.legs, -- HP, enmity retention, DT
     feet = odyssean.feet.cure_potency,
@@ -387,6 +387,10 @@ function get_sets()
   sets.midcast["Flash"] = sets.enmity
   sets.midcast["Banishga"] = sets.enmity
   sets.midcast["Blue Magic"] = sets.sird
+  sets.midcast["Blood Saber"] = set_combine(sets.enmity, {
+    head = "Pixie Hairpin +1",
+    left_ring = "Archon Ring"
+  })
 
   -- Other sets
   sets.TH = {

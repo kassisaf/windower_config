@@ -336,6 +336,14 @@ ranged_weaponskills = S {
   "Myrkr"
 }
 
+aurore = {
+  head = "Aurore Beret",
+  body = "Aurore Doublet",
+  hands = "Aurore Gloves",
+  legs = "Aurore Brais",
+  feet = "Aurore Gaiters"
+}
+
 agwu = {
   head = "Agwu's Cap",
   body = "Agwu's Robe",

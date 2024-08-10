@@ -6,9 +6,22 @@
 -- end
 -- 2x march, ltncarol, 2x int
 -- ethren
+local PIANISSIMO = 409
+function determine_song_target()
+  local active_buffs = windower.ffxi.get_player().buffs
+  if table.find(active_buffs, PIANISSIMO) then
+    return '<stpt>'
+  end
+  return '<me>'
+end
+
+function cast_spell(spell_name)
+  return 'input /ma "' .. spell_name .. '" ' .. determine_song_target()
+end
+
 return {
   ['Ctrl+1'] = 'input /ja "Pianissimo" <me>',
-  ['Ctrl+2'] = 'input /ma "Knight\'s Minne V" <me>',
+  ['Ctrl+2'] = cast_spell("Knight\'s Minne V"),
   ['Ctrl+3'] = 'input /ma "Valor Minuet III" <me>',
   ['Ctrl+4'] = 'input /ma "Valor Minuet IV" <me>',
   ['Ctrl+5'] = 'input /ma "Valor Minuet V" <me>',

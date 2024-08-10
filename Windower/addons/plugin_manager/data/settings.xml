@@ -48,5 +48,6 @@
 		<addon>equipviewer</addon>
 		<addon>debuffed</addon>
 		<addon>omen</addon>
+		<addon>buffwatch</addon>
 	</global>
 </settings>

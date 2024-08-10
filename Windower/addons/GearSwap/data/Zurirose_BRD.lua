@@ -144,8 +144,8 @@ function get_sets()
 
   -- Basic sets
   sets.idle = {
-    main = "Sangoma",
-    sub = "Genmei Shield",
+    -- main = "Sangoma",
+    -- sub = "Genmei Shield",
     range = linos.defense,
     head = empyrean.head,
     body = "Inyanga Jubbah +2",
@@ -162,7 +162,8 @@ function get_sets()
   }
   sets.TP = {
     main = "Naegling",
-    sub = "Genmei Shield",
+    -- sub = "Genmei Shield",
+    sub = "Crepuscular Knife",
     range = linos.tp,
     head = "Ayanmo Zucchetto +2", -- Bunzi's Hat after RP
     body = "Ayanmo Corazza +2", -- Ashera (lol)
@@ -178,7 +179,7 @@ function get_sets()
     back = ambu_cape.tp
   }
   if dual_wield_available then
-    sets.TP["sub"] = "Gleti's Knife"
+    sets.TP["sub"] = "Crepuscular Knife"
   end
   sets.FC = {
     -- TODO optimize with haste

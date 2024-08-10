@@ -214,7 +214,7 @@ function get_sets()
     ammo = "Barathrum", -- Steal +3
     head = relic.head, -- Enhances Aura Steal
     hands = "Thief's Kote", -- Steal +3
-    legs = "Assassin's Culottes", -- Steal +5,    lost after reforge
+    legs = "Assassin's Culottes", -- Steal +5, lost at +2
     feet = artifact.feet -- Steal +2 NQ, +3/+3/+10/+15 with upgrades
   })
   sets.precast["Box Step"] = sets.TH

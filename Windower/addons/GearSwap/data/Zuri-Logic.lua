@@ -15,14 +15,6 @@ function to_set(t)
   return set
 end
 
-function starts_with(str, start)
-  return str:sub(1, #start) == start
-end
-
-function ends_with(str, ending)
-  return ending == "" or str:sub(-#ending) == ending
-end
-
 function split_by_space(inputstr)
   local t = {}
   for str in string.gmatch(inputstr, "([^%s]+)") do
@@ -302,7 +294,8 @@ end
 
 function handle_geomancy_midcast(spell)
   safe_equip(sets.midcast["Geomancy"])
-  if starts_with(spell.english, "Indi") then
+  -- if starts_with(spell.english, "Indi") then
+  if spell.english:startswith("Indi") then
     if buffactive["Entrust"] then
       safe_equip(sets.midcast["Indi-Entrust"])
     else
