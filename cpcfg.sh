@@ -16,6 +16,7 @@ standard_addons=(
   "Treasury"
   "Trusts"
   "Yush"
+  "BuffWatch"
 )
 
 # Generic handling for any addon that stores its config files in a /data folder

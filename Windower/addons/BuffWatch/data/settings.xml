@@ -1,0 +1,84 @@
+<?xml version="1.1" ?>
+<settings>
+    <global>
+        <auto_swap_job_profiles>true</auto_swap_job_profiles>
+        <background>
+            <alpha>128</alpha>
+            <visible>false</visible>
+        </background>
+        <default_to_global_profile>true</default_to_global_profile>
+        <pos>
+            <x>664</x>
+            <y>438</y>
+        </pos>
+        <profiles>
+            <example>
+                <_116>
+                    <en>Phalanx</en>
+                    <id>116</id>
+                    <label>Phalanx</label>
+                </_116>
+                <_289>
+                    <en>Enmity Boost</en>
+                    <id>289</id>
+                    <label>Crusade</label>
+                </_289>
+                <_618>
+                    <en>Emporox&apos;s Gift</en>
+                    <id>618</id>
+                    <label>Potpourri</label>
+                </_618>
+                <_93>
+                    <en>Defense Boost</en>
+                    <id>93</id>
+                    <label>Cocoon</label>
+                </_93>
+            </example>
+            <global>
+                <_618>
+                    <en>Emporox&apos;s Gift</en>
+                    <id>618</id>
+                    <label>Potpourri</label>
+                </_618>
+            </global>
+            <pld>
+                <_116>
+                    <en>Phalanx</en>
+                    <id>116</id>
+                    <label>Phalanx</label>
+                </_116>
+                <_289>
+                    <en>Enmity Boost</en>
+                    <id>289</id>
+                    <label>Crusade</label>
+                </_289>
+            </pld>
+            <pld_blu>
+                <_116>
+                    <en>Phalanx</en>
+                    <id>116</id>
+                    <label>Phalanx</label>
+                </_116>
+                <_289>
+                    <en>Enmity Boost</en>
+                    <id>289</id>
+                    <label>Crusade</label>
+                </_289>
+                <_93>
+                    <en>Defense Boost</en>
+                    <id>93</id>
+                    <label>Cocoon</label>
+                </_93>
+            </pld_blu>
+        </profiles>
+        <show_ok_message>true</show_ok_message>
+        <text>
+            <font>Arial</font>
+            <size>11</size>
+            <stroke>
+                <transparency>200</transparency>
+                <width>2</width>
+            </stroke>
+        </text>
+    </global>
+</settings>
